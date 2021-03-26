@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.9.2.46 FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="ACOPOS6D_POWERLINK" Type="FBE.00000A1C_PlanarMotorIncorporatedPOWERLINK" Version="1.12.05" OrderNumber="Planar Motor Incorporated POWERLINK">
+    <Connection Connector="PLK1" TargetModule="X20CP1685" TargetConnector="IF3" NodeNumber="1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20CP1685" Type="X20CP1685" Version="1.1.0.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="ActivateSnmp" Value="2" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="CycleTime" Value="1000" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="6DDemo_Config1" />
+    <Parameter ID="UserPartitionSize" Value="10" />
+    <Parameter ID="Simulation" Value="1" />
+    <Parameter ID="TimerDeviceType" Value="EPLX2X" />
+    <Parameter ID="TimerDevice" Value="X20CP1685.IF3" />
+    <Parameter ID="Cyclic1Duration" Value="1000" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="10000" />
+    <Parameter ID="Cyclic2Tolerance" Value="10000" />
+    <Parameter ID="Cyclic8Duration" Value="1000" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="6DMacro" />
+    <Parameter ID="FileDevicePath1" Value="F:\Macros" />
+    <Group ID="FileDevice2" />
+    <Parameter ID="FileDeviceName2" Value="AuditFileDev" />
+    <Parameter ID="FileDevicePath2" Value="F:/AuditExport" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="user" />
+    <Parameter ID="FtpUserPassword1" Value="XLDSpOsjCux8fLbUPdTMl3dlmwfwq9DjvsZi0xU0j4E=" Description="user" />
+    <Parameter ID="FtpUserSalt1" Value="i1JicX8w" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
+  </Module>
+</Hardware>

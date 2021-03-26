@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="cntHome_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="mapp" refId="gAuditTrail" attribute="link" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="AuditList1" attribute="mpLink" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Main:state" attribute="value" />
+			<Target xsi:type="snippet" refId="MainIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="MainIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toMainStatus" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::LoadStatio:state" attribute="value" />
+			<Target xsi:type="snippet" refId="LoadIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="LoadIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toLoadState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::UnloadStat:state" attribute="value" />
+			<Target xsi:type="snippet" refId="UnloadIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="UnloadIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toUnloadState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::PrintStati:state" attribute="value" />
+			<Target xsi:type="snippet" refId="PrintIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="PrintIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toPrintState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::DoseSt1:state" attribute="value" />
+			<Target xsi:type="snippet" refId="Dose1IfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="Dose1IfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toDose1State" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::DoseSt2:state" attribute="value" />
+			<Target xsi:type="snippet" refId="Dose2IfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="Dose2IfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toDose2State" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::TampStatio:state" attribute="value" />
+			<Target xsi:type="snippet" refId="TampIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="TampIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toTampState" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Power" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="tsMainPower" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Start" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="mpbStartProcess" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Stop" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="mpbStopProcess" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gLoadStationIf.Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noLoadIdx" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gUnloadStationIf.Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noUnloadShuttleIdx" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gPrintStationIf.Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noPrintShuttleIdx" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gTampStationIf.Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noTampShuttleIdx" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gDoseStationsIf[0].Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noDose1ShuttleIdx" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gDoseStationsIf[1].Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noDose2ShuttleIdx" attribute="value" />
+		</Binding>
+	
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gLoadStationIf.Par.WaitTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niLoadTime" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPrintStationIf.Par.PrintAccel" attribute="node" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niPrintAccel" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPrintStationIf.Par.PrintVel" attribute="node" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niPrintSpeed" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gUnloadStationIf.Par.WaitTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niUnloadTime" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gDoseStationsIf[0].Par.WaitTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niSt1DoseTime" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gDoseStationsIf[1].Par.WaitTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niSt2DoseTime" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::ShCtrl:pDebugIf.Par.NumLayers" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="niNumLayers" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::ShCtrl:debugIdx" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="shuttleSelector" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessInfoIf.Sts.CurrentLayersPerMinute" attribute="node" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="OnlineChartHDA1" attribute="graph[graph1].node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessInfoIf.Sts.CurrentLayersPerMinute" attribute="node" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="OnlineChartGraph1" attribute="node" />
+</Binding>
+</Bindings>
+</BindingsSet>

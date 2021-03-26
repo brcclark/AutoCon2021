@@ -1,0 +1,4 @@
+VAR
+	SysThroughputCalcFb : ThroughputCounterFb;
+	PowThroughputCalcFb : ThroughputCounterFb;
+END_VAR

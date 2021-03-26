@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.90">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases>
+      <EngineeringUnit Id="1" UnitId="5067859" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="metre per second" Symbol="m/s" />
+      <EngineeringUnit Id="2" UnitId="5067595" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="metre per second squared" Symbol="m/s²" />
+    </EngineeringUnitAliases>
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gMainIf" AutomaticEnable="True" />
+        <Variable Name="gTampStationIf" AutomaticEnable="True" />
+        <Variable Name="g6DRecoveryIf" />
+        <Variable Name="gAcp6DCtrlIf" />
+        <Variable Name="gDoseStationsIf" EnableArrayElements="True" />
+        <Variable Name="gLoadStationIf" AutomaticEnable="True" />
+        <Variable Name="gMacroLoadIf" AutomaticEnable="True" />
+        <Variable Name="gPrintStationIf" AutomaticEnable="True">
+          <Variable Name="Par">
+            <Variable Name="PrintVel" EngineeringUnitId="1" />
+            <Variable Name="PrintAccel" EngineeringUnitId="2" />
+          </Variable>
+        </Variable>
+        <Variable Name="gShuttleIf" EnableArrayElements="True" />
+        <Variable Name="gUnloadStationIf" AutomaticEnable="True" />
+        <Variable Name="gProcessInfoIf" AutomaticEnable="True">
+          <Variable Name="Cmd" AutomaticEnable="True" />
+          <Variable Name="Par" AutomaticEnable="True" />
+          <Variable Name="Sts" AutomaticEnable="True">
+            <Variable Name="CurrentLayersPerMinute" Historizing="True" HistoryBufferSize="400" HistorySamplingInterval="Timer5" />
+          </Variable>
+        </Variable>
+      </GlobalVariables>
+      <Task Name="6DCtrl">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="Main">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="Recovery">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="MacroLoad">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="TampStatio">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="DoseSt2">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="DoseSt1">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="PrintStati">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="UnloadStat">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="LoadStatio">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="ShCtrl">
+        <Variable Name="pDebugIf" AutomaticEnable="True" />
+        <Variable Name="pDebugState" />
+        <Variable Name="debugIdx" />
+      </Task>
+      <Task Name="Vis">
+        <Variable Name="Vis">
+          <Variable Name="Shuttles" EnableArrayElements="True" />
+        </Variable>
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

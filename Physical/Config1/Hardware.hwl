@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?AutomationStudio FileVersion="4.9"?>
+<BR.AS.HardwareTopology>
+  <TimeStamps>
+    <TimeStamp LogicalPath="Config1.Hardware.hw" LastWriteTime="03/04/2021 10:27:58" />
+  </TimeStamps>
+  <Modules>
+    <Module Name="X20CP1685" Type="X20CP1685" X="100" Y="100" />
+    <Module Name="ACOPOS6D_POWERLINK" Type="FBE.00000A1C_PlanarMotorIncorporatedPOWERLINK" X="250" Y="249" />
+  </Modules>
+  <Links>
+    <Link From="X20CP1685" To="ACOPOS6D_POWERLINK" FromPort="IF3" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="156" Y="187" />
+      <Point X="156" Y="187" />
+      <Point X="156" Y="200" />
+      <Point X="156" Y="305" />
+      <Point X="283" Y="305" />
+      <Point X="283" Y="300" />
+      <Point X="283" Y="293" />
+      <Point X="283" Y="293" />
+    </Link>
+  </Links>
+  <InfoElements />
+</BR.AS.HardwareTopology>
