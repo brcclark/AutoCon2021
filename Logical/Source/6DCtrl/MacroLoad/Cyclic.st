@@ -3,9 +3,9 @@ PROGRAM _CYCLIC
 	CASE state OF
 		MACLOAD_IDLE:	//******************************************************************************** Macro Idle State
 			IF gMacroLoadIf.Cmd.LoadAll OR gMacroLoadIf.Cmd.LoadSingle THEN
-				gMacroLoadIf.Status.AllMacrosLoaded := FALSE;
-				gMacroLoadIf.Status.Loading := TRUE;
-				gMacroLoadIf.Status.CurrentMacro := 0;
+				gMacroLoadIf.Sts.AllMacrosLoaded := FALSE;
+				gMacroLoadIf.Sts.Loading := TRUE;
+				gMacroLoadIf.Sts.CurrentMacro := 0;
 				
 				state := MACLOAD_COUNT_CHECK;
 			ELSIF gMacroLoadIf.Cmd.Clear THEN
@@ -15,34 +15,34 @@ PROGRAM _CYCLIC
 				
 				state := MACLOAD_CLEAR;
 			ELSIF gMacroLoadIf.Cmd.Reset THEN
-				gMacroLoadIf.Status.AllMacrosLoaded := FALSE;
+				gMacroLoadIf.Sts.AllMacrosLoaded := FALSE;
 				gMacroLoadIf.Cmd.Reset := FALSE;
 			END_IF
 			
 		MACLOAD_LOAD://******************************************************************************** Macro Load State
 			IF MacroFbs.MacroLoadFb.Error THEN
-				gMacroLoadIf.Status.Error := TRUE;
-				gMacroLoadIf.Status.MacroIDError := gMacroLoadIf.Status.CurrentMacro;
+				gMacroLoadIf.Sts.Error := TRUE;
+				gMacroLoadIf.Sts.MacroIDError := gMacroLoadIf.Sts.CurrentMacro;
 				
 				state := MACLOAD_ERROR;
 			ELSIF MacroFbs.MacroLoadFb.Done THEN
 				MacroFbs.MacroLoadFb.Execute := FALSE;
 				IF gMacroLoadIf.Cmd.LoadSingle THEN
-					gMacroLoadIf.Status.CmdDone := TRUE;
+					gMacroLoadIf.Sts.CmdDone := TRUE;
 				ELSE //Means we commanded a "LOAD ALL"
-					gMacroLoadIf.Status.CurrentMacro := gMacroLoadIf.Status.CurrentMacro + 1;
+					gMacroLoadIf.Sts.CurrentMacro := gMacroLoadIf.Sts.CurrentMacro + 1;
 					
 					state := MACLOAD_COUNT_CHECK;
 				END_IF
 			END_IF
 			
 		MACLOAD_COUNT_CHECK: //******************************************************************************** Macro Count check State
-			IF gMacroLoadIf.Par.MacroList[gMacroLoadIf.Status.CurrentMacro].Load THEN
+			IF gMacroLoadIf.Par.MacroList[gMacroLoadIf.Sts.CurrentMacro].Load THEN
 				MacroFbs.MacroLoadFb.Controller := ADR(gMcAcp6DController);
 				MacroFbs.MacroLoadFb.FileDevice := gMacroLoadIf.Par.FileDevice;
 				IF gMacroLoadIf.Cmd.LoadAll THEN
-					MacroFbs.MacroLoadFb.MacroID := gMacroLoadIf.Par.MacroList[gMacroLoadIf.Status.CurrentMacro].MacroID;
-					MacroFbs.MacroLoadFb.FileName := gMacroLoadIf.Par.MacroList[gMacroLoadIf.Status.CurrentMacro].MacroFileName;
+					MacroFbs.MacroLoadFb.MacroID := gMacroLoadIf.Par.MacroList[gMacroLoadIf.Sts.CurrentMacro].MacroID;
+					MacroFbs.MacroLoadFb.FileName := gMacroLoadIf.Par.MacroList[gMacroLoadIf.Sts.CurrentMacro].MacroFileName;
 					
 				ELSIF gMacroLoadIf.Cmd.LoadSingle THEN
 					MacroFbs.MacroLoadFb.MacroID := gMacroLoadIf.Par.SingleMacroLoad.MacroID;
@@ -51,29 +51,29 @@ PROGRAM _CYCLIC
 				MacroFbs.MacroLoadFb.Execute := TRUE;
 				state := MACLOAD_LOAD;
 			ELSE
-				gMacroLoadIf.Status.CurrentMacro := gMacroLoadIf.Status.CurrentMacro + 1;
-				IF gMacroLoadIf.Status.CurrentMacro >= MAX_MACRO_COUNT THEN
-					gMacroLoadIf.Status.AllMacrosLoaded := TRUE;
-					gMacroLoadIf.Status.CmdDone := TRUE;
+				gMacroLoadIf.Sts.CurrentMacro := gMacroLoadIf.Sts.CurrentMacro + 1;
+				IF gMacroLoadIf.Sts.CurrentMacro >= MAX_MACRO_COUNT THEN
+					gMacroLoadIf.Sts.AllMacrosLoaded := TRUE;
+					gMacroLoadIf.Sts.CmdDone := TRUE;
 						
 					state := MACLOAD_DONE;
 				END_IF	
 			END_IF
 		MACLOAD_CLEAR: //******************************************************************************** Macro Clear state 
 			IF MacroFbs.MacroClearFb.Error THEN
-				gMacroLoadIf.Status.Error := TRUE;
+				gMacroLoadIf.Sts.Error := TRUE;
 				
 				state := MACLOAD_ERROR;
 			ELSIF MacroFbs.MacroClearFb.Done THEN
 				MacroFbs.MacroClearFb.Execute := FALSE;
-				gMacroLoadIf.Status.CmdDone := TRUE;
+				gMacroLoadIf.Sts.CmdDone := TRUE;
 				
 				state := MACLOAD_DONE;
 			END_IF
 		MACLOAD_DONE: //******************************************************************************** Load Done State
-			gMacroLoadIf.Status.Loading := FALSE;
+			gMacroLoadIf.Sts.Loading := FALSE;
 			IF NOT gMacroLoadIf.Cmd.Clear AND NOT gMacroLoadIf.Cmd.LoadAll AND NOT gMacroLoadIf.Cmd.LoadSingle THEN
-				gMacroLoadIf.Status.CmdDone := FALSE;
+				gMacroLoadIf.Sts.CmdDone := FALSE;
 				state := MACLOAD_IDLE;
 			END_IF
 		MACLOAD_ERROR: //******************************************************************************** Macro load error State
@@ -83,10 +83,10 @@ PROGRAM _CYCLIC
 				
 				gMacroLoadIf.Cmd.Reset := FALSE;
 				
-				gMacroLoadIf.Status.Loading := FALSE;
-				gMacroLoadIf.Status.AllMacrosLoaded := FALSE;
-				gMacroLoadIf.Status.Error := FALSE;
-				gMacroLoadIf.Status.MacroIDError := 0;
+				gMacroLoadIf.Sts.Loading := FALSE;
+				gMacroLoadIf.Sts.AllMacrosLoaded := FALSE;
+				gMacroLoadIf.Sts.Error := FALSE;
+				gMacroLoadIf.Sts.MacroIDError := 0;
 				state := MACLOAD_IDLE;
 			END_IF
 	END_CASE;

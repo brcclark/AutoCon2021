@@ -17,12 +17,12 @@ PROGRAM _CYCLIC
 		ACP6D_POWER_OFF: 	//******************************************************************************** 6D Power off commanding State
 			Fbs.PowerOffFb.Execute := TRUE;
 			IF(Fbs.PowerOffFb.Acknowledge AND (Fbs.SysReadStateFb.Valid AND Fbs.SysReadStateFb.State = mcACP6D_STATE_INACTIVE))THEN
-				gAcp6DCtrlIf.Status.PowerOn := FALSE;
+				gAcp6DCtrlIf.Sts.PowerOn := FALSE;
 				Fbs.PowerOffFb.Execute 	:= FALSE;
 				state := ACP6D_INACTIVE;
 			ELSIF(Fbs.PowerOffFb.Error)THEN
 				Fbs.PowerOffFb.Execute 	:= FALSE;
-				gAcp6DCtrlIf.Status.ErrorID := Fbs.PowerOffFb.ErrorID;
+				gAcp6DCtrlIf.Sts.ErrorID := Fbs.PowerOffFb.ErrorID;
 				state := ACP6D_ERROR;
 			END_IF;
 		
@@ -35,7 +35,7 @@ PROGRAM _CYCLIC
 		
 		ACP6D_POWER_ON: 	//******************************************************************************** 6D Power on Commanding State
 			IF Fbs.PowerOnFb.Error THEN
-				gAcp6DCtrlIf.Status.ErrorID := Fbs.PowerOnFb.ErrorID;
+				gAcp6DCtrlIf.Sts.ErrorID := Fbs.PowerOnFb.ErrorID;
 				state := ACP6D_ERROR;
 			ELSIF(Fbs.PowerOnFb.Acknowledge AND (Fbs.SysReadStateFb.Valid AND (Fbs.SysReadStateFb.State > mcACP6D_STATE_INACTIVE)))THEN
 				//MpAuditCustomEvent(gAuditTrail,"INFO","Acp6DSys","Powered On");
@@ -47,7 +47,7 @@ PROGRAM _CYCLIC
 		ACP6D_WAIT_ACTIVATION: 	//******************************************************************************** 6D Waiting for Activation of Shuttles State
 			IF(Fbs.SysReadStateFb.Valid)THEN
 				IF(Fbs.SysReadStateFb.State = mcACP6D_STATE_OPERATION)THEN
-					gAcp6DCtrlIf.Status.PowerOn := TRUE;
+					gAcp6DCtrlIf.Sts.PowerOn := TRUE;
 					state := ACP6D_INIT_MACRO;
 				ELSIF(Fbs.SysReadStateFb.State = mcACP6D_STATE_INACTIVE)THEN
 					state := ACP6D_INACTIVE; // Error during Activating state; Can happen in Absolute ID mode.
@@ -55,7 +55,7 @@ PROGRAM _CYCLIC
 				END_IF;
 			END_IF;
 		ACP6D_INIT_MACRO: 	//******************************************************************************** 6D Wait for Macro initilization State
-			IF gMacroLoadIf.Status.AllMacrosLoaded THEN
+			IF gMacroLoadIf.Sts.AllMacrosLoaded THEN
 				gMacroLoadIf.Cmd.LoadAll := FALSE;
 				state := ACP6D_READY;
 			ELSE
@@ -69,7 +69,7 @@ PROGRAM _CYCLIC
 			END_IF;
 
 		ACP6D_ERROR: 	//******************************************************************************** 6D Error State
-			gAcp6DCtrlIf.Status.PowerOn := FALSE;
+			gAcp6DCtrlIf.Sts.PowerOn := FALSE;
 			IF(gAcp6DCtrlIf.Cmd.ErrorReset)THEN
 				IF(Fbs.SysReadStateFb.State<>mcACP6D_STATE_ERROR)THEN
 					gAcp6DCtrlIf.Cmd.ErrorReset := FALSE;
@@ -82,7 +82,7 @@ PROGRAM _CYCLIC
 					ELSIF(Fbs.PowerOffFb.Error)THEN
 						gAcp6DCtrlIf.Cmd.ErrorReset := FALSE;
 						Fbs.PowerOffFb.Execute 	:= FALSE;
-						gAcp6DCtrlIf.Status.ErrorID := Fbs.PowerOffFb.ErrorID;
+						gAcp6DCtrlIf.Sts.ErrorID := Fbs.PowerOffFb.ErrorID;
 						state := ACP6D_ERROR;
 					END_IF;
 				END_IF;
@@ -105,12 +105,12 @@ PROGRAM _CYCLIC
 		Fbs.ShReadState[i].ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
 		Fbs.ShReadState[i]();
 		
-		gShuttleIf[i].Status.ShuttleInfo.Force.Value := Fbs.ShReadForceFb[i].ForceInfo;
-		gShuttleIf[i].Status.ShuttleInfo.Force.Valid := Fbs.ShReadForceFb[i].Valid;
-		gShuttleIf[i].Status.ShuttleInfo.Position.Value := Fbs.ShReadPositionFb[i].PositionInfo;
-		gShuttleIf[i].Status.ShuttleInfo.Position.Valid := Fbs.ShReadPositionFb[i].Valid;
-		gShuttleIf[i].Status.ShuttleInfo.State.Value := Fbs.ShReadState[i].State;
-		gShuttleIf[i].Status.ShuttleInfo.State.Valid := Fbs.ShReadState[i].Valid;
+		gShuttleIf[i].Sts.ShuttleInfo.Force.Value := Fbs.ShReadForceFb[i].ForceInfo;
+		gShuttleIf[i].Sts.ShuttleInfo.Force.Valid := Fbs.ShReadForceFb[i].Valid;
+		gShuttleIf[i].Sts.ShuttleInfo.Position.Value := Fbs.ShReadPositionFb[i].PositionInfo;
+		gShuttleIf[i].Sts.ShuttleInfo.Position.Valid := Fbs.ShReadPositionFb[i].Valid;
+		gShuttleIf[i].Sts.ShuttleInfo.State.Value := Fbs.ShReadState[i].State;
+		gShuttleIf[i].Sts.ShuttleInfo.State.Valid := Fbs.ShReadState[i].Valid;
 	END_FOR;
 	
 	IF gAcp6DCtrlIf.Cmd.GetErrorInfo THEN
@@ -118,7 +118,7 @@ PROGRAM _CYCLIC
 		Fbs.GetErrorCodesFb.Execute := TRUE;
 		
 		IF Fbs.GetErrorCodesFb.Valid OR Fbs.GetErrorCodesFb.Error THEN
-			gAcp6DCtrlIf.Status.ErrorCodes := Fbs.GetErrorCodesFb.ErrorCodes;
+			gAcp6DCtrlIf.Sts.ErrorCodes := Fbs.GetErrorCodesFb.ErrorCodes;
 			Fbs.GetErrorCodesFb.Execute := FALSE;
 			gAcp6DCtrlIf.Cmd.GetErrorInfo := FALSE;
 		END_IF
@@ -131,8 +131,8 @@ PROGRAM _CYCLIC
 	Fbs.PowerOnFb();
 	Fbs.AutoRefreshFB();
 	
-	gAcp6DCtrlIf.Status.Ready := state = ACP6D_READY;
-	gAcp6DCtrlIf.Status.Error := state = ACP6D_ERROR;
-	gAcp6DCtrlIf.Status.ReadyToPowerOn := Fbs.SysReadStateFb.Valid AND Fbs.SysReadStateFb.State = mcACP6D_STATE_INACTIVE;
+	gAcp6DCtrlIf.Sts.Ready := state = ACP6D_READY;
+	gAcp6DCtrlIf.Sts.Error := state = ACP6D_ERROR;
+	gAcp6DCtrlIf.Sts.ReadyToPowerOn := Fbs.SysReadStateFb.Valid AND Fbs.SysReadStateFb.State = mcACP6D_STATE_INACTIVE;
 
 END_PROGRAM

@@ -4,7 +4,7 @@ TYPE
 	gMacroLoadIfTYp : 	STRUCT 
 		Cmd : gMacroLoadIfCmdTyp;
 		Par : gMacroLoadIfParTyp;
-		Status : gMacroLoadIfStatusTyp;
+		Sts : gMacroLoadIfStsTyp;
 	END_STRUCT;
 	gMacroLoadIfCmdTyp : 	STRUCT 
 		LoadAll : BOOL; (*Command to load all macros*)
@@ -22,7 +22,7 @@ TYPE
 		MacroList : ARRAY[0..MAX_MACRO_COUNT_ARRAY]OF MacroParTyp; (*List of macros to load*)
 		SingleMacroLoad : MacroParTyp; (*Parameter to load a singular macro*)
 	END_STRUCT;
-	gMacroLoadIfStatusTyp : 	STRUCT 
+	gMacroLoadIfStsTyp : 	STRUCT 
 		AllMacrosLoaded : BOOL;
 		Loading : BOOL;
 		CurrentMacro : USINT;

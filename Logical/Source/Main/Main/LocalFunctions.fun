@@ -2,7 +2,7 @@
 {REDUND_ERROR} FUNCTION CmdShEnable : BOOL (*Provides interface to group enable command for all shuttles*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
 	VAR_INPUT
 		Enable : BOOL;
-		ShIfs : REFERENCE TO ARRAY[0..MAX_SHUTTLE_COUNT_ARRAY] OF gShuttleIfTyp;
+		ShIfs : REFERENCE TO ARRAY[0..MAX_SHUTTLE_COUNT_ARRAY] OF ShuttleIfTyp;
 		ShCount : USINT;
 	END_VAR
 	VAR

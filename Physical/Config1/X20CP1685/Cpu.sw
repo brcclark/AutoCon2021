@@ -7,11 +7,6 @@
   </TaskClass>
   <TaskClass Name="Cyclic#2">
     <Task Name="LoadStatio" Source="Source.ProcessStations.LoadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="UnloadStat" Source="Source.ProcessStations.UnloadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="PrintStati" Source="Source.ProcessStations.PrintStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="DoseSt1" Source="Source.ProcessStations.DoseStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="DoseSt2" Source="Source.ProcessStations.DoseStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="TampStatio" Source="Source.ProcessStations.TampStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="Main" Source="Source.Main.Main.prg" Memory="UserROM" Language="IEC" Debugging="true" />

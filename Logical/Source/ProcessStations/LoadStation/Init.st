@@ -6,6 +6,6 @@ PROGRAM _INIT
 	gLoadStationIf.Cfg.StationPos.X := 0.060;
 	gLoadStationIf.Cfg.StationPos.Y := 0.180;
 	
-	gLoadStationIf.Par.WaitTime := T#2s;
+	gSysPars.LoadStation.WaitTime := T#2s;
 	
 END_PROGRAM

@@ -58,10 +58,10 @@ PROGRAM _CYCLIC
 			GroupRecovered := TRUE;
 			FOR i:=0 TO gMainIf.Cfg.ShuttleCount -1 DO
 				IF g6DRecoveryIf.Par.AutoDrivePositions[i].GroupNum = CurrentGroup THEN
-					IF NOT gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Status.Recovered THEN
+					IF NOT gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Sts.Recovered THEN
 						GroupRecovered := FALSE;
 						IF CurrentGroup = 0 THEN
-							gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Status.Recovered := TRUE;
+							gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Sts.Recovered := TRUE;
 							gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Cmd.NextStep := TRUE;
 						ELSE
 							RecoverFbs.MacroRunFb[i].Controller := ADR(gMcAcp6DController);
@@ -74,7 +74,7 @@ PROGRAM _CYCLIC
 							ELSIF RecoverFbs.MacroRunFb[i].Acknowledge THEN
 								RecoverFbs.MacroRunFb[i].Execute := FALSE;
 								gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Cmd.NextStep := TRUE;
-								gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Status.Recovered := TRUE;
+								gShuttleIf[g6DRecoveryIf.Par.AutoDrivePositions[i].ShIdx].Sts.Recovered := TRUE;
 							END_IF
 						END_IF
 					ELSE

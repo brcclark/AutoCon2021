@@ -1,4 +1,5 @@
 VAR
 	state : LoadStationStateEnum;
 	LoadStationFbs : LoadStationFbTyp;
+	stationPars : LoadStationParsTyp;
 END_VAR

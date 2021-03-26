@@ -14,20 +14,11 @@
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
         <Variable Name="gMainIf" AutomaticEnable="True" />
-        <Variable Name="gTampStationIf" AutomaticEnable="True" />
         <Variable Name="g6DRecoveryIf" />
         <Variable Name="gAcp6DCtrlIf" />
-        <Variable Name="gDoseStationsIf" EnableArrayElements="True" />
         <Variable Name="gLoadStationIf" AutomaticEnable="True" />
         <Variable Name="gMacroLoadIf" AutomaticEnable="True" />
-        <Variable Name="gPrintStationIf" AutomaticEnable="True">
-          <Variable Name="Par">
-            <Variable Name="PrintVel" EngineeringUnitId="1" />
-            <Variable Name="PrintAccel" EngineeringUnitId="2" />
-          </Variable>
-        </Variable>
         <Variable Name="gShuttleIf" EnableArrayElements="True" />
-        <Variable Name="gUnloadStationIf" AutomaticEnable="True" />
         <Variable Name="gProcessInfoIf" AutomaticEnable="True">
           <Variable Name="Cmd" AutomaticEnable="True" />
           <Variable Name="Par" AutomaticEnable="True" />
@@ -46,21 +37,6 @@
         <Variable Name="state" />
       </Task>
       <Task Name="MacroLoad">
-        <Variable Name="state" />
-      </Task>
-      <Task Name="TampStatio">
-        <Variable Name="state" />
-      </Task>
-      <Task Name="DoseSt2">
-        <Variable Name="state" />
-      </Task>
-      <Task Name="DoseSt1">
-        <Variable Name="state" />
-      </Task>
-      <Task Name="PrintStati">
-        <Variable Name="state" />
-      </Task>
-      <Task Name="UnloadStat">
         <Variable Name="state" />
       </Task>
       <Task Name="LoadStatio">
