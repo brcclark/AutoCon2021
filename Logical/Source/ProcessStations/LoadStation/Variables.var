@@ -2,4 +2,5 @@ VAR
 	state : LoadStationStateEnum;
 	LoadStationFbs : LoadStationFbTyp;
 	stationPars : LoadStationParsTyp;
+	recipes : ProductRecipeTyp;
 END_VAR

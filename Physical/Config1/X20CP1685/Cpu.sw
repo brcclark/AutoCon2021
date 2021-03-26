@@ -7,6 +7,10 @@
   </TaskClass>
   <TaskClass Name="Cyclic#2">
     <Task Name="LoadStatio" Source="Source.ProcessStations.LoadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="FillSt1" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="FillSt2" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="FillSt3" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="FillSt4" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="Main" Source="Source.Main.Main.prg" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -64,6 +68,7 @@
     <LibraryObject Name="AdvIecChk" Source="Libraries.AdvIecChk.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="CoTrace" Source="Libraries.CoTrace.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsZip" Source="Libraries.AsZip.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="aruser" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />

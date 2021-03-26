@@ -1,0 +1,7 @@
+VAR
+	state : FillStationStateEnum;
+	pFillIf : REFERENCE TO StationIfTyp;
+	FillStationFbs : FillStationFbTyp;
+	taskName : STRING[80];
+	stationPars : REFERENCE TO FillStationParsTyp;
+END_VAR

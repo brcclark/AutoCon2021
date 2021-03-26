@@ -52,6 +52,14 @@ TYPE
 	ProductRecipeTyp : 	STRUCT 
 		Fills : ARRAY[0..MAX_FILL_STEPS_ARRAY]OF USINT;
 	END_STRUCT;
+	CurrentProductInfoTyp : 	STRUCT 
+		Loaded : BOOL;
+		FillData : USINT;
+		CurrentFillStep : USINT;
+		Weight : REAL;
+		Capped : BOOL;
+		Buffer : BOOL;
+	END_STRUCT;
 END_TYPE
 
 (*Shuttle Interface Types*)
@@ -75,8 +83,12 @@ TYPE
 		MacroIDs : ShuttleIfCfgMacrosTyp; (*Macro's used for routing shuttles*)
 	END_STRUCT;
 	ShuttleIfCfgMacrosTyp : 	STRUCT  (*Structure of the macro IDs used for operation*)
-		LoadToPrintMacroID : ShuttleIfMacroEnum; (*Macro ID used for sending a shuttle from the load station to the print station*)
-		TampToUnloadMacroID : ShuttleIfMacroEnum; (*Macro ID used for sending a shuttle from the tamping station to the unload station*)
+		LoadToFillEntry : ShuttleIfMacroEnum;
+		Fill1ToFill2 : ShuttleIfMacroEnum;
+		Fill2ToFill3 : ShuttleIfMacroEnum;
+		Fill3ToFill4 : ShuttleIfMacroEnum;
+		Fill4ToFill1 : ShuttleIfMacroEnum;
+		Fill4ToFillExit : ShuttleIfMacroEnum;
 	END_STRUCT;
 	ShuttleIfCfgTyp : 	STRUCT  (*Configuration values for a shuttle*)
 		ShuttleId : USINT; (*ShuttleID of this shuttle*)
@@ -86,19 +98,20 @@ TYPE
 		Error : BOOL; (*Shuttle is currently in an error state*)
 		CurrentLayer : USINT; (*Current Layer being built on the shuttle*)
 		ShuttleInfo : Acp6DShuttleInfoTyp; (*CurrentStatus Information about the shuttle*)
+		ProductInfo : CurrentProductInfoTyp; (*CurrentProduct Information about the product on the shuttle*)
 		ErrorState : ShStateEnum; (*State the shuttle errored at*)
 		Recovered : BOOL; (*Shuttle has been recovered*)
 	END_STRUCT;
 	ShuttleIfMacroEnum : 
 		( (*Macro IDs that are used to denote which macro means what*)
-		MACRO_LOAD_TO_PRINT := 128, (*Macro ID used for sending a shuttle from the load station to the print station*)
-		MACRO_PRINT_TO_DOSE1, (*Macro ID for moving from the print station to the dose 1 station*)
-		MACRO_PRINT_TO_DOSE2, (*Macro ID for moving from the print station to the dose 2 station*)
-		MACRO_DOSE_TO_PRINT, (*Macro ID used for sending a shuttle from the dosing station to the printing station*)
-		MACRO_PRINT_TO_TAMP, (*Macro ID used for sending a shuttle from the printing station to the tamping station*)
-		MACRO_TAMP_TO_UNLOAD, (*Macro ID used for sending a shuttle from the tamping station to the unload station*)
-		MACRO_UNLOAD_TO_LOAD, (*Macro ID used for sending a shuttle from the unloading station to the loading station*)
-		MACRO_RECOVERY_GROUP0, (*Macro ID used for recovering the group 0 shuttles*)
+		MACRO_LOAD_TO_FILL_ENTRY := 128, (*Macro ID used for sending a shuttle from the load station to the fill entry*)
+		MACR_FILL_ENTRY_TO_FILL_1, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACR_FILL_1_TO_FILL_2, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACR_FILL_2_TO_FILL_3, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACR_FILL_3_TO_FILL_4, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACR_FILL_4_TO_FILL_1, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACR_FILL_4_TO_FILL_EXIT, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
 		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
 		);
@@ -125,9 +138,11 @@ TYPE
 		SH_IDLE, (*Shuttle is in the idle station waiting to start*)
 		SH_MOVE_TO_LOAD, (*Shuttle is moving to the load position*)
 		SH_LOADING, (*Shuttle is currently being loaded*)
+		SH_MOVE_FILL_ENTER, (*Shuttle is moving towards the fill enter station*)
 		SH_MOVE_FILL, (*Shuttle is moving to a fill station*)
 		SH_FILLING, (*Shuttle is currently being filled*)
 		SH_FILLING_EVAL, (*Shuttle is deciding which filling station to move next to*)
+		SH_MOVE_FILL_EXIT, (*Shuttle is moving towards the fill exit station*)
 		SH_MOVE_TO_WEIGH, (*Shuttle is moving to a weigh station*)
 		SH_WEIGHING, (*Shuttle is currently being weighed/inspected*)
 		SH_MOVE_TO_CAP, (*Shuttle is moving to a cap station*)
@@ -242,6 +257,8 @@ TYPE
 	END_STRUCT;
 	StationIfCfgTyp : 	STRUCT 
 		StationPos : StationPositionTyp; (*Station's center world position*)
+		EnterPos : StationPositionTyp; (*Station's enter position relative or absolute*)
+		ExitPos : StationPositionTyp; (*Station's exit position relative or absolute*)
 	END_STRUCT;
 	StationIfParTyp : 	STRUCT 
 		ShuttleIdx : USINT; (*Index in the gShuttle array for the shuttle in question*)
@@ -264,8 +281,17 @@ END_TYPE
 TYPE
 	SysParsTyp : 	STRUCT 
 		LoadStation : LoadStationParsTyp;
+		FillStations : ARRAY[0..MAX_FILL_STATIONS_ARRAY]OF FillStationParsTyp;
+		TraversalVel : REAL;
+		TraversalAccel : REAL;
 	END_STRUCT;
 	LoadStationParsTyp : 	STRUCT 
 		WaitTime : TIME;
+	END_STRUCT;
+	FillStationParsTyp : 	STRUCT 
+		Vel : REAL;
+		Accel : REAL;
+		FillRate : REAL;
+		FillTime : TIME;
 	END_STRUCT;
 END_TYPE

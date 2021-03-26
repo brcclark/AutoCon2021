@@ -3,6 +3,8 @@ VAR CONSTANT
 	MAX_SHUTTLE_COUNT : USINT := 8; (*Maximum count of shuttles allowed in the system*)
 	MAX_SHUTTLE_COUNT_ARRAY : USINT := MAX_SHUTTLE_COUNT-1; (*Maximum count of shuttles - 1 (used for array declaration)*)
 	STATION_IS_EMPTY : USINT := 255; (*Index that denotes that a station is empty and available*)
+	MAX_FILL_STATIONS : USINT := 4;
+	MAX_FILL_STATIONS_ARRAY : USINT := MAX_FILL_STATIONS-1;
 END_VAR
 (*Application Constants*)
 VAR CONSTANT
@@ -19,4 +21,5 @@ VAR
 	g6DRecoveryIf : Acp6DRecoveryIfTyp; (*Interface to control the recover process*)
 	gProcessInfoIf : ProcessInfoIfTyp; (*Interface to display process related information*)
 	gSysPars : SysParsTyp; (*System Parameters*)
+	gFillStationsIf : ARRAY[0..MAX_FILL_STATIONS_ARRAY] OF StationIfTyp;
 END_VAR

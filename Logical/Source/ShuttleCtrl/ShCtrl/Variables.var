@@ -6,4 +6,6 @@ VAR
 	pDebugFbs : REFERENCE TO ShFbsTyp;
 	pDebugState : REFERENCE TO ShStateEnum;
 	debugIdx : USINT;
+	fillEntry : StationPositionTyp;
+	fillExit : StationPositionTyp;
 END_VAR

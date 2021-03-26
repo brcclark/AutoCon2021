@@ -36,6 +36,10 @@ PROGRAM _CYCLIC
 				gShuttleIf[gLoadStationIf.Par.ShuttleIdx].Cmd.NextStep := TRUE;
 				gLoadStationIf.Sts.Done := TRUE;
 				
+				//Assign the shuttle a recipe
+				gShuttleIf[gLoadStationIf.Par.ShuttleIdx].Par.Recipe := recipes;
+				gShuttleIf[gLoadStationIf.Par.ShuttleIdx].Sts.ProductInfo.Loaded := TRUE;
+				
 				state := LOAD_DONE;
 			END_IF
 		LOAD_DONE: //********************************************************************************Load station is done with the load process
