@@ -1,6 +1,13 @@
 
 PROGRAM _CYCLIC
 	FOR i:= 0 TO gMainIf.Cfg.ShuttleCount - 1 DO
+		IF gShuttleIf[i].Cmd.Stop THEN
+			shFbs[i].ShStop.Controller := ADR(gMcAcp6DController);
+			shFbs[i].ShStop.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+			shFbs[i].ShStop.Execute := TRUE;
+			
+			shState[i] := SH_STOPPING;
+		END_IF
 		
 		CASE shState[i] OF
 			SH_OFF:  //******************************************************************************** Shuttle is in the off/idle state
@@ -157,12 +164,23 @@ PROGRAM _CYCLIC
 			SH_UNLOADING: //********************************************************************************  Shuttle is currently being unloaded	
 			SH_MOVE_TO_REJECT: //********************************************************************************  Shuttle is moving to a reject station	
 			SH_REJECTING: //********************************************************************************  Shuttle is currently being rejected
-				
+			SH_STOPPING:
+				IF shFbs[i].ShStop.Error THEN
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShStop.Done THEN
+					gShuttleIf[i].Cmd.Stop := FALSE;
+					gShuttleIf[i].Cmd.NextStep := FALSE;
+					shFbs[i].ShStop.Execute := FALSE;
+					gShuttleIf[i].Cmd.ResetProductInfo := TRUE;
+					
+					shState[i] := SH_OFF;
+				END_IF
 			SH_ERROR: //******************************************************************************** Shuttle is in the error state
 		
 		END_CASE;
 		shFbs[i].ShRunMacroFb();
 		shFbs[i].ShMoveInPlaneFb();
+		shFbs[i].ShStop();
 		
 		IF gShuttleIf[i].Cmd.ResetProductInfo THEN
 			brsmemset(ADR(gShuttleIf[i].Sts.ProductInfo),0,SIZEOF(gShuttleIf[i].Sts.ProductInfo));

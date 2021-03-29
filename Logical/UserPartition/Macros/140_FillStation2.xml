@@ -1,0 +1,12 @@
+﻿<?xml version="0.5" encoding="utf-8"?>
+<Commands>
+	<Command id="1">
+		<Parameter Name="MacroClear" MacroID="140"/>
+	</Command>
+	<Command id="2">
+		<Parameter Name="MoveShortAxis" ShuttleID="140" RXTarget="0.017" RYTarget="0.017" VelRx="0.017" PositionMode="0" PathType="1"/>
+	</Command>
+	<Command id="3">
+		<Parameter Name="MacroSave" MacroID="140"/>
+	</Command>
+</Commands>

@@ -4,4 +4,5 @@ VAR
 	FillStationFbs : FillStationFbTyp;
 	taskName : STRING[80];
 	stationPars : REFERENCE TO FillStationParsTyp;
+	station : FillStationEnum;
 END_VAR

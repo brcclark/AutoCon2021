@@ -42,12 +42,25 @@ PROGRAM _CYCLIC
 				FillStationFbs.WaitTimer.IN := TRUE;
 				FillStationFbs.WaitTimer.PT := stationPars.FillTime;
 				
+				SetupStationActions;
+							
 				state := FILL_FILLING;
 			END_IF
 		FILL_FILLING: //********************************************************************************Fill station is preforming the filling process
-			IF FillStationFbs.WaitTimer.Q THEN
+			IF FillStationFbs.WaitTimer.Q 
+				AND ((FillStationFbs.St1Fb.Done AND FillStationFbs.St1Fb.Execute) 
+				OR (FillStationFbs.St2Fb.Done AND FillStationFbs.St2Fb.Execute)) THEN
 				FillStationFbs.WaitTimer.IN := FALSE;
-				
+				//Interface with the correct Station FB
+				CASE station OF
+					ST1:
+						FillStationFbs.St1Fb.Execute := FALSE;
+					ST2:
+					ST3:
+					ST4:
+
+				END_CASE;
+								
 				FillStationFbs.FillMoveFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 				FillStationFbs.FillMoveFb.Path := mcACP6D_PATH_X_THEN_Y;
 				FillStationFbs.FillMoveFb.Velocity := stationPars.Vel;
@@ -65,6 +78,7 @@ PROGRAM _CYCLIC
 				
 				state := FILL_ERROR;
 			ELSIF FillStationFbs.FillMoveFb.Acknowledge THEN
+				FillStationFbs.FillMoveFb.Execute := FALSE;
 				gShuttleIf[pFillIf.Par.ShuttleIdx].Cmd.NextStep := TRUE;
 				pFillIf.Sts.Done := TRUE;
 				pFillIf.Sts.Processing := FALSE;
@@ -111,4 +125,7 @@ PROGRAM _CYCLIC
 		
 	FillStationFbs.FillMoveFb();
 	FillStationFbs.WaitTimer();
+	//Call the appropriate station block
+	CallStationFbs;
+	
 END_PROGRAM

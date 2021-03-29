@@ -26,6 +26,7 @@
             <Variable Name="CurrentLayersPerMinute" Historizing="True" HistoryBufferSize="400" HistorySamplingInterval="Timer5" />
           </Variable>
         </Variable>
+        <Variable Name="gFillStationsIf" EnableArrayElements="True" />
       </GlobalVariables>
       <Task Name="6DCtrl">
         <Variable Name="state" />
@@ -51,6 +52,18 @@
         <Variable Name="Vis">
           <Variable Name="Shuttles" EnableArrayElements="True" />
         </Variable>
+      </Task>
+      <Task Name="FillSt1">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="FillSt2">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="FillSt3">
+        <Variable Name="state" />
+      </Task>
+      <Task Name="FillSt4">
+        <Variable Name="state" />
       </Task>
     </Module>
   </DefaultView>

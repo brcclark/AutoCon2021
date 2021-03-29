@@ -18,6 +18,7 @@ PROGRAM _CYCLIC
 				mcACP6D_SH_STATE_IDLING :  //Shuttle is levitating and not currently executing a motion command		
 					Vis.Shuttles[idx].Color := DINT_TO_INT(COLOR_WHITE_MATTE);
 				mcACP6D_SH_STATE_DISABLED :  //Shuttle is not controlled by the System		
+					Vis.Shuttles[idx].Color := DINT_TO_INT(COLOR_GREY_MATTE);
 				mcACP6D_SH_STATE_MOTION :  //Shuttle is in motion		
 					Vis.Shuttles[idx].Color := DINT_TO_INT(COLOR_WHITE_MATTE);
 				mcACP6D_SH_STATE_WAIT :  //Shuttle is waiting for a trigger defined by the WaitUntil command		

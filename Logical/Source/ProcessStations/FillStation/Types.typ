@@ -14,5 +14,15 @@ TYPE
 	FillStationFbTyp : 	STRUCT 
 		FillMoveFb : MC_BR_MoveInPlane_Acp6D;
 		WaitTimer : TON;
+		St1Fb : AngledMovementFb;
+		St2Fb : MC_BR_MacroRun_Acp6D;
 	END_STRUCT;
+	FillStationEnum : 
+		(
+		ST_UNDEF,
+		ST1,
+		ST2,
+		ST3,
+		ST4
+		);
 END_TYPE

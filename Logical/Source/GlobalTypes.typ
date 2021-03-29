@@ -153,6 +153,7 @@ TYPE
 		SH_UNLOADING, (*Shuttle is currently being unloaded*)
 		SH_MOVE_TO_REJECT, (*Shuttle is moving to a reject station*)
 		SH_REJECTING, (*Shuttle is currently being rejected*)
+		SH_STOPPING, (*Shuttle is currently being stopped*)
 		SH_ERROR := 65535 (*Shuttle is in the error state*)
 		);
 END_TYPE

@@ -28,14 +28,14 @@
         <Widget xsi:type="widgets.brease.Label" id="Label9" top="102" left="234" width="91" zIndex="13" text="Shuttle Idx:" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toTampState" top="77" left="329" width="121" zIndex="14" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noTampShuttleIdx" top="102" left="329" width="55" zIndex="15" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label10" top="7" left="445" width="105" zIndex="16" text="Dose 1 State:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label10" top="7" left="445" width="105" zIndex="16" text="Fill 1 State:" />
         <Widget xsi:type="widgets.brease.Label" id="Label11" top="32" left="459" width="91" zIndex="17" text="Shuttle Idx:" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="toDose1State" top="7" left="549" width="121" zIndex="18" padding="0px 2px 0px 2px" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="noDose1ShuttleIdx" top="32" left="549" width="55" zIndex="19" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label12" top="77" left="445" width="105" zIndex="20" text="Dose 2 State:" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="toFill1State" top="7" left="549" width="121" zIndex="18" padding="0px 2px 0px 2px" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noFill1ShuttleIdx" top="32" left="549" width="55" zIndex="19" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
+        <Widget xsi:type="widgets.brease.Label" id="Label12" top="77" left="445" width="105" zIndex="20" text="Fill 2 State:" />
         <Widget xsi:type="widgets.brease.Label" id="Label13" top="102" left="459" width="91" zIndex="21" text="Shuttle Idx:" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="toDose2State" top="77" left="549" width="121" zIndex="22" padding="0px 2px 0px 2px" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="noDose2ShuttleIdx" top="102" left="549" width="55" zIndex="23" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="toFill2State" top="77" left="549" width="121" zIndex="22" padding="0px 2px 0px 2px" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="noFill2ShuttleIdx" top="102" left="549" width="55" zIndex="23" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox2" top="260" left="10" width="440" height="305" zIndex="2" text="Parameters">

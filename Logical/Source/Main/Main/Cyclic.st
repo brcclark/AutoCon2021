@@ -64,6 +64,7 @@ PROGRAM _CYCLIC
 				gFillStationsIf[2].Cmd.Enable := FALSE;
 				gFillStationsIf[3].Cmd.Enable := FALSE;
 				gProcessInfoIf.Cmd.Enable := FALSE;
+				CmdShStop(ADR(gShuttleIf),gMainIf.Cfg.ShuttleCount);
 				
 				state := MAIN_STOPPING;
 			END_IF

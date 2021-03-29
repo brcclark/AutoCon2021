@@ -10,5 +10,6 @@
     <File Private="true">LocalFunctions.typ</File>
     <File Private="true">LocalFunctions.fun</File>
     <File>CmdShEnable.st</File>
+    <File>CmdShStop.st</File>
   </Files>
 </Program>

@@ -21,6 +21,22 @@
 			<Source xsi:type="snippet" refId="LoadIfState" attribute="value" />
 			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toLoadState" attribute="value" />
 		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::FillSt1:state" attribute="value" />
+			<Target xsi:type="snippet" refId="Fill1IfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="Fill1IfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toFill1State" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::FillSt2:state" attribute="value" />
+			<Target xsi:type="snippet" refId="Fill2IfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="Fill2IfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toFill2State" attribute="value" />
+		</Binding>
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Power" attribute="value" />
 			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="tsMainPower" attribute="value" />
@@ -50,5 +66,13 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessInfoIf.Sts.CurrentLayersPerMinute" attribute="node" />
 			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="OnlineChartGraph1" attribute="node" />
 		</Binding>
-	</Bindings>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gFillStationsIf[0].Par.ShuttleIdx" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noFill1ShuttleIdx" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gFillStationsIf[1].Par.ShuttleIdx" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noFill2ShuttleIdx" attribute="value" />
+</Binding>
+</Bindings>
 </BindingsSet>

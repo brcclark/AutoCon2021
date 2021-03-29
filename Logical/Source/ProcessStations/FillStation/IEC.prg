@@ -7,5 +7,10 @@
     <File Description="Exit code">Exit.st</File>
     <File Description="Local data types" Private="true">Types.typ</File>
     <File Description="Local variables" Private="true">Variables.var</File>
+    <File Description="Local variables" Private="true">LocalFunctionVars.var</File>
+    <File Description="Local data types" Private="true">LocalFunctionsTypes.typ</File>
+    <File Private="true">LocalFunctions.fun</File>
+    <File>AngledMovementFb.st</File>
+    <File>StationActions.st</File>
   </Files>
 </Program>

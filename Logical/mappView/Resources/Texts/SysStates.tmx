@@ -291,37 +291,42 @@
         <seg>Error</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.0">
+    <tu tuid="Fill.0">
       <tuv xml:lang="en">
         <seg>Off</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.1">
+    <tu tuid="Fill.1">
       <tuv xml:lang="en">
         <seg>Init</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.2">
+    <tu tuid="Fill.2">
       <tuv xml:lang="en">
         <seg>Waiting For Shuttle</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.3">
+    <tu tuid="Fill.3">
       <tuv xml:lang="en">
-        <seg>Indexing Shuttle</seg>
+        <seg>Enter Shuttle</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.4">
+    <tu tuid="Fill.4">
       <tuv xml:lang="en">
-        <seg>Dosing</seg>
+        <seg>Filling</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.5">
+    <tu tuid="Fill.5">
+      <tuv xml:lang="en">
+        <seg>Exiting Shuttle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Fill.6">
       <tuv xml:lang="en">
         <seg>Done</seg>
       </tuv>
     </tu>
-    <tu tuid="Dose.6">
+    <tu tuid="Fill.7">
       <tuv xml:lang="en">
         <seg>Error</seg>
       </tuv>
