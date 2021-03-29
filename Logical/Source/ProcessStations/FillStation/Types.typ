@@ -16,6 +16,7 @@ TYPE
 		WaitTimer : TON;
 		St1Fb : AngledMovementFb;
 		St2Fb : MC_BR_MacroRun_Acp6D;
+		St3Fb : WobbleMovementFb;
 	END_STRUCT;
 	FillStationEnum : 
 		(

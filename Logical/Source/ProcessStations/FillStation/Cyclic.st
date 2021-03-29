@@ -49,14 +49,17 @@ PROGRAM _CYCLIC
 		FILL_FILLING: //********************************************************************************Fill station is preforming the filling process
 			IF FillStationFbs.WaitTimer.Q 
 				AND ((FillStationFbs.St1Fb.Done AND FillStationFbs.St1Fb.Execute) 
-				OR (FillStationFbs.St2Fb.Done AND FillStationFbs.St2Fb.Execute)) THEN
+				OR (FillStationFbs.St2Fb.Done AND FillStationFbs.St2Fb.Execute) 
+				OR (FillStationFbs.St3Fb.Done AND FillStationFbs.St3Fb.Execute)) THEN
 				FillStationFbs.WaitTimer.IN := FALSE;
 				//Interface with the correct Station FB
 				CASE station OF
 					ST1:
 						FillStationFbs.St1Fb.Execute := FALSE;
 					ST2:
+						FillStationFbs.St2Fb.Execute := FALSE;
 					ST3:
+						FillStationFbs.St3Fb.Execute := FALSE;
 					ST4:
 
 				END_CASE;

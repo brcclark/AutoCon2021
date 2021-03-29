@@ -11,6 +11,7 @@
     <File Description="Local data types" Private="true">LocalFunctionsTypes.typ</File>
     <File Private="true">LocalFunctions.fun</File>
     <File>AngledMovementFb.st</File>
+    <File>WobbleMovementFb.st</File>
     <File>StationActions.st</File>
   </Files>
 </Program>
