@@ -21,6 +21,51 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[3].MacroFileName := '142_FillStation3Wobble.xml';
 	gMacroLoadIf.Par.MacroList[3].MacroID := 142;
 	
+	//Fill Station 4 Macro
+	gMacroLoadIf.Par.MacroList[4].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[4].MacroFileName := '143_FillStation4.xml';
+	gMacroLoadIf.Par.MacroList[4].MacroID := 143;
+	
+	
+	//Bypass Enter
+	//Fill1 Enter
+	gMacroLoadIf.Par.MacroList[5].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[5].MacroFileName := '130_Fill1EnterBypass.xml';
+	gMacroLoadIf.Par.MacroList[5].MacroID := 130;
+	
+	//Fill2 Enter
+	gMacroLoadIf.Par.MacroList[6].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[6].MacroFileName := '131_Fill2EnterBypass.xml';
+	gMacroLoadIf.Par.MacroList[6].MacroID := 131;
+	
+	//Fill3 Enter
+	gMacroLoadIf.Par.MacroList[7].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[7].MacroFileName := '132_Fill3EnterBypass.xml';
+	gMacroLoadIf.Par.MacroList[7].MacroID := 132;
+	
+	//Fill4 Enter
+	gMacroLoadIf.Par.MacroList[8].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[8].MacroFileName := '133_Fill4EnterBypass.xml';
+	gMacroLoadIf.Par.MacroList[8].MacroID := 133;
+	
+	//Bypass Exit
+	//Fill1 Exit
+	gMacroLoadIf.Par.MacroList[9].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[9].MacroFileName := '134_Fill1ExitBypass.xml';
+	gMacroLoadIf.Par.MacroList[9].MacroID := 134;
+	//Fill2 Exit
+	gMacroLoadIf.Par.MacroList[10].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[10].MacroFileName := '135_Fill2ExitBypass.xml';
+	gMacroLoadIf.Par.MacroList[10].MacroID := 135;
+	//Fill3 Exit
+	gMacroLoadIf.Par.MacroList[11].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[11].MacroFileName := '136_Fill3ExitBypass.xml';
+	gMacroLoadIf.Par.MacroList[11].MacroID := 136;
+	//Fill4 Exit
+	gMacroLoadIf.Par.MacroList[12].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[12].MacroFileName := '137_Fill4ExitBypass.xml';
+	gMacroLoadIf.Par.MacroList[12].MacroID := 137;
+	
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

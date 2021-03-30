@@ -50,7 +50,8 @@ PROGRAM _CYCLIC
 			IF FillStationFbs.WaitTimer.Q 
 				AND ((FillStationFbs.St1Fb.Done AND FillStationFbs.St1Fb.Execute) 
 				OR (FillStationFbs.St2Fb.Done AND FillStationFbs.St2Fb.Execute) 
-				OR (FillStationFbs.St3Fb.Done AND FillStationFbs.St3Fb.Execute)) THEN
+				OR (FillStationFbs.St3Fb.Done AND FillStationFbs.St3Fb.Execute)
+				OR (FillStationFbs.St4Fb.Done AND FillStationFbs.St4Fb.Execute)) THEN
 				FillStationFbs.WaitTimer.IN := FALSE;
 				//Interface with the correct Station FB
 				CASE station OF
@@ -61,7 +62,7 @@ PROGRAM _CYCLIC
 					ST3:
 						FillStationFbs.St3Fb.Execute := FALSE;
 					ST4:
-
+						FillStationFbs.St4Fb.Execute := FALSE;
 				END_CASE;
 								
 				FillStationFbs.FillMoveFb.Mode := mcACP6D_MOVE_ABSOLUTE;

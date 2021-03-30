@@ -59,6 +59,7 @@ TYPE
 		Weight : REAL;
 		Capped : BOOL;
 		Buffer : BOOL;
+		Bypassing : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -96,24 +97,28 @@ TYPE
 	ShuttleIfStsTyp : 	STRUCT  (*Status information for the shuttle*)
 		CurrentDestination : ShuttleIfDestEnum; (*Destination the shuttle is currently moving towards*)
 		Error : BOOL; (*Shuttle is currently in an error state*)
-		CurrentLayer : USINT; (*Current Layer being built on the shuttle*)
 		ShuttleInfo : Acp6DShuttleInfoTyp; (*CurrentStatus Information about the shuttle*)
 		ProductInfo : CurrentProductInfoTyp; (*CurrentProduct Information about the product on the shuttle*)
 		ErrorState : ShStateEnum; (*State the shuttle errored at*)
 		Recovered : BOOL; (*Shuttle has been recovered*)
+		NextStation : USINT;
+		CurrentStation : USINT;
 	END_STRUCT;
 	ShuttleIfMacroEnum : 
 		( (*Macro IDs that are used to denote which macro means what*)
 		MACRO_LOAD_TO_FILL_ENTRY := 128, (*Macro ID used for sending a shuttle from the load station to the fill entry*)
-		MACR_FILL_ENTRY_TO_FILL_1, (*Macro ID for moving from the fill entry location to the fill 1 station*)
-		MACR_FILL_1_TO_FILL_2, (*Macro ID for moving from the fill entry location to the fill 1 station*)
-		MACR_FILL_2_TO_FILL_3, (*Macro ID for moving from the fill entry location to the fill 1 station*)
-		MACR_FILL_3_TO_FILL_4, (*Macro ID for moving from the fill entry location to the fill 1 station*)
-		MACR_FILL_4_TO_FILL_1, (*Macro ID for moving from the fill entry location to the fill 1 station*)
-		MACR_FILL_4_TO_FILL_EXIT, (*Macro ID for moving from the fill entry location to the fill 1 station*)
+		MACRO_FILL_1_ENTER_BYPASS := 130, (*Macro ID for moving from the fill 1 station to enter the bypass lane*)
+		MACRO_FILL_2_ENTER_BYPASS, (*Macro ID for moving from the fill 2 station to enter the bypass lane*)
+		MACRO_FILL_3_ENTER_BYPASS, (*Macro ID for moving from the fill 3 station to enter the bypass lane*)
+		MACRO_FILL_4_ENTER_BYPASS, (*Macro ID for moving from the fill 4 station to enter the bypass lane*)
+		MACRO_FILL_1_EXIT_BYPASS, (*Macro ID for moving from the fill 1 station to exit the bypass lane*)
+		MACRO_FILL_2_EXIT_BYPASS, (*Macro ID for moving from the fill 2 station to exit the bypass lane*)
+		MACRO_FILL_3_EXIT_BYPASS, (*Macro ID for moving from the fill 3 station to exit the bypass lane*)
+		MACRO_FILL_4_EXIT_BYPASS, (*Macro ID for moving from the fill 4 station to exit the bypass lane*)
 		MACRO_FILL_STATION_PROC_2 := 140, (*Macro ID used for preforming the fill station 2 process*)
 		MACRO_FILL_STATION_PROC_3_XY, (*Macro ID used for preforming the fill station 3 X/Y movement*)
 		MACRO_FILL_STATION_PROC_3_WOBBLE, (*Macro ID used for preforming the wobble movment on station 3*)
+		MACRO_FILL_STATION_PROC_4, (*Macro ID used for preforming the fill station 4 process*)
 		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
 		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
@@ -147,6 +152,9 @@ TYPE
 		SH_FILLING_EVAL, (*Shuttle is deciding which filling station to move next to*)
 		SH_MOVE_FILL_EXIT, (*Shuttle is moving towards the fill exit station*)
 		SH_MOVE_TO_WEIGH, (*Shuttle is moving to a weigh station*)
+		SH_BYPASS_ENTER,
+		SH_BYPASS_MOVE, (*Shuttle is preforming a bypass movement*)
+		SH_BYPASS_CHECK, (*Shuttle is checking if bypassing has completed*)
 		SH_WEIGHING, (*Shuttle is currently being weighed/inspected*)
 		SH_MOVE_TO_CAP, (*Shuttle is moving to a cap station*)
 		SH_CAPPING, (*Shuttle is currently being capped*)
@@ -288,6 +296,7 @@ TYPE
 		FillStations : ARRAY[0..MAX_FILL_STATIONS_ARRAY]OF FillStationParsTyp;
 		TraversalVel : REAL;
 		TraversalAccel : REAL;
+		UnloadStation : LoadStationParsTyp;
 	END_STRUCT;
 	LoadStationParsTyp : 	STRUCT 
 		WaitTime : TIME;

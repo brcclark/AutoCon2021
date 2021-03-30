@@ -43,8 +43,8 @@ FUNCTION_BLOCK WobbleMovementFb
 			IF Internal.Fbs.RealMacroFb.Error OR Internal.Fbs.VirtualMacroFb.Error THEN
 				Internal.state := WOB_INT_ERROR;
 			ELSIF Internal.Fbs.VirtualMacroFb.Done THEN
-				Internal.Fbs.VirtualMacroFb.Execute := TRUE;
-				Internal.Fbs.RealMacroFb.Execute := TRUE;
+				Internal.Fbs.VirtualMacroFb.Execute := FALSE;
+				Internal.Fbs.RealMacroFb.Execute := FALSE;
 				
 				Internal.Fbs.StopFb.Controller := ADR(Controller);
 				Internal.Fbs.StopFb.ShuttleID := ShuttleId;

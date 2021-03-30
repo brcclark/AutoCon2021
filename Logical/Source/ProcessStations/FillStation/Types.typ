@@ -17,6 +17,7 @@ TYPE
 		St1Fb : AngledMovementFb;
 		St2Fb : MC_BR_MacroRun_Acp6D;
 		St3Fb : WobbleMovementFb;
+		St4Fb : MC_BR_MacroRun_Acp6D;
 	END_STRUCT;
 	FillStationEnum : 
 		(

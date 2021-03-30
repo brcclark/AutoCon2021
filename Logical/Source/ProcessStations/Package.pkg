@@ -5,7 +5,7 @@
     <Object Type="File" Private="true">ProcGlobalVars.var</Object>
     <Object Type="File" Private="true">ProCGlobalTypes.typ</Object>
     <Object Type="Program" Language="IEC">LoadStation</Object>
-    <Object Type="Program" Language="IEC">TampStation</Object>
     <Object Type="Program" Language="IEC">FillStation</Object>
+    <Object Type="Program" Language="IEC">UnloadStation</Object>
   </Objects>
 </Package>

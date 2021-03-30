@@ -80,15 +80,17 @@ PROGRAM _CYCLIC
 					
 					shState[i] := SH_ERROR;
 				ELSIF shFbs[i].ShMoveInPlaneFb.Acknowledge THEN
+					gShuttleIf[i].Sts.CurrentStation := gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep];
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
 					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-					shFbs[i].ShMoveInPlaneFb.PositionX := gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cfg.EnterPos.X;
-					shFbs[i].ShMoveInPlaneFb.PositionY := gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cfg.EnterPos.Y;
+					shFbs[i].ShMoveInPlaneFb.PositionX := gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Cfg.EnterPos.X;
+					shFbs[i].ShMoveInPlaneFb.PositionY := gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Cfg.EnterPos.Y;
 					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
 					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
 					
 					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					
 					shState[i] := SH_MOVE_FILL;
 				END_IF
 			SH_MOVE_FILL:  //******************************************************************************** Shuttle is moving to a fill station
@@ -97,11 +99,11 @@ PROGRAM _CYCLIC
 					gShuttleIf[i].Sts.Error := TRUE;
 					gShuttleIf[i].Sts.ErrorState := shState[i];
 					shState[i] := SH_ERROR;
-				ELSIF shFbs[i].ShMoveInPlaneFb.Done AND (gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Par.ShuttleIdx = STATION_IS_EMPTY AND gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Sts.ReadyForNewShuttle) 
-					AND PositionValidation(ADR(gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cfg.EnterPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
-					gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Par.ShuttleIdx := i;
-					gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cmd.Process := TRUE;
-				
+				ELSIF shFbs[i].ShMoveInPlaneFb.Done AND (gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Par.ShuttleIdx = STATION_IS_EMPTY AND gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Sts.ReadyForNewShuttle) 
+					AND PositionValidation(ADR(gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Cfg.EnterPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
+					gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Par.ShuttleIdx := i;
+					gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Cmd.Process := TRUE;
+					
 					LogDebug(gAuditTrail,i,"Arrived at Fill");
 					
 					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
@@ -111,40 +113,140 @@ PROGRAM _CYCLIC
 			SH_FILLING:  //******************************************************************************** Shuttle is currently being filled
 				//Station has control on the shuttle during this section
 				IF gShuttleIf[i].Cmd.NextStep THEN
-					gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cmd.Process := FALSE;
+					gFillStationsIf[gShuttleIf[i].Sts.CurrentStation - 1].Cmd.Process := FALSE;
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
+					
 					gShuttleIf[i].Sts.ProductInfo.CurrentFillStep := gShuttleIf[i].Sts.ProductInfo.CurrentFillStep + 1;
+					gShuttleIf[i].Sts.NextStation := gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep];
 					IF gShuttleIf[i].Sts.ProductInfo.CurrentFillStep > MAX_FILL_STEPS - 1 THEN
 						shState[i] := SH_ERROR;
 					ELSE
 						shState[i] := SH_FILLING_EVAL;
 					END_IF
-					
-					
 				END_IF
 				
 			SH_FILLING_EVAL:  //******************************************************************************** Shuttle is deciding which filling station to move next to
+				//Look at next station - current station to see if we need to move into the bypass lane
+				nextStationCalc := gShuttleIf[i].Sts.NextStation - gShuttleIf[i].Sts.CurrentStation;
+				
 				shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
 				shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
 				shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 				shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
 				
-				IF gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep] = 0 THEN
+				IF gShuttleIf[i].Sts.NextStation = 0 THEN
 					//This will likely need to be some macro eventually instead
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 					shFbs[i].ShMoveInPlaneFb.PositionX := fillExit.X;
 					shFbs[i].ShMoveInPlaneFb.PositionY := fillExit.Y;
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Sent To Fill Exit");
 					shState[i] := SH_MOVE_FILL_EXIT;
-				ELSE
+				ELSIF nextStationCalc = 1 OR nextStationCalc = -3 THEN
+					//We don't need to bypass the lane, we proceed directly to the station
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_DIRECT;
-					shFbs[i].ShMoveInPlaneFb.PositionX := gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cfg.EnterPos.X;
-					shFbs[i].ShMoveInPlaneFb.PositionY := gFillStationsIf[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep].Cfg.EnterPos.Y;
+					shFbs[i].ShMoveInPlaneFb.PositionX := gFillStationsIf[gShuttleIf[i].Sts.NextStation - 1].Cfg.EnterPos.X;
+					shFbs[i].ShMoveInPlaneFb.PositionY := gFillStationsIf[gShuttleIf[i].Sts.NextStation - 1].Cfg.EnterPos.Y;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					gShuttleIf[i].Sts.CurrentStation := gShuttleIf[i].Sts.NextStation;
+					LogDebug(gAuditTrail,i,"Moving to Fill");
 					shState[i] := SH_MOVE_FILL;
+				ELSE
+					//Need to enter the bypass lane
+					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_FILL_1_ENTER_BYPASS) + gShuttleIf[i].Sts.CurrentStation - 1;//Current Station is the current station 1-4, shifting by - 1 for the macro
+					shFbs[i].ShRunMacroFb.Execute := TRUE;
+					gShuttleIf[i].Sts.ProductInfo.Bypassing := TRUE;
+					LogDebug(gAuditTrail,i,"Moving to Fill");
+					shState[i] := SH_BYPASS_ENTER;
 				END_IF
+			SH_BYPASS_ENTER:
+				IF shFbs[i].ShRunMacroFb.Error THEN
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShRunMacroFb.Done THEN
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
+					
+					shState[i] := SH_BYPASS_CHECK;
+				END_IF
+			SH_BYPASS_MOVE:
+				IF shFbs[i].ShRunMacroFb.Error OR shFbs[i].ShMoveInPlaneFb.Error THEN 
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					
+					shState[i] := SH_ERROR;
+				ELSIF (shFbs[i].ShRunMacroFb.Done AND shFbs[i].ShRunMacroFb.Execute) 
+					OR (shFbs[i].ShMoveInPlaneFb.Done AND shFbs[i].ShMoveInPlaneFb.Execute) THEN
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
+					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					
+					IF gShuttleIf[i].Sts.ProductInfo.Bypassing THEN
+						//We're now "at" the next station (at least in the motion buffer we are)
+						gShuttleIf[i].Sts.CurrentStation := gShuttleIf[i].Sts.CurrentStation + 1;
+						IF gShuttleIf[i].Sts.CurrentStation > 4 THEN
+							gShuttleIf[i].Sts.CurrentStation := 1;
+						END_IF
+						shState[i] := SH_BYPASS_CHECK;
+					ELSE 
+						shState[i] := SH_FILLING_EVAL;
+					END_IF
+				END_IF
+			SH_BYPASS_CHECK:
+				nextStationCalc := gShuttleIf[i].Sts.NextStation - gShuttleIf[i].Sts.CurrentStation;
+				IF nextStationCalc = 1 OR nextStationCalc = -3 THEN
+					//Need to exit the bypass lane
+					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_FILL_1_EXIT_BYPASS) + gShuttleIf[i].Sts.CurrentStation - 1;//Current Station Calc is the current station 1-4, shifting by - 1 for the macro
+					shFbs[i].ShRunMacroFb.Execute := TRUE;
+					gShuttleIf[i].Sts.ProductInfo.Bypassing := FALSE;
+					
+					LogDebug(gAuditTrail,i,"Exiting Bypass");
+				ELSE
+					//Continue along the bypass lane
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_DIRECT;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_RELATIVE;
+					shFbs[i].ShMoveInPlaneFb.PositionX := 0.24 * ((gShuttleIf[i].Sts.CurrentStation MOD 2) <> 0);
+					shFbs[i].ShMoveInPlaneFb.PositionY := 0.24 * ((gShuttleIf[i].Sts.CurrentStation MOD 2) = 0);
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Traversing Bypass");
+				END_IF
+				shState[i] := SH_BYPASS_MOVE;
 			SH_MOVE_FILL_EXIT:
-				
+				IF shFbs[i].ShMoveInPlaneFb.Error THEN
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShMoveInPlaneFb.Acknowledge THEN
+					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.PositionX := gUnloadStationIf.Cfg.StationPos.X;
+					shFbs[i].ShMoveInPlaneFb.PositionY := gUnloadStationIf.Cfg.StationPos.Y;
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					
+					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shState[i] := SH_MOVE_TO_UNLOAD;
+				END_IF
 			SH_MOVE_TO_WEIGH:  //******************************************************************************** Shuttle is moving to a weigh station
 				
 			SH_WEIGHING:  //******************************************************************************** Shuttle is currently being weighed/inspected
@@ -161,7 +263,43 @@ PROGRAM _CYCLIC
 				//Station has control on the shuttle during this section
 				
 			SH_MOVE_TO_UNLOAD: //********************************************************************************  Shuttle is moving to an unload	
+				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+				IF shFbs[i].ShMoveInPlaneFb.Error THEN
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShMoveInPlaneFb.Done AND (gUnloadStationIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gUnloadStationIf.Sts.ReadyForNewShuttle) 
+					AND PositionValidation(ADR(gUnloadStationIf.Cfg.StationPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
+					gUnloadStationIf.Par.ShuttleIdx := i;
+					gUnloadStationIf.Cmd.Process := TRUE;
+				
+					LogDebug(gAuditTrail,i,"Arrived at Unload");
+					
+					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shState[i] := SH_UNLOADING;
+				END_IF
 			SH_UNLOADING: //********************************************************************************  Shuttle is currently being unloaded	
+				IF gShuttleIf[i].Cmd.NextStep THEN
+					gUnloadStationIf.Cmd.Process := FALSE; //Respond to the Unoad station we're done
+					gShuttleIf[i].Cmd.NextStep := FALSE;
+					
+					gShuttleIf[i].Cmd.ResetProductInfo := TRUE;
+					gShuttleIf[i].Sts.CurrentDestination := DEST_LOAD;
+				
+					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_Y_THEN_X;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.PositionX := gLoadStationIf.Cfg.StationPos.X;
+					shFbs[i].ShMoveInPlaneFb.PositionY := gLoadStationIf.Cfg.StationPos.Y;
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+			
+					LogDebug(gAuditTrail,i,"Sent To Load");
+					
+					shState[i] := SH_MOVE_TO_LOAD;
+					
+				END_IF
 			SH_MOVE_TO_REJECT: //********************************************************************************  Shuttle is moving to a reject station	
 			SH_REJECTING: //********************************************************************************  Shuttle is currently being rejected
 			SH_STOPPING:
@@ -187,6 +325,7 @@ PROGRAM _CYCLIC
 			gShuttleIf[i].Sts.CurrentDestination := DEST_LOAD;
 			gShuttleIf[i].Sts.Error := FALSE;
 			gShuttleIf[i].Sts.ErrorState := 0;
+			gShuttleIf[i].Sts.ProductInfo.Bypassing := FALSE;
 			gShuttleIf[i].Cmd.ResetProductInfo := FALSE;
 		END_IF
 	END_FOR;

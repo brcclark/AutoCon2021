@@ -21,5 +21,6 @@ VAR
 	g6DRecoveryIf : Acp6DRecoveryIfTyp; (*Interface to control the recover process*)
 	gProcessInfoIf : ProcessInfoIfTyp; (*Interface to display process related information*)
 	gSysPars : SysParsTyp; (*System Parameters*)
-	gFillStationsIf : ARRAY[0..MAX_FILL_STATIONS_ARRAY] OF StationIfTyp;
+	gFillStationsIf : ARRAY[0..MAX_FILL_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the fill stations*)
+	gUnloadStationIf : StationIfTyp; (*Interface to control the unload station*)
 END_VAR

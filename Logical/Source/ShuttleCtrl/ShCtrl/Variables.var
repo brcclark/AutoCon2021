@@ -8,4 +8,6 @@ VAR
 	debugIdx : USINT;
 	fillEntry : StationPositionTyp;
 	fillExit : StationPositionTyp;
+	nextStationCalc : SINT;
+	currentStationCalc : SINT;
 END_VAR

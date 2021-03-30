@@ -22,7 +22,10 @@ ACTION SetupStationActions:
 			FillStationFbs.St3Fb.VirtShId := 100;
 			FillStationFbs.St3Fb.Execute := TRUE;
 		ST4:
-
+			FillStationFbs.St4Fb.Controller := ADR(gMcAcp6DController);
+			FillStationFbs.St4Fb.MacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_4);
+			FillStationFbs.St4Fb.ShuttleID := gShuttleIf[pFillIf.Par.ShuttleIdx].Cfg.ShuttleId;
+			FillStationFbs.St4Fb.Execute := TRUE;
 	END_CASE;
 END_ACTION
 
@@ -35,5 +38,6 @@ ACTION CallStationFbs:
 		ST3:
 			FillStationFbs.St3Fb();
 		ST4:
+			FillStationFbs.St4Fb();
 	END_CASE;
 END_ACTION

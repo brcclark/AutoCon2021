@@ -11,6 +11,7 @@
     <Task Name="FillSt2" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="FillSt3" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="FillSt4" Source="Source.ProcessStations.FillStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="UnloadStat" Source="Source.ProcessStations.UnloadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="Main" Source="Source.Main.Main.prg" Memory="UserROM" Language="IEC" Debugging="true" />

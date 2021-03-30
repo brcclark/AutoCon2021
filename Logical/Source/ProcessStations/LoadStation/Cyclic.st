@@ -37,7 +37,12 @@ PROGRAM _CYCLIC
 				gLoadStationIf.Sts.Done := TRUE;
 				
 				//Assign the shuttle a recipe
-				gShuttleIf[gLoadStationIf.Par.ShuttleIdx].Par.Recipe := recipes;
+				gShuttleIf[gLoadStationIf.Par.ShuttleIdx].Par.Recipe := recipes[recipeCounter];
+				recipeCounter:= recipeCounter + 1;
+				IF recipeCounter = 3 THEN
+					recipeCounter := 0;
+				END_IF
+				
 				gShuttleIf[gLoadStationIf.Par.ShuttleIdx].Sts.ProductInfo.Loaded := TRUE;
 				
 				state := LOAD_DONE;

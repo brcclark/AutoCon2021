@@ -8,8 +8,18 @@ PROGRAM _INIT
 	
 	gSysPars.LoadStation.WaitTime := T#2s;
 	
-	recipes.Fills[0] := 1;
-	recipes.Fills[1] := 2;
-	recipes.Fills[2] := 3;
-	recipes.Fills[3] := 4;
+	recipes[0].Fills[0] := 1;
+	recipes[0].Fills[1] := 2;
+	recipes[0].Fills[2] := 3;
+	recipes[0].Fills[3] := 4;
+	
+	recipes[1].Fills[0] := 1;
+	recipes[1].Fills[1] := 3;
+	recipes[1].Fills[2] := 4;
+	recipes[1].Fills[3] := 0;
+	
+	recipes[2].Fills[0] := 1;
+	recipes[2].Fills[1] := 2;
+	recipes[2].Fills[2] := 4;
+	recipes[2].Fills[3] := 0;
 END_PROGRAM
