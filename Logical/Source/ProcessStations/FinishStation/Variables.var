@@ -1,0 +1,6 @@
+VAR
+	state : FinishStationStateEnum;
+	stationFbs : FinishStationFbTyp;
+	stationPars : FinishStationParsTyp;
+	i : INT;
+END_VAR

@@ -8,5 +8,6 @@
     <Object Type="Program" Language="IEC">FillStation</Object>
     <Object Type="Program" Language="IEC">UnloadStation</Object>
     <Object Type="Program" Language="IEC">WeighStation</Object>
+    <Object Type="Program" Language="IEC">FinishStation</Object>
   </Objects>
 </Package>

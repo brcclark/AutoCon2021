@@ -26,4 +26,5 @@ VAR
 	gFillStationsIf : ARRAY[0..MAX_FILL_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the fill stations*)
 	gUnloadStationIf : StationIfTyp; (*Interface to control the unload station*)
 	gWeighStationIf : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the weight Stations*)
+	gFinishStationIf : StationIfTyp; (*Interface to control the finishing station*)
 END_VAR

@@ -58,7 +58,7 @@ TYPE
 		CurrentFillStep : USINT;
 		Weight : REAL;
 		WeighStation : USINT;
-		Capped : BOOL;
+		Finished : BOOL;
 		Buffer : BOOL;
 		Bypassing : BOOL;
 	END_STRUCT;
@@ -159,8 +159,8 @@ TYPE
 		SH_BYPASS_MOVE, (*Shuttle is preforming a bypass movement*)
 		SH_BYPASS_CHECK, (*Shuttle is checking if bypassing has completed*)
 		SH_WEIGHING, (*Shuttle is currently being weighed/inspected*)
-		SH_MOVE_TO_CAP, (*Shuttle is moving to a cap station*)
-		SH_CAPPING, (*Shuttle is currently being capped*)
+		SH_MOVE_TO_FINISH, (*Shuttle is moving to a cap station*)
+		SH_FINISHING, (*Shuttle is currently being capped*)
 		SH_MOVE_TO_BUFFER, (*Shuttle is moving to a buffer lane*)
 		SH_BUFFERED, (*Shuttle is currently being buffered*)
 		SH_MOVE_TO_UNLOAD, (*Shuttle is moving to an unload*)
@@ -298,9 +298,10 @@ TYPE
 		LoadStation : LoadStationParsTyp;
 		FillStations : ARRAY[0..MAX_FILL_STATIONS_ARRAY]OF FillStationParsTyp;
 		WeighStations : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY]OF WeighStationParsTyp;
+		UnloadStation : LoadStationParsTyp;
+		FinishStation : FinishStationParsTyp;
 		TraversalVel : REAL;
 		TraversalAccel : REAL;
-		UnloadStation : LoadStationParsTyp;
 	END_STRUCT;
 	LoadStationParsTyp : 	STRUCT 
 		WaitTime : TIME;
@@ -314,6 +315,9 @@ TYPE
 	WeighStationParsTyp : 	STRUCT 
 		MinWeight : DINT; (*Minimum Weight for product in 1/10 grams*)
 		MaxWeight : DINT; (*Max Weight for product in 1/10 grams*)
+		WaitTime : TIME;
+	END_STRUCT;
+	FinishStationParsTyp : 	STRUCT 
 		WaitTime : TIME;
 	END_STRUCT;
 END_TYPE

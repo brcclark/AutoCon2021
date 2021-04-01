@@ -274,6 +274,40 @@ PROGRAM _CYCLIC
 					gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Cmd.Process := FALSE;
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
+					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_DIRECT;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.PositionX := gFinishStationIf.Cfg.StationPos.X;
+					shFbs[i].ShMoveInPlaneFb.PositionY := gFinishStationIf.Cfg.StationPos.Y;
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Sent to Finishing");
+					
+					shState[i] := SH_MOVE_TO_FINISH;
+				END_IF
+			SH_MOVE_TO_FINISH:  //******************************************************************************** Shuttle is moving to a cap station
+				IF shFbs[i].ShMoveInPlaneFb.Error THEN
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShMoveInPlaneFb.Done AND (gFinishStationIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gFinishStationIf.Sts.ReadyForNewShuttle) 
+					AND PositionValidation(ADR(gFinishStationIf.Cfg.StationPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
+					gFinishStationIf.Par.ShuttleIdx := i;
+					gFinishStationIf.Cmd.Process := TRUE;
+				
+					LogDebug(gAuditTrail,i,"Added to finish station");
+					
+					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
+					shState[i] := SH_FINISHING;
+				END_IF
+			SH_FINISHING:  //******************************************************************************** Shuttle is currently being capped
+				//Station has control on the shuttle during this section
+				IF gShuttleIf[i].Cmd.NextStep THEN
+					gShuttleIf[i].Cmd.NextStep := FALSE;
+					
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
 					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
@@ -287,10 +321,6 @@ PROGRAM _CYCLIC
 					
 					shState[i] := SH_MOVE_TO_UNLOAD;
 				END_IF
-			SH_MOVE_TO_CAP:  //******************************************************************************** Shuttle is moving to a cap station
-				
-			SH_CAPPING:  //******************************************************************************** Shuttle is currently being capped
-				//Station has control on the shuttle during this section
 			
 			SH_MOVE_TO_BUFFER:  //******************************************************************************** Shuttle is moving to a buffer lane
 			
