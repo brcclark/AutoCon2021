@@ -16,6 +16,6 @@ PROGRAM _INIT
 	END_FOR
 	
 	gSysPars.TraversalVel := 1.0;
-	gSysPars.TraversalAccel := 1.0;
+	gSysPars.TraversalAccel := 10.0;
 	
 END_PROGRAM
