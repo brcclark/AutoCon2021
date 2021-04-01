@@ -57,6 +57,7 @@ TYPE
 		FillData : USINT;
 		CurrentFillStep : USINT;
 		Weight : REAL;
+		WeighStation : USINT;
 		Capped : BOOL;
 		Buffer : BOOL;
 		Bypassing : BOOL;
@@ -119,6 +120,8 @@ TYPE
 		MACRO_FILL_STATION_PROC_3_XY, (*Macro ID used for preforming the fill station 3 X/Y movement*)
 		MACRO_FILL_STATION_PROC_3_WOBBLE, (*Macro ID used for preforming the wobble movment on station 3*)
 		MACRO_FILL_STATION_PROC_4, (*Macro ID used for preforming the fill station 4 process*)
+		MACRO_FILL_EXIT_TO_WEIGH_1 := 150, (*Macro ID used for going from the fill exit station to weigh station 1*)
+		MACRO_FILL_EXIT_TO_WEIGH_2, (*Macro ID used for going from the fill exit station to weigh station 2*)
 		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
 		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
@@ -294,6 +297,7 @@ TYPE
 	SysParsTyp : 	STRUCT 
 		LoadStation : LoadStationParsTyp;
 		FillStations : ARRAY[0..MAX_FILL_STATIONS_ARRAY]OF FillStationParsTyp;
+		WeighStations : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY]OF WeighStationParsTyp;
 		TraversalVel : REAL;
 		TraversalAccel : REAL;
 		UnloadStation : LoadStationParsTyp;
@@ -306,5 +310,10 @@ TYPE
 		Accel : REAL;
 		FillRate : REAL;
 		FillTime : TIME;
+	END_STRUCT;
+	WeighStationParsTyp : 	STRUCT 
+		MinWeight : DINT; (*Minimum Weight for product in 1/10 grams*)
+		MaxWeight : DINT; (*Max Weight for product in 1/10 grams*)
+		WaitTime : TIME;
 	END_STRUCT;
 END_TYPE

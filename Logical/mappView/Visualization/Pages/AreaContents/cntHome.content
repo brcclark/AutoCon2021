@@ -58,7 +58,7 @@
         <Widget xsi:type="widgets.brease.DropDownBox" id="shuttleSelector" top="225" left="153" width="73" zIndex="15" dataProvider="[{'value':'0','text':'1'},{'value':'1','text':'2'},{'value':'2','text':'3'},{'value':'3','text':'4'},{'value':'4','text':'5'},{'value':'5','text':'6'},{'value':'6','text':'7'},{'value':'7','text':'8'}]" selectedValue="0" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.FlyOut" id="FlyOut1" top="338" left="0" width="850" height="460" zIndex="3" docking="right" text="Audit" buttonHeight="30" buttonWidth="60">
+    <Widget xsi:type="widgets.brease.FlyOut" id="FlyOut1" top="338" left="0" width="850" height="460" zIndex="3" docking="right" text="Audit" buttonHeight="30" buttonWidth="60" backColor="rgba(255, 255, 255, 1)">
       <Widgets>
         <Widget xsi:type="widgets.brease.AuditList" id="AuditList1" top="14" left="14" width="826" height="425" zIndex="0" itemsPerPage="9">
           <Widgets>

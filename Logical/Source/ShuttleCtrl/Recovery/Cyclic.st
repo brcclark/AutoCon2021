@@ -109,6 +109,7 @@ PROGRAM _CYCLIC
 				g6DRecoveryIf.Sts.ShuttlesRecovered := FALSE;
 				g6DRecoveryIf.Sts.Error := FALSE;
 				CurrentGroup := 0;
+				GroupRecovered := FALSE;
 				
 				RecoverFbs.AsyncMoveFb.Execute := FALSE;
 				state := RECOVER_IDLE;

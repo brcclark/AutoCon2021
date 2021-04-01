@@ -81,6 +81,7 @@ PROGRAM _CYCLIC
 					shState[i] := SH_ERROR;
 				ELSIF shFbs[i].ShMoveInPlaneFb.Acknowledge THEN
 					gShuttleIf[i].Sts.CurrentStation := gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep];
+					
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
 					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
@@ -118,10 +119,10 @@ PROGRAM _CYCLIC
 					
 					
 					gShuttleIf[i].Sts.ProductInfo.CurrentFillStep := gShuttleIf[i].Sts.ProductInfo.CurrentFillStep + 1;
-					gShuttleIf[i].Sts.NextStation := gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep];
 					IF gShuttleIf[i].Sts.ProductInfo.CurrentFillStep > MAX_FILL_STEPS - 1 THEN
 						shState[i] := SH_ERROR;
 					ELSE
+						gShuttleIf[i].Sts.NextStation := gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep];
 						shState[i] := SH_FILLING_EVAL;
 					END_IF
 				END_IF
@@ -236,6 +237,43 @@ PROGRAM _CYCLIC
 					
 					shState[i] := SH_ERROR;
 				ELSIF shFbs[i].ShMoveInPlaneFb.Acknowledge THEN
+										
+					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_FILL_EXIT_TO_WEIGH_1) + currentWeighStation;
+					shFbs[i].ShRunMacroFb.Execute := TRUE;
+					
+					gShuttleIf[i].Sts.ProductInfo.WeighStation := currentWeighStation;
+					currentWeighStation := currentWeighStation + 1;
+					IF currentWeighStation >= MAX_WEIGH_STATIONS THEN
+						currentWeighStation := 0;
+					END_IF
+					LogDebug(gAuditTrail,i,"Sent To Weigh Station");
+					
+					shState[i] := SH_MOVE_TO_WEIGH;
+				END_IF
+			SH_MOVE_TO_WEIGH:  //******************************************************************************** Shuttle is moving to a weigh station
+				IF shFbs[i].ShRunMacroFb.Error THEN
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShRunMacroFb.Done AND (gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Par.ShuttleIdx = STATION_IS_EMPTY AND gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Sts.ReadyForNewShuttle) 
+					AND PositionValidation(ADR(gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Cfg.StationPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
+					gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Par.ShuttleIdx := i;
+					gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Cmd.Process := TRUE;
+				
+					LogDebug(gAuditTrail,i,"Arrived at Weigh Station");
+					
+					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
+					shState[i] := SH_WEIGHING;
+				END_IF
+			SH_WEIGHING:  //******************************************************************************** Shuttle is currently being weighed/inspected
+				//Station has control on the shuttle during this section
+				IF gShuttleIf[i].Cmd.NextStep THEN
+					gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Cmd.Process := FALSE;
+					gShuttleIf[i].Cmd.NextStep := FALSE;
+					
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
 					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
@@ -243,15 +281,12 @@ PROGRAM _CYCLIC
 					shFbs[i].ShMoveInPlaneFb.PositionY := gUnloadStationIf.Cfg.StationPos.Y;
 					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
 					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
 					
-					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					LogDebug(gAuditTrail,i,"Sent to Unload");
+					
 					shState[i] := SH_MOVE_TO_UNLOAD;
 				END_IF
-			SH_MOVE_TO_WEIGH:  //******************************************************************************** Shuttle is moving to a weigh station
-				
-			SH_WEIGHING:  //******************************************************************************** Shuttle is currently being weighed/inspected
-				//Station has control on the shuttle during this section
-				
 			SH_MOVE_TO_CAP:  //******************************************************************************** Shuttle is moving to a cap station
 				
 			SH_CAPPING:  //******************************************************************************** Shuttle is currently being capped
@@ -310,6 +345,9 @@ PROGRAM _CYCLIC
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					shFbs[i].ShStop.Execute := FALSE;
 					gShuttleIf[i].Cmd.ResetProductInfo := TRUE;
+					
+					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
 					
 					shState[i] := SH_OFF;
 				END_IF

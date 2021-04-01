@@ -66,6 +66,14 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[12].MacroFileName := '137_Fill4ExitBypass.xml';
 	gMacroLoadIf.Par.MacroList[12].MacroID := 137;
 	
+	//Fill Exit to Weigh 1
+	gMacroLoadIf.Par.MacroList[13].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[13].MacroFileName := '150_FillExitToWeigh1.xml';
+	gMacroLoadIf.Par.MacroList[13].MacroID := 150;
+	
+	gMacroLoadIf.Par.MacroList[14].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[14].MacroFileName := '151_FillExitToWeigh2.xml';
+	gMacroLoadIf.Par.MacroList[14].MacroID := 151;
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

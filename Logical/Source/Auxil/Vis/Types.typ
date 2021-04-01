@@ -20,12 +20,8 @@ TYPE
 		EnablePositioner : USINT;
 		EnablePath : BOOL;
 		ClearPath : BOOL;
-		PathColor : ScnViewerPathTyp;
-	END_STRUCT;
-	ScnViewerPathTyp : 	STRUCT 
-		Red : USINT;
-		Green : USINT;
-		Blue : USINT;
+		PathColor : ARRAY[0..2]OF REAL; (*0-Red, 1-Green, 2-Blue*)
+		PathLength : UDINT;
 	END_STRUCT;
 	ShuttleColorEnum : 
 		(

@@ -4,12 +4,5 @@
   <Objects>
     <Object Type="File">128_LoadToPrint.xml</Object>
     <Object Type="File">129_PrintToDose1.xml</Object>
-    <Object Type="File">130_PrintToDose2.xml</Object>
-    <Object Type="File">131_DoseToPrint.xml</Object>
-    <Object Type="File">132_PrintToTamp.xml</Object>
-    <Object Type="File">133_TampToUnload.xml</Object>
-    <Object Type="File">134_UnloadToLoad.xml</Object>
-    <Object Type="File">135_RecoveryGroup0.xml</Object>
-    <Object Type="File">136_RecoveryGroup1.xml</Object>
   </Objects>
 </Package>

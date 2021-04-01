@@ -24,4 +24,24 @@ PROGRAM _INIT
 	g6DRecoveryIf.Par.AutoDrivePositions[3].GroupNum := 0;
 	g6DRecoveryIf.Par.AutoDrivePositions[3].X := 0.18;
 	g6DRecoveryIf.Par.AutoDrivePositions[3].Y := 0.06;
+	//************************************************************************* Shuttle 4
+	g6DRecoveryIf.Par.AutoDrivePositions[4].ShIdx := 4;
+	g6DRecoveryIf.Par.AutoDrivePositions[4].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[4].X := 0.06;
+	g6DRecoveryIf.Par.AutoDrivePositions[4].Y := 0.06;
+	//************************************************************************* Shuttle 4
+	g6DRecoveryIf.Par.AutoDrivePositions[5].ShIdx := 5;
+	g6DRecoveryIf.Par.AutoDrivePositions[5].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[5].X := 0.06;
+	g6DRecoveryIf.Par.AutoDrivePositions[5].Y := 0.18;
+	//************************************************************************* Shuttle 4
+	g6DRecoveryIf.Par.AutoDrivePositions[6].ShIdx := 6;
+	g6DRecoveryIf.Par.AutoDrivePositions[6].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[6].X := 0.18;
+	g6DRecoveryIf.Par.AutoDrivePositions[6].Y := 0.18;
+	//************************************************************************* Shuttle 4
+	g6DRecoveryIf.Par.AutoDrivePositions[7].ShIdx := 7;
+	g6DRecoveryIf.Par.AutoDrivePositions[7].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[7].X := 0.3;
+	g6DRecoveryIf.Par.AutoDrivePositions[7].Y := 0.18;
 END_PROGRAM

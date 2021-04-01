@@ -31,6 +31,8 @@ PROGRAM _CYCLIC
 					Vis.Shuttles[idx].Color := DINT_TO_INT(COLOR_RED);
 				mcACP6D_SH_STATE_RESERVED :  //Reserved State
 			END_CASE;
+			Vis.Shuttles[idx].ScnViewer.EnablePath := turnOnAllPaths;
+			Vis.Shuttles[idx].ScnViewer.ClearPath := clearAllPaths;
 		ELSE
 			Vis.Shuttles[idx].Visible := TRUE;
 		END_IF

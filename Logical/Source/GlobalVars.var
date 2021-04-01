@@ -5,6 +5,8 @@ VAR CONSTANT
 	STATION_IS_EMPTY : USINT := 255; (*Index that denotes that a station is empty and available*)
 	MAX_FILL_STATIONS : USINT := 4;
 	MAX_FILL_STATIONS_ARRAY : USINT := MAX_FILL_STATIONS-1;
+	MAX_WEIGH_STATIONS : USINT := 2;
+	MAX_WEIGH_STATIONS_ARRAY : USINT := MAX_WEIGH_STATIONS-1;
 END_VAR
 (*Application Constants*)
 VAR CONSTANT
@@ -23,4 +25,5 @@ VAR
 	gSysPars : SysParsTyp; (*System Parameters*)
 	gFillStationsIf : ARRAY[0..MAX_FILL_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the fill stations*)
 	gUnloadStationIf : StationIfTyp; (*Interface to control the unload station*)
+	gWeighStationIf : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the weight Stations*)
 END_VAR

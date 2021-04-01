@@ -35,6 +35,8 @@ PROGRAM _CYCLIC
 				gFillStationsIf[1].Cmd.Enable := TRUE;
 				gFillStationsIf[2].Cmd.Enable := TRUE;
 				gFillStationsIf[3].Cmd.Enable := TRUE;
+				gWeighStationIf[0].Cmd.Enable := TRUE;
+				gWeighStationIf[1].Cmd.Enable := TRUE;
 				gUnloadStationIf.Cmd.Enable := TRUE;
 				
 				CmdShEnable(TRUE, ADR(gShuttleIf), gMainIf.Cfg.ShuttleCount);
@@ -51,6 +53,8 @@ PROGRAM _CYCLIC
 				AND gFillStationsIf[1].Sts.Enabled 
 				AND gFillStationsIf[2].Sts.Enabled 
 				AND gFillStationsIf[3].Sts.Enabled 
+				AND gWeighStationIf[0].Sts.Enabled 
+				AND gWeighStationIf[0].Sts.Enabled 
 				AND gProcessInfoIf.Sts.Enabled 
 				AND gUnloadStationIf.Sts.Enabled THEN
 				
@@ -65,6 +69,8 @@ PROGRAM _CYCLIC
 				gFillStationsIf[1].Cmd.Enable := FALSE;
 				gFillStationsIf[2].Cmd.Enable := FALSE;
 				gFillStationsIf[3].Cmd.Enable := FALSE;
+				gWeighStationIf[0].Cmd.Enable := FALSE;
+				gWeighStationIf[1].Cmd.Enable := FALSE;
 				gProcessInfoIf.Cmd.Enable := FALSE;
 				gUnloadStationIf.Cmd.Enable := FALSE;
 				CmdShStop(ADR(gShuttleIf),gMainIf.Cfg.ShuttleCount);
@@ -77,6 +83,8 @@ PROGRAM _CYCLIC
 				AND NOT gFillStationsIf[1].Sts.Enabled 
 				AND NOT gFillStationsIf[2].Sts.Enabled 
 				AND NOT gFillStationsIf[3].Sts.Enabled 
+				AND NOT gWeighStationIf[0].Sts.Enabled
+				AND NOT gWeighStationIf[1].Sts.Enabled
 				AND NOT gProcessInfoIf.Sts.Enabled 
 				AND NOT gUnloadStationIf.Sts.Enabled THEN
 				

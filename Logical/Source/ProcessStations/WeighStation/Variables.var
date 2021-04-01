@@ -1,0 +1,10 @@
+VAR
+	state : WeighStationStateEnum;
+	stFbs : WeighStationFbTyp;
+	pWeighIf : REFERENCE TO StationIfTyp;
+	taskName : STRING[80];
+	stationPars : REFERENCE TO WeighStationParsTyp;
+	i : INT;
+	lastRecordedWeight : DINT;
+	lastRecordedWeightHMI : REAL;
+END_VAR

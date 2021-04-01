@@ -1,7 +1,7 @@
 
 
 PROGRAM _INIT
-	gMainIf.Cfg.ShuttleCount := 4;
+	gMainIf.Cfg.ShuttleCount := 8;
 	
 	//Used to initialize the shuttle indecies.
 	FOR i:=0 TO gMainIf.Cfg.ShuttleCount - 1 DO

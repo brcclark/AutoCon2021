@@ -65,6 +65,14 @@
       <Task Name="FillSt4">
         <Variable Name="state" />
       </Task>
+      <Task Name="WeighSt1">
+        <Variable Name="lastRecordedWeight" />
+        <Variable Name="lastRecordedWeightHMI" />
+      </Task>
+      <Task Name="WeighSt2">
+        <Variable Name="lastRecordedWeight" />
+        <Variable Name="lastRecordedWeightHMI" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

@@ -3,4 +3,6 @@ VAR
 	ShData : ARRAY[0..9] OF MC_BR_ShReadPosition_Acp6D;
 	states : ARRAY[0..9] OF VisShuttleStateEnum;
 	idx : USINT;
+	turnOnAllPaths : BOOL;
+	clearAllPaths : BOOL;
 END_VAR

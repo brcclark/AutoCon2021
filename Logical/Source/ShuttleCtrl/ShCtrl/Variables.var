@@ -10,4 +10,5 @@ VAR
 	fillExit : StationPositionTyp;
 	nextStationCalc : SINT;
 	currentStationCalc : SINT;
+	currentWeighStation : USINT;
 END_VAR
