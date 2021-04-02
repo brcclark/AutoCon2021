@@ -1,0 +1,31 @@
+
+FUNCTION blAddItem : USINT
+	VAR_INPUT
+		List : REFERENCE TO BufferListTyp;
+		NewItem : USINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION blRemoveItem : SINT
+	VAR_INPUT
+		List : REFERENCE TO BufferListTyp;
+		Item : USINT;
+	END_VAR
+	VAR
+		toReturn : USINT;
+		size : UDINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION blContains : BOOL
+	VAR_INPUT
+		List : REFERENCE TO BufferListTyp;
+		Item : USINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION blResetList : USINT
+	VAR_INPUT
+		List : REFERENCE TO BufferListTyp;
+	END_VAR
+END_FUNCTION

@@ -7,6 +7,7 @@ VAR CONSTANT
 	MAX_FILL_STATIONS_ARRAY : USINT := MAX_FILL_STATIONS-1;
 	MAX_WEIGH_STATIONS : USINT := 2;
 	MAX_WEIGH_STATIONS_ARRAY : USINT := MAX_WEIGH_STATIONS-1;
+	NUM_BUFFER_LANES : USINT := 3;
 END_VAR
 (*Application Constants*)
 VAR CONSTANT
@@ -27,4 +28,5 @@ VAR
 	gUnloadStationIf : StationIfTyp; (*Interface to control the unload station*)
 	gWeighStationIf : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the weight Stations*)
 	gFinishStationIf : StationIfTyp; (*Interface to control the finishing station*)
+	gBufferAreaIf : StationIfTyp;
 END_VAR

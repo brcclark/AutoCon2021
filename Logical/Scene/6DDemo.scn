@@ -625,9 +625,9 @@
 		<ParID parid="124" val="100"/>
 		<ParID parid="125" val="FALSE"/>
 		<Object objecttypeid="110" name="Shuttle01" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[0].Visible#100*::Vis:Vis.Shuttles[0].Pos.X#101*::Vis:Vis.Shuttles[0].Pos.Y#102*::Vis:Vis.Shuttles[0].Pos.Z#103*::Vis:Vis.Shuttles[0].Pos.RZ#104*::Vis:Vis.Shuttles[0].Pos.RY#105*::Vis:Vis.Shuttles[0].Pos.RX#121*::Vis:Vis.Shuttles[0].Color" jointoparent="0">
-			<ParID parid="100" val="1980"/>
-			<ParID parid="101" val="905.026"/>
-			<ParID parid="102" val="1.99995"/>
+			<ParID parid="100" val="780"/>
+			<ParID parid="101" val="1020"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -635,7 +635,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[0].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[0].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[0].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[0].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[0].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -671,9 +671,9 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle02" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].Visible#100*::Vis:Vis.Shuttles[1].Pos.X#101*::Vis:Vis.Shuttles[1].Pos.Y#102*::Vis:Vis.Shuttles[1].Pos.Z#103*::Vis:Vis.Shuttles[1].Pos.RZ#104*::Vis:Vis.Shuttles[1].Pos.RY#105*::Vis:Vis.Shuttles[1].Pos.RX#121*::Vis:Vis.Shuttles[1].Color" jointoparent="0">
-			<ParID parid="100" val="1425.46"/>
-			<ParID parid="101" val="540"/>
-			<ParID parid="102" val="2.49998"/>
+			<ParID parid="100" val="779.85"/>
+			<ParID parid="101" val="900"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -681,7 +681,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[1].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[1].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[1].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[1].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[1].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -717,9 +717,9 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle03" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[2].Visible#100*::Vis:Vis.Shuttles[2].Pos.X#101*::Vis:Vis.Shuttles[2].Pos.Y#102*::Vis:Vis.Shuttles[2].Pos.Z#103*::Vis:Vis.Shuttles[2].Pos.RZ#104*::Vis:Vis.Shuttles[2].Pos.RY#105*::Vis:Vis.Shuttles[2].Pos.RX#121*::Vis:Vis.Shuttles[2].Color" jointoparent="0">
-			<ParID parid="100" val="541.098"/>
-			<ParID parid="101" val="60"/>
-			<ParID parid="102" val="2.49998"/>
+			<ParID parid="100" val="660"/>
+			<ParID parid="101" val="915"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -727,7 +727,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[2].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[2].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[2].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[2].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[2].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -763,9 +763,9 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle04" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[3].Visible#100*::Vis:Vis.Shuttles[3].Pos.X#101*::Vis:Vis.Shuttles[3].Pos.Y#102*::Vis:Vis.Shuttles[3].Pos.Z#103*::Vis:Vis.Shuttles[3].Pos.RZ#104*::Vis:Vis.Shuttles[3].Pos.RY#105*::Vis:Vis.Shuttles[3].Pos.RX#121*::Vis:Vis.Shuttles[3].Color" jointoparent="0">
-			<ParID parid="100" val="2097.03"/>
-			<ParID parid="101" val="1080"/>
-			<ParID parid="102" val="1.99995"/>
+			<ParID parid="100" val="900"/>
+			<ParID parid="101" val="900.149"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -773,7 +773,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[3].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[3].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[3].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[3].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[3].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -809,9 +809,9 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle05" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[4].Visible#100*::Vis:Vis.Shuttles[4].Pos.X#101*::Vis:Vis.Shuttles[4].Pos.Y#102*::Vis:Vis.Shuttles[4].Pos.Z#103*::Vis:Vis.Shuttles[4].Pos.RZ#104*::Vis:Vis.Shuttles[4].Pos.RY#105*::Vis:Vis.Shuttles[4].Pos.RX#121*::Vis:Vis.Shuttles[4].Color" jointoparent="0">
-			<ParID parid="100" val="1565.42"/>
-			<ParID parid="101" val="120"/>
-			<ParID parid="102" val="1.99995"/>
+			<ParID parid="100" val="900"/>
+			<ParID parid="101" val="1140"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -819,7 +819,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[4].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[4].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[4].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[4].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[4].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -855,9 +855,9 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle06" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[5].Visible#100*::Vis:Vis.Shuttles[5].Pos.X#101*::Vis:Vis.Shuttles[5].Pos.Y#102*::Vis:Vis.Shuttles[5].Pos.Z#103*::Vis:Vis.Shuttles[5].Pos.RZ#104*::Vis:Vis.Shuttles[5].Pos.RY#105*::Vis:Vis.Shuttles[5].Pos.RX#121*::Vis:Vis.Shuttles[5].Color" jointoparent="0">
-			<ParID parid="100" val="2097.32"/>
-			<ParID parid="101" val="102.258"/>
-			<ParID parid="102" val="1.99995"/>
+			<ParID parid="100" val="1020"/>
+			<ParID parid="101" val="899.998"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -865,7 +865,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[5].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[5].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[5].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[5].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[5].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -901,9 +901,9 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle07" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[6].Visible#100*::Vis:Vis.Shuttles[6].Pos.X#101*::Vis:Vis.Shuttles[6].Pos.Y#102*::Vis:Vis.Shuttles[6].Pos.Z#103*::Vis:Vis.Shuttles[6].Pos.RZ#104*::Vis:Vis.Shuttles[6].Pos.RY#105*::Vis:Vis.Shuttles[6].Pos.RX#121*::Vis:Vis.Shuttles[6].Color" jointoparent="0">
-			<ParID parid="100" val="1140"/>
-			<ParID parid="101" val="899.997"/>
-			<ParID parid="102" val="0.736831"/>
+			<ParID parid="100" val="1020"/>
+			<ParID parid="101" val="778.382"/>
+			<ParID parid="102" val="-0.000168942"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
@@ -911,7 +911,7 @@
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[6].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[6].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[6].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[6].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[6].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -947,17 +947,17 @@
 			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Shuttle08" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[7].Visible#100*::Vis:Vis.Shuttles[7].Pos.X#101*::Vis:Vis.Shuttles[7].Pos.Y#102*::Vis:Vis.Shuttles[7].Pos.Z#103*::Vis:Vis.Shuttles[7].Pos.RZ#104*::Vis:Vis.Shuttles[7].Pos.RY#105*::Vis:Vis.Shuttles[7].Pos.RX#121*::Vis:Vis.Shuttles[7].Color" jointoparent="0">
-			<ParID parid="100" val="1560"/>
-			<ParID parid="101" val="1080"/>
-			<ParID parid="102" val="3.99992"/>
-			<ParID parid="103" val="-7.6327"/>
+			<ParID parid="100" val="900"/>
+			<ParID parid="101" val="1020"/>
+			<ParID parid="102" val="-0.000168942"/>
+			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="106" val="1"/>
 			<ParID parid="107" val="1"/>
 			<ParID parid="108" val="1"/>
 			<ParID parid="120" val="Models/M3-06-03.stl"/>
-			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="121" val="3: Grey Matte"/>
 			<ParID parid="130" val="1"/>
 			<Object objecttypeid="200" name="Path tracker" visible="1" mask="" binding="#14*::Vis:Vis.Shuttles[7].ScnViewer.EnablePath#111*::Vis:Vis.Shuttles[7].ScnViewer.PathLength#130*::Vis:Vis.Shuttles[7].ScnViewer.PathColor#140*::Vis:Vis.Shuttles[7].ScnViewer.ClearPath#141*::Vis:Vis.Shuttles[7].ScnViewer.EnablePath" jointoparent="0">
 				<ParID parid="100" val="0"/>
@@ -1013,23 +1013,23 @@
 			<ParID parid="131" val="FALSE"/>
 			<ParID parid="200" val=""/>
 			<ParID parid="201" val="Product Weight"/>
-			<Object objecttypeid="350" name="Weight1" visible="1" mask="" binding="#201*::WeighSt1:lastRecordedWeight" jointoparent="0">
+			<Object objecttypeid="350" name="Weight1" visible="1" mask="" binding="#201*::WeighSt1:lastRecordedWeightHMI" jointoparent="0">
 				<ParID parid="100" val="120"/>
 				<ParID parid="101" val="-100"/>
 				<ParID parid="102" val="0"/>
 				<ParID parid="130" val="1,0.5,0"/>
 				<ParID parid="131" val="FALSE"/>
 				<ParID parid="200" val=""/>
-				<ParID parid="201" val="2.39071e+08"/>
+				<ParID parid="201" val="0"/>
 			</Object>
-			<Object objecttypeid="350" name="Weight2" visible="1" mask="" binding="" jointoparent="0">
+			<Object objecttypeid="350" name="Weight2" visible="1" mask="" binding="#201*::WeighSt2:lastRecordedWeightHMI" jointoparent="0">
 				<ParID parid="100" val="0"/>
 				<ParID parid="101" val="-100"/>
 				<ParID parid="102" val="0"/>
 				<ParID parid="130" val="1,0.5,0"/>
 				<ParID parid="131" val="FALSE"/>
 				<ParID parid="200" val=""/>
-				<ParID parid="201" val="431.85"/>
+				<ParID parid="201" val="0"/>
 			</Object>
 		</Object>
 	</Object>

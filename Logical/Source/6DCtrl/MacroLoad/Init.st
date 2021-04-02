@@ -74,6 +74,19 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[14].Load := TRUE;
 	gMacroLoadIf.Par.MacroList[14].MacroFileName := '151_FillExitToWeigh2.xml';
 	gMacroLoadIf.Par.MacroList[14].MacroID := 151;
+	
+	//Finish to Buffer areas
+	gMacroLoadIf.Par.MacroList[15].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[15].MacroFileName := '152_FinishToBuffer1.xml';
+	gMacroLoadIf.Par.MacroList[15].MacroID := 152;
+	
+	gMacroLoadIf.Par.MacroList[16].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[16].MacroFileName := '153_FinishToBuffer2.xml';
+	gMacroLoadIf.Par.MacroList[16].MacroID := 153;
+	
+	gMacroLoadIf.Par.MacroList[17].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[17].MacroFileName := '154_FinishToBuffer3.xml';
+	gMacroLoadIf.Par.MacroList[17].MacroID := 154;
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

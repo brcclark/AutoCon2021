@@ -9,5 +9,6 @@
     <Object Type="Program" Language="IEC">UnloadStation</Object>
     <Object Type="Program" Language="IEC">WeighStation</Object>
     <Object Type="Program" Language="IEC">FinishStation</Object>
+    <Object Type="Program" Language="IEC">BufferArea</Object>
   </Objects>
 </Package>

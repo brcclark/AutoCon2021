@@ -14,6 +14,7 @@
     <Task Name="WeighSt1" Source="Source.ProcessStations.WeighStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="WeighSt2" Source="Source.ProcessStations.WeighStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="FinishStat" Source="Source.ProcessStations.FinishStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="BufferArea" Source="Source.ProcessStations.BufferArea.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="UnloadStat" Source="Source.ProcessStations.UnloadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
@@ -74,6 +75,7 @@
     <LibraryObject Name="AsZip" Source="Libraries.AsZip.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="RandLib" Source="Libraries.RandLib.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <LibraryObject Name="BufferLib" Source="Libraries.BufferLib.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="aruser" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />

@@ -308,24 +308,54 @@ PROGRAM _CYCLIC
 				IF gShuttleIf[i].Cmd.NextStep THEN
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
-					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
-					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
-					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-					shFbs[i].ShMoveInPlaneFb.PositionX := gUnloadStationIf.Cfg.StationPos.X;
-					shFbs[i].ShMoveInPlaneFb.PositionY := gUnloadStationIf.Cfg.StationPos.Y;
-					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
-					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
-					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					gShuttleIf[i].Sts.ProductInfo.BufferLane := currentBufferLane + 1;;
 					
-					LogDebug(gAuditTrail,i,"Sent to Unload");
+					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_FINISH_TO_BUFFER_1) + currentBufferLane;//Current Station is the current station 1-4, shifting by - 1 for the macro
+					shFbs[i].ShRunMacroFb.Execute := TRUE;
 					
-					shState[i] := SH_MOVE_TO_UNLOAD;
+					currentBufferLane := currentBufferLane + 1;
+					
+					IF currentBufferLane > NUM_BUFFER_LANES - 1 THEN
+						currentBufferLane := 0;
+					END_IF					
+					
+					LogDebug(gAuditTrail,i,"Moving to a Buffer Lane");
+					shState[i] := SH_MOVE_TO_BUFFER;
 				END_IF
 			
 			SH_MOVE_TO_BUFFER:  //******************************************************************************** Shuttle is moving to a buffer lane
-			
+				IF shFbs[i].ShRunMacroFb.Error OR shFbs[i].ShMoveInPlaneFb.Error THEN 
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShRunMacroFb.Acknowledge AND gShuttleIf[i].Sts.ShuttleInfo.Position.Value.X <= gBufferAreaIf.Cfg.StationPos.X  AND
+					(gBufferAreaIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gBufferAreaIf.Sts.ReadyForNewShuttle) THEN
+					gBufferAreaIf.Par.ShuttleIdx := gShuttleIf[i].Cfg.ShuttleId;
+					gBufferAreaIf.Cmd.Process := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Added to a Buffer Lane");
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
+					
+					shState[i] := SH_BUFFERED;
+				END_IF
 			SH_BUFFERED:  //******************************************************************************** Shuttle is currently being buffered
 				//Station has control on the shuttle during this section
+//				
+//				shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
+//				shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+//				shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+//				shFbs[i].ShMoveInPlaneFb.PositionX := gUnloadStationIf.Cfg.StationPos.X;
+//				shFbs[i].ShMoveInPlaneFb.PositionY := gUnloadStationIf.Cfg.StationPos.Y;
+//				shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+//				shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+//				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+//					
+//				LogDebug(gAuditTrail,i,"Sent to Unload");
+//					
+//				shState[i] := SH_MOVE_TO_UNLOAD;
 				
 			SH_MOVE_TO_UNLOAD: //********************************************************************************  Shuttle is moving to an unload	
 				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;

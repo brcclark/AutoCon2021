@@ -1,0 +1,7 @@
+
+TYPE
+	BufferListTyp : 	STRUCT 
+		List : ARRAY[0..MAX_BUFFER_SIZE_ARRAY]OF USINT;
+		CurrentLength : USINT;
+	END_STRUCT;
+END_TYPE

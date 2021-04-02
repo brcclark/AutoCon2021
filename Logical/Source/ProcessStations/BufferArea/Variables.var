@@ -1,0 +1,5 @@
+VAR
+	state : BufferAreaStatesEnum;
+	bufferArea : BufferListTyp;
+	returnVal : SINT;
+END_VAR

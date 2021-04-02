@@ -59,6 +59,7 @@ TYPE
 		Weight : REAL;
 		WeighStation : USINT;
 		Finished : BOOL;
+		BufferLane : USINT;
 		Buffer : BOOL;
 		Bypassing : BOOL;
 	END_STRUCT;
@@ -122,6 +123,9 @@ TYPE
 		MACRO_FILL_STATION_PROC_4, (*Macro ID used for preforming the fill station 4 process*)
 		MACRO_FILL_EXIT_TO_WEIGH_1 := 150, (*Macro ID used for going from the fill exit station to weigh station 1*)
 		MACRO_FILL_EXIT_TO_WEIGH_2, (*Macro ID used for going from the fill exit station to weigh station 2*)
+		MACRO_FINISH_TO_BUFFER_1, (*Macro ID to navigate from the finishing station to buffer lane 1 station*)
+		MACRO_FINISH_TO_BUFFER_2, (*Macro ID to navigate from the finishing station to buffer lane 2 station*)
+		MACRO_FINISH_TO_BUFFER_3, (*Macro ID to navigate from the finishing station to buffer lane 3 station*)
 		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
 		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
