@@ -332,7 +332,7 @@ PROGRAM _CYCLIC
 					shState[i] := SH_ERROR;
 				ELSIF shFbs[i].ShRunMacroFb.Acknowledge AND gShuttleIf[i].Sts.ShuttleInfo.Position.Value.X <= gBufferAreaIf.Cfg.StationPos.X  AND
 					(gBufferAreaIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gBufferAreaIf.Sts.ReadyForNewShuttle) THEN
-					gBufferAreaIf.Par.ShuttleIdx := gShuttleIf[i].Cfg.ShuttleId;
+					gBufferAreaIf.Par.ShuttleIdx := i;
 					gBufferAreaIf.Cmd.Process := TRUE;
 					
 					LogDebug(gAuditTrail,i,"Added to a Buffer Lane");
@@ -341,40 +341,48 @@ PROGRAM _CYCLIC
 					shState[i] := SH_BUFFERED;
 				END_IF
 			SH_BUFFERED:  //******************************************************************************** Shuttle is currently being buffered
-				//Station has control on the shuttle during this section
-//				
-//				shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
-//				shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
-//				shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-//				shFbs[i].ShMoveInPlaneFb.PositionX := gUnloadStationIf.Cfg.StationPos.X;
-//				shFbs[i].ShMoveInPlaneFb.PositionY := gUnloadStationIf.Cfg.StationPos.Y;
-//				shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
-//				shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
-//				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
-//					
-//				LogDebug(gAuditTrail,i,"Sent to Unload");
-//					
-//				shState[i] := SH_MOVE_TO_UNLOAD;
-				
+				IF gShuttleIf[i].Cmd.NextStep THEN
+					gShuttleIf[i].Cmd.NextStep := FALSE;
+					shFbs[i].ShStop.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShStop.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShStop.Execute := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Exiting Buffer");
+					shState[i] := SH_EXIT_BUFFER;
+				END_IF
+			SH_EXIT_BUFFER:
+				IF shFbs[i].ShStop.Error THEN
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShStop.Done THEN
+					
+					shFbs[i].ShStop.Execute := FALSE;
+					
+					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_BUFFER_1_TO_UNLOAD) + gShuttleIf[i].Sts.ProductInfo.BufferLane - 1;//Current Station is the current station 1-4, shifting by - 1 for the macro
+					shFbs[i].ShRunMacroFb.Execute := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Sent to Unload");
+					shState[i] := SH_MOVE_TO_UNLOAD;
+				END_IF
 			SH_MOVE_TO_UNLOAD: //********************************************************************************  Shuttle is moving to an unload	
-				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+				shFbs[i].ShRunMacroFb.Execute := TRUE;
 				IF shFbs[i].ShMoveInPlaneFb.Error THEN
 					gShuttleIf[i].Sts.Error := TRUE;
 					gShuttleIf[i].Sts.ErrorState := shState[i];
 					shState[i] := SH_ERROR;
-				ELSIF shFbs[i].ShMoveInPlaneFb.Done AND (gUnloadStationIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gUnloadStationIf.Sts.ReadyForNewShuttle) 
+				ELSIF shFbs[i].ShRunMacroFb.Done AND (gUnloadStationIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gUnloadStationIf.Sts.ReadyForNewShuttle) 
 					AND PositionValidation(ADR(gUnloadStationIf.Cfg.StationPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
 					gUnloadStationIf.Par.ShuttleIdx := i;
 					gUnloadStationIf.Cmd.Process := TRUE;
 				
 					LogDebug(gAuditTrail,i,"Arrived at Unload");
 					
-					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
 					shState[i] := SH_UNLOADING;
 				END_IF
 			SH_UNLOADING: //********************************************************************************  Shuttle is currently being unloaded	
 				IF gShuttleIf[i].Cmd.NextStep THEN
-					gUnloadStationIf.Cmd.Process := FALSE; //Respond to the Unoad station we're done
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
 					gShuttleIf[i].Cmd.ResetProductInfo := TRUE;
@@ -392,7 +400,6 @@ PROGRAM _CYCLIC
 					LogDebug(gAuditTrail,i,"Sent To Load");
 					
 					shState[i] := SH_MOVE_TO_LOAD;
-					
 				END_IF
 			SH_MOVE_TO_REJECT: //********************************************************************************  Shuttle is moving to a reject station	
 			SH_REJECTING: //********************************************************************************  Shuttle is currently being rejected

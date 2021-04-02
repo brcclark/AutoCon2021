@@ -87,6 +87,20 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[17].Load := TRUE;
 	gMacroLoadIf.Par.MacroList[17].MacroFileName := '154_FinishToBuffer3.xml';
 	gMacroLoadIf.Par.MacroList[17].MacroID := 154;
+	
+	//Buffer to Unload Area
+	gMacroLoadIf.Par.MacroList[18].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[18].MacroFileName := '155_Buffer1ToUnload.xml';
+	gMacroLoadIf.Par.MacroList[18].MacroID := 155;
+	
+	gMacroLoadIf.Par.MacroList[19].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[19].MacroFileName := '156_Buffer2ToUnload.xml';
+	gMacroLoadIf.Par.MacroList[19].MacroID := 156;
+	
+	gMacroLoadIf.Par.MacroList[20].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[20].MacroFileName := '157_Buffer3ToUnload.xml';
+	gMacroLoadIf.Par.MacroList[20].MacroID := 157;
+	
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

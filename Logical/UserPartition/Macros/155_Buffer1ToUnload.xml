@@ -1,0 +1,18 @@
+﻿<?xml version="0.5" encoding="utf-8"?>
+<Commands>
+	<Command id="1">
+		<Parameter Name="MacroClear" MacroID="155"/>
+	</Command>
+	<Command id="2">
+		<Parameter Name="MoveInPlane" ShuttleID="155" XTarget="0" YTarget="-0.12" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="1"/>
+	</Command>
+	<Command id="3">
+		<Parameter Name="MoveInPlane" ShuttleID="155" XTarget="0.06" YTarget="0.78" Acc="10" Vel="1" EndVel="0.0" PositionMode="0" PathType="0"/>
+	</Command>
+	<Command id="4">
+		<Parameter Name="MoveInPlane" ShuttleID="155" XTarget="0.18" YTarget="0.18" Acc="10" Vel="1" EndVel="0.0" PositionMode="0" PathType="2"/>
+	</Command>
+	<Command id="5">
+		<Parameter Name="MacroSave" MacroID="155"/>
+	</Command>
+</Commands>

@@ -15,7 +15,7 @@
     <Task Name="WeighSt2" Source="Source.ProcessStations.WeighStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="FinishStat" Source="Source.ProcessStations.FinishStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="BufferArea" Source="Source.ProcessStations.BufferArea.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="UnloadStt" Source="Source.ProcessStations.UnloadStt.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="UnloadStat" Source="Source.ProcessStations.UnloadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="Main" Source="Source.Main.Main.prg" Memory="UserROM" Language="IEC" Debugging="true" />

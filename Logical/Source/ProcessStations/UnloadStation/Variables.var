@@ -1,5 +1,6 @@
 VAR
+	i : INT;
 	state : UnloadStationStateEnum;
-	UnloadStationFbs : UnloadStationFbTyp;
+	stationFbs : UnloadStationFbTyp;
 	stationPars : LoadStationParsTyp;
 END_VAR

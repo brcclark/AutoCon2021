@@ -126,6 +126,9 @@ TYPE
 		MACRO_FINISH_TO_BUFFER_1, (*Macro ID to navigate from the finishing station to buffer lane 1 station*)
 		MACRO_FINISH_TO_BUFFER_2, (*Macro ID to navigate from the finishing station to buffer lane 2 station*)
 		MACRO_FINISH_TO_BUFFER_3, (*Macro ID to navigate from the finishing station to buffer lane 3 station*)
+		MACRO_BUFFER_1_TO_UNLOAD,
+		MACRO_BUFFER_2_TO_UNLOAD,
+		MACRO_BUFFER_3_TO_UNLOAD,
 		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
 		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
@@ -167,6 +170,7 @@ TYPE
 		SH_FINISHING, (*Shuttle is currently being capped*)
 		SH_MOVE_TO_BUFFER, (*Shuttle is moving to a buffer lane*)
 		SH_BUFFERED, (*Shuttle is currently being buffered*)
+		SH_EXIT_BUFFER, (*Shutlte is being commanded to stop to leave the buffer*)
 		SH_MOVE_TO_UNLOAD, (*Shuttle is moving to an unload*)
 		SH_UNLOADING, (*Shuttle is currently being unloaded*)
 		SH_MOVE_TO_REJECT, (*Shuttle is moving to a reject station*)
@@ -304,6 +308,7 @@ TYPE
 		WeighStations : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY]OF WeighStationParsTyp;
 		UnloadStation : LoadStationParsTyp;
 		FinishStation : FinishStationParsTyp;
+		BufferArea : BufferAreaParsTyp;
 		TraversalVel : REAL;
 		TraversalAccel : REAL;
 	END_STRUCT;
@@ -323,5 +328,8 @@ TYPE
 	END_STRUCT;
 	FinishStationParsTyp : 	STRUCT 
 		WaitTime : TIME;
+	END_STRUCT;
+	BufferAreaParsTyp : 	STRUCT 
+		MinBufferSize : USINT;
 	END_STRUCT;
 END_TYPE

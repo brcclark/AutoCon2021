@@ -2,4 +2,7 @@ VAR
 	state : BufferAreaStatesEnum;
 	bufferArea : BufferListTyp;
 	returnVal : SINT;
+	stationPars : BufferAreaParsTyp;
+	i : INT;
+	serveShuttleId : USINT;
 END_VAR
