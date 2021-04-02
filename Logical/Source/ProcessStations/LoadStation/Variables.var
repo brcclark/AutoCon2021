@@ -1,6 +1,7 @@
 VAR
+	i : INT;
 	state : LoadStationStateEnum;
-	LoadStationFbs : LoadStationFbTyp;
+	stationFbs : LoadStationFbTyp;
 	stationPars : LoadStationParsTyp;
 	recipes : ARRAY[0..2] OF ProductRecipeTyp;
 	recipeCounter : USINT;

@@ -57,7 +57,6 @@ PROGRAM _CYCLIC
 			SH_LOADING:  //******************************************************************************** Shuttle is currently being loaded
 				//Station has control on the shuttle during this section
 				IF gShuttleIf[i].Cmd.NextStep THEN
-					gLoadStationIf.Cmd.Process := FALSE; //Respond to the Load station we're done
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_Y_THEN_X;

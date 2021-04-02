@@ -95,7 +95,7 @@ PROGRAM _CYCLIC
 				stationFbs.BatchProcessFb.Enable := FALSE;
 				
 				state := FINISH_OFF;
-			ELSIF NOT gFinishStationIf.Cmd.Process THEN
+			ELSIF NOT gFinishStationIf.Cmd.Process AND stationFbs.BatchProcessFb.ReadyForShuttle THEN
 				gFinishStationIf.Par.ShuttleIdx := STATION_IS_EMPTY;
 				gFinishStationIf.Sts.Done := FALSE;
 				gFinishStationIf.Sts.ReadyForNewShuttle := FALSE;
