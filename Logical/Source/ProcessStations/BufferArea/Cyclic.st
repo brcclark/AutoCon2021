@@ -43,10 +43,17 @@ PROGRAM _CYCLIC
 				END_IF
 			END_IF//********************************************************************************Buffer station is calling off shuttles to be removed from the buffer area
 		BUFFER_CALL_OFF_SHUTTLES:
+			//This is a little dangerous of a process
+			(*
+				Get a random shuttle number from 1 to the current length
+				Remove that ID from the list to get the value at that index
+				Use that value as the index for the gShuttle interface to command off the buffer
+			*)
 			WHILE bufferArea.CurrentLength > stationPars.MinBufferSize - 4 DO
-	  			serveShuttleId := DINT_TO_USINT(RandValueDINT(1,bufferArea.CurrentLength));
-				gShuttleIf[bufferArea.List[serveShuttleId]].Cmd.NextStep := TRUE;
-				blRemoveItem(ADR(bufferArea),serveShuttleId);
+				serveShuttleId := DINT_TO_USINT(RandValueDINT(1,bufferArea.CurrentLength));
+				shId := blRemoveItem(ADR(bufferArea),serveShuttleId);
+				gShuttleIf[SINT_TO_USINT(shId)].Cmd.NextStep := TRUE;
+				
 			END_WHILE;
 			gBufferAreaIf.Par.ShuttleIdx := STATION_IS_EMPTY;
 			gBufferAreaIf.Sts.ReadyForNewShuttle := TRUE;
