@@ -24,24 +24,64 @@ PROGRAM _INIT
 	g6DRecoveryIf.Par.AutoDrivePositions[3].GroupNum := 0;
 	g6DRecoveryIf.Par.AutoDrivePositions[3].X := 0.18;
 	g6DRecoveryIf.Par.AutoDrivePositions[3].Y := 0.06;
-	//************************************************************************* Shuttle 4
+	//************************************************************************* Shuttle 5
 	g6DRecoveryIf.Par.AutoDrivePositions[4].ShIdx := 4;
 	g6DRecoveryIf.Par.AutoDrivePositions[4].GroupNum := 0;
 	g6DRecoveryIf.Par.AutoDrivePositions[4].X := 0.06;
 	g6DRecoveryIf.Par.AutoDrivePositions[4].Y := 0.06;
-	//************************************************************************* Shuttle 4
+	//************************************************************************* Shuttle 6
 	g6DRecoveryIf.Par.AutoDrivePositions[5].ShIdx := 5;
 	g6DRecoveryIf.Par.AutoDrivePositions[5].GroupNum := 0;
 	g6DRecoveryIf.Par.AutoDrivePositions[5].X := 0.06;
 	g6DRecoveryIf.Par.AutoDrivePositions[5].Y := 0.18;
-	//************************************************************************* Shuttle 4
+	//************************************************************************* Shuttle 7
 	g6DRecoveryIf.Par.AutoDrivePositions[6].ShIdx := 6;
 	g6DRecoveryIf.Par.AutoDrivePositions[6].GroupNum := 0;
 	g6DRecoveryIf.Par.AutoDrivePositions[6].X := 0.18;
 	g6DRecoveryIf.Par.AutoDrivePositions[6].Y := 0.18;
-	//************************************************************************* Shuttle 4
+	//************************************************************************* Shuttle 8
 	g6DRecoveryIf.Par.AutoDrivePositions[7].ShIdx := 7;
 	g6DRecoveryIf.Par.AutoDrivePositions[7].GroupNum := 0;
 	g6DRecoveryIf.Par.AutoDrivePositions[7].X := 0.3;
 	g6DRecoveryIf.Par.AutoDrivePositions[7].Y := 0.18;
+	//************************************************************************* Shuttle 9
+	g6DRecoveryIf.Par.AutoDrivePositions[8].ShIdx := 8;
+	g6DRecoveryIf.Par.AutoDrivePositions[8].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[8].X := 0.06;
+	g6DRecoveryIf.Par.AutoDrivePositions[8].Y := 0.3;
+	//************************************************************************* Shuttle 10
+	g6DRecoveryIf.Par.AutoDrivePositions[9].ShIdx := 9;
+	g6DRecoveryIf.Par.AutoDrivePositions[9].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[9].X := 0.18;
+	g6DRecoveryIf.Par.AutoDrivePositions[9].Y := 0.3;
+	//************************************************************************* Shuttle 11
+	g6DRecoveryIf.Par.AutoDrivePositions[10].ShIdx := 10;
+	g6DRecoveryIf.Par.AutoDrivePositions[10].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[10].X := 0.06;
+	g6DRecoveryIf.Par.AutoDrivePositions[10].Y := 0.42;
+	//************************************************************************* Shuttle 12
+	g6DRecoveryIf.Par.AutoDrivePositions[11].ShIdx := 11;
+	g6DRecoveryIf.Par.AutoDrivePositions[11].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[11].X := 0.18;
+	g6DRecoveryIf.Par.AutoDrivePositions[11].Y := 0.42;
+	//************************************************************************* Shuttle 13
+	g6DRecoveryIf.Par.AutoDrivePositions[12].ShIdx := 12;
+	g6DRecoveryIf.Par.AutoDrivePositions[12].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[12].X := 0.06;
+	g6DRecoveryIf.Par.AutoDrivePositions[12].Y := 0.54;
+	//************************************************************************* Shuttle 14
+	g6DRecoveryIf.Par.AutoDrivePositions[13].ShIdx := 13;
+	g6DRecoveryIf.Par.AutoDrivePositions[13].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[13].X := 0.18;
+	g6DRecoveryIf.Par.AutoDrivePositions[13].Y := 0.54;
+	//************************************************************************* Shuttle 15
+	g6DRecoveryIf.Par.AutoDrivePositions[14].ShIdx := 14;
+	g6DRecoveryIf.Par.AutoDrivePositions[14].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[14].X := 0.06;
+	g6DRecoveryIf.Par.AutoDrivePositions[14].Y := 0.66;
+	//************************************************************************* Shuttle 16
+	g6DRecoveryIf.Par.AutoDrivePositions[15].ShIdx := 15;
+	g6DRecoveryIf.Par.AutoDrivePositions[15].GroupNum := 0;
+	g6DRecoveryIf.Par.AutoDrivePositions[15].X := 0.18;
+	g6DRecoveryIf.Par.AutoDrivePositions[15].Y := 0.66;
 END_PROGRAM

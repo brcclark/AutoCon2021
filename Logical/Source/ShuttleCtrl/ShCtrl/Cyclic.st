@@ -25,7 +25,7 @@ PROGRAM _CYCLIC
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					//Evaluate the current step to determine what the next step should be
 					shFbs[i].ShMoveInPlaneFb.Controller := ADR(gMcAcp6DController);
-					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_DIRECT;
+					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_Y_THEN_X;
 					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
 					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
 					shFbs[i].ShMoveInPlaneFb.PositionX := gLoadStationIf.Cfg.StationPos.X;
