@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="cntHome_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="mapp" refId="gAuditTrail" attribute="link" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="AuditList1" attribute="mpLink" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Main:state" attribute="value" />
+			<Target xsi:type="snippet" refId="MainIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="MainIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toMainStatus" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::LoadStatio:state" attribute="value" />
+			<Target xsi:type="snippet" refId="LoadIfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="LoadIfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toLoadState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::FillSt1:state" attribute="value" />
+			<Target xsi:type="snippet" refId="Fill1IfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="Fill1IfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toFill1State" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::FillSt2:state" attribute="value" />
+			<Target xsi:type="snippet" refId="Fill2IfState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="Fill2IfState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="toFill2State" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Power" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="tsMainPower" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Start" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="mpbStartProcess" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gMainIf.Cmd.Stop" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="mpbStopProcess" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gLoadStationIf.Par.ShuttleIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noLoadIdx" attribute="value" />
+		</Binding>
+	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::ShCtrl:debugIdx" attribute="value" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="shuttleSelector" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessInfoIf.Sts.CurrentLayersPerMinute" attribute="node" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="OnlineChartHDA1" attribute="graph[graph1].node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessInfoIf.Sts.CurrentLayersPerMinute" attribute="node" />
+			<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="OnlineChartGraph1" attribute="node" />
+		</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gFillStationsIf[0].Par.ShuttleIdx" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noFill1ShuttleIdx" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gFillStationsIf[1].Par.ShuttleIdx" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntHome" widgetRefId="noFill2ShuttleIdx" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

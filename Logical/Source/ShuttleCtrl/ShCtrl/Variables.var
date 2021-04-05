@@ -11,6 +11,5 @@ VAR
 	nextStationCalc : SINT;
 	currentStationCalc : SINT;
 	currentWeighStation : USINT;
-	currentBufferLane : USINT;
 	BufferLaneCounters : ARRAY[0..2] OF USINT;
 END_VAR

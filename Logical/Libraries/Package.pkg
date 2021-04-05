@@ -24,5 +24,12 @@
     <Object Type="Library" Language="binary" Description="The AsBrStr Library contains FBKs for memory and character string handling.">AsBrStr</Object>
     <Object Type="Library" Language="ANSIC">RandLib</Object>
     <Object Type="Library" Language="IEC">BufferLib</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Robotics library">MpRobotics</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axes group library">McAxGroup</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Path generator axes group library">McPathGen</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axis library">McAxis</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Program interpreter library">McProgInt</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] ACOPOS axis library">McAcpAx</Object>
   </Objects>
 </Package>

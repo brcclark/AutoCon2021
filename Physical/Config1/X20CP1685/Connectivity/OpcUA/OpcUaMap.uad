@@ -73,6 +73,16 @@
         <Variable Name="lastRecordedWeight" />
         <Variable Name="lastRecordedWeightHMI" />
       </Task>
+      <Task Name="RobotCtrl">
+        <Variable Name="DeltaFb">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+          <Variable Name="X" />
+          <Variable Name="Y" />
+          <Variable Name="Z" />
+        </Variable>
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

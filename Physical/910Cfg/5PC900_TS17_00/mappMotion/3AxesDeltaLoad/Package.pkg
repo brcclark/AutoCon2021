@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="mMoPredefinedCfgPackage" PackageType="mMoPredefinedCfgPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">AxGrpLd.axesgroup</Object>
+    <Object Type="File">AxLoad.axis</Object>
+    <Object Type="File">MechSysLd.mechanicalsystem</Object>
+    <Object Type="File">AxGrpLdFt.axesgroupfeature</Object>
+  </Objects>
+</Package>

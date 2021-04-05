@@ -60,6 +60,8 @@ PROGRAM _CYCLIC
 				gUnloadStationIf.Sts.Processing := TRUE;
 				stationFbs.BatchProcessFb.ProcessShuttle := FALSE;
 				
+				gRobotIf[Unload_Robot].Cmd.Run := TRUE;
+				
 				state := UNLOAD_UNLOADING;
 			ELSIF stationFbs.BatchProcessFb.ReadyForShuttle THEN
 				gUnloadStationIf.Sts.ReadyForNewShuttle := TRUE;
@@ -72,9 +74,10 @@ PROGRAM _CYCLIC
 			IF stationFbs.BatchProcessFb.Error THEN
 				gUnloadStationIf.Sts.Error := TRUE;
 				state := UNLOAD_ERROR;
-			ELSIF stationFbs.BatchProcessFb.BatchComplete THEN
+			ELSIF stationFbs.BatchProcessFb.BatchComplete AND gRobotIf[Unload_Robot].Sts.Done THEN
 				stationFbs.BatchProcessFb.Reset := TRUE;
 				gUnloadStationIf.Cmd.Process := FALSE;
+				gRobotIf[Unload_Robot].Cmd.Run := FALSE;
 				
 				gUnloadStationIf.Sts.Processing := FALSE;
 				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO

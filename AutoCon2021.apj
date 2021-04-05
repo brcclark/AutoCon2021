@@ -10,6 +10,7 @@
   <TechnologyPackages>
     <mapp Version="5.14.0" />
     <mappCockpit Version="5.14.0" />
+    <mappMotion McAcpDrv="5.14.0" McAcpSim="5.14.0" McAcpSys="5.14.0" McMechSys="5.14.0" Version="5.14.0" />
     <mappView Version="5.14.0" />
   </TechnologyPackages>
 </Project>

@@ -231,6 +231,31 @@ TYPE
 	END_STRUCT;
 END_TYPE
 
+(*Robot Interface Types*)
+
+TYPE
+	RbtIfTyp : 	STRUCT 
+		Cmd : RbtIfCmdTyp;
+		Sts : RbtIfStsTyp;
+	END_STRUCT;
+	RbtIfCmdTyp : 	STRUCT 
+		Enable : BOOL;
+		Run : BOOL;
+		Reset : BOOL;
+	END_STRUCT;
+	RbtIfStsTyp : 	STRUCT 
+		Powered : BOOL;
+		Ready : BOOL;
+		Running : BOOL;
+		Done : BOOL;
+	END_STRUCT;
+	SysRobotType : 
+		(
+		Load_Robot,
+		Unload_Robot
+		);
+END_TYPE
+
 (*Recovery Interface Type*)
 
 TYPE

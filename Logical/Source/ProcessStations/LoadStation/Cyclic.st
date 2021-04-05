@@ -59,9 +59,11 @@ PROGRAM _CYCLIC
 			IF stationFbs.BatchProcessFb.Processsing THEN
 				gLoadStationIf.Sts.Processing := TRUE;
 				stationFbs.BatchProcessFb.ProcessShuttle := FALSE;
+				gRobotIf[Load_Robot].Cmd.Run := TRUE;
 				
 				state := LOAD_LOADING;
 			ELSIF stationFbs.BatchProcessFb.ReadyForShuttle THEN
+								
 				gLoadStationIf.Sts.ReadyForNewShuttle := TRUE;
 				gLoadStationIf.Par.ShuttleIdx := STATION_IS_EMPTY;
 				stationFbs.BatchProcessFb.ProcessShuttle := FALSE;
@@ -72,7 +74,9 @@ PROGRAM _CYCLIC
 			IF stationFbs.BatchProcessFb.Error THEN
 				gLoadStationIf.Sts.Error := TRUE;
 				state := LOAD_ERROR;
-			ELSIF stationFbs.BatchProcessFb.BatchComplete THEN
+			ELSIF stationFbs.BatchProcessFb.BatchComplete AND gRobotIf[Load_Robot].Sts.Done THEN
+				gRobotIf[Load_Robot].Cmd.Run := FALSE;
+				
 				stationFbs.BatchProcessFb.Reset := TRUE;
 				gLoadStationIf.Cmd.Process := FALSE;
 				

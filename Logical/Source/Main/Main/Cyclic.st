@@ -37,6 +37,8 @@ PROGRAM _CYCLIC
 				gFillStationsIf[3].Cmd.Enable := TRUE;
 				gWeighStationIf[0].Cmd.Enable := TRUE;
 				gWeighStationIf[1].Cmd.Enable := TRUE;
+				gRobotIf[Load_Robot].Cmd.Enable := TRUE;
+				gRobotIf[Unload_Robot].Cmd.Enable := TRUE;
 				gFinishStationIf.Cmd.Enable := TRUE;
 				gBufferAreaIf.Cmd.Enable := TRUE;
 				gUnloadStationIf.Cmd.Enable := TRUE;
@@ -58,6 +60,8 @@ PROGRAM _CYCLIC
 				AND gWeighStationIf[0].Sts.Enabled 
 				AND gWeighStationIf[0].Sts.Enabled 
 				AND gFinishStationIf.Sts.Enabled
+				AND gRobotIf[Load_Robot].Sts.Ready 
+				AND gRobotIf[Unload_Robot].Sts.Ready 
 				AND gBufferAreaIf.Sts.Enabled 
 				AND gProcessInfoIf.Sts.Enabled 
 				AND gUnloadStationIf.Sts.Enabled THEN
@@ -76,6 +80,8 @@ PROGRAM _CYCLIC
 				gWeighStationIf[0].Cmd.Enable := FALSE;
 				gWeighStationIf[1].Cmd.Enable := FALSE;
 				gFinishStationIf.Cmd.Enable := FALSE;
+				gRobotIf[Load_Robot].Cmd.Enable := FALSE;
+				gRobotIf[Unload_Robot].Cmd.Enable := FALSE;
 				gBufferAreaIf.Cmd.Enable := FALSE;
 				gProcessInfoIf.Cmd.Enable := FALSE;
 				gUnloadStationIf.Cmd.Enable := FALSE;

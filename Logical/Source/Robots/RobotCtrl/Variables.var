@@ -1,0 +1,7 @@
+VAR
+	DeltaFb : MpDelta3Axis;
+	DeltaPars : MpDelta3AxisParType;
+	state : RobotStateEnum;
+	pRobotIf : REFERENCE TO RbtIfTyp;
+	taskName : STRING[10];
+END_VAR

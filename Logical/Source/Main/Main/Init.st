@@ -10,7 +10,7 @@ PROGRAM _INIT
 	
 	FOR i:=0 TO MAX_FILL_STATIONS - 1 DO
 		gSysPars.FillStations[i].Vel := 1.0;
-		gSysPars.FillStations[i].Accel := 1.0;
+		gSysPars.FillStations[i].Accel := 10.0;
 		gSysPars.FillStations[i].FillRate := 1.0;
 		gSysPars.FillStations[i].FillTime := T#2s;
 	END_FOR
