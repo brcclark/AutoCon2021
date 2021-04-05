@@ -307,18 +307,13 @@ PROGRAM _CYCLIC
 				IF gShuttleIf[i].Cmd.NextStep THEN
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
-					gShuttleIf[i].Sts.ProductInfo.BufferLane := currentBufferLane + 1;;
+					gShuttleIf[i].Sts.ProductInfo.BufferLane := GetNextLane(ADR(BufferLaneCounters));
+					gShuttleIf[i].Sts.ProductInfo.Buffer := TRUE;
 					
 					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
 					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_FINISH_TO_BUFFER_1) + currentBufferLane;//Current Station is the current station 1-4, shifting by - 1 for the macro
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_FINISH_TO_BUFFER_1) + gShuttleIf[i].Sts.ProductInfo.BufferLane;//Current Station is the current station 1-4, shifting by - 1 for the macro
 					shFbs[i].ShRunMacroFb.Execute := TRUE;
-					
-					currentBufferLane := currentBufferLane + 1;
-					
-					IF currentBufferLane > NUM_BUFFER_LANES - 1 THEN
-						currentBufferLane := 0;
-					END_IF					
 					
 					LogDebug(gAuditTrail,i,"Moving to a Buffer Lane");
 					shState[i] := SH_MOVE_TO_BUFFER;
@@ -359,8 +354,11 @@ PROGRAM _CYCLIC
 					
 					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
 					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_BUFFER_1_TO_UNLOAD) + gShuttleIf[i].Sts.ProductInfo.BufferLane - 1;//Current Station is the current station 1-4, shifting by - 1 for the macro
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_BUFFER_1_TO_UNLOAD) + gShuttleIf[i].Sts.ProductInfo.BufferLane;//Current Station is the current station 1-4, shifting by - 1 for the macro
 					shFbs[i].ShRunMacroFb.Execute := TRUE;
+					
+					gShuttleIf[i].Sts.ProductInfo.Buffer := FALSE;
+					gShuttleIf[i].Sts.ProductInfo.BufferLane := 0;
 					
 					LogDebug(gAuditTrail,i,"Sent to Unload");
 					shState[i] := SH_MOVE_TO_UNLOAD;
@@ -423,6 +421,9 @@ PROGRAM _CYCLIC
 		shFbs[i].ShRunMacroFb();
 		shFbs[i].ShMoveInPlaneFb();
 		shFbs[i].ShStop();
+		
+		//This isn't really the ideal way to keep track of the size of the buffer, but quick and dirty
+		BufferCount(gMainIf.Cfg.ShuttleCount,ADR(gShuttleIf),ADR(BufferLaneCounters));
 		
 		IF gShuttleIf[i].Cmd.ResetProductInfo THEN
 			brsmemset(ADR(gShuttleIf[i].Sts.ProductInfo),0,SIZEOF(gShuttleIf[i].Sts.ProductInfo));

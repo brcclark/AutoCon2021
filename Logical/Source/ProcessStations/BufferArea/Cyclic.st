@@ -32,7 +32,6 @@ PROGRAM _CYCLIC
 			ELSE
 				gBufferAreaIf.Sts.Processing := FALSE;
 				
-				
 				IF bufferArea.CurrentLength >= stationPars.MinBufferSize THEN
 					state := BUFFER_CALL_OFF_SHUTTLES;
 				ELSE

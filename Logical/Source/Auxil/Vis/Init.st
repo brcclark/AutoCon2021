@@ -3,7 +3,7 @@
 PROGRAM _INIT
 	FOR idx := 0 TO gMainIf.Cfg.ShuttleCount - 1 DO
 		Vis.Shuttles[idx].ID := idx+1;
-		Vis.Shuttles[idx].ScnViewer.PathLength := 80;
+		Vis.Shuttles[idx].ScnViewer.PathLength := 50;
 	END_FOR;
 	Vis.Shuttles[0].ScnViewer.PathColor[0] := 0.0;
 	Vis.Shuttles[0].ScnViewer.PathColor[1] := 0.0;

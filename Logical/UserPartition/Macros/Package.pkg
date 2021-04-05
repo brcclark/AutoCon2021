@@ -2,7 +2,26 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File">128_LoadToPrint.xml</Object>
-    <Object Type="File">129_PrintToDose1.xml</Object>
+    <Object Type="File">130_Fill1EnterBypass.xml</Object>
+    <Object Type="File">131_Fill2EnterBypass.xml</Object>
+    <Object Type="File">132_Fill3EnterBypass.xml</Object>
+    <Object Type="File">133_Fill4EnterBypass.xml</Object>
+    <Object Type="File">134_Fill1ExitBypass.xml</Object>
+    <Object Type="File">135_Fill2ExitBypass.xml</Object>
+    <Object Type="File">136_Fill3ExitBypass.xml</Object>
+    <Object Type="File">137_Fill4ExitBypass.xml</Object>
+    <Object Type="File">140_FillStation2.xml</Object>
+    <Object Type="File">141_FillStation3XY.xml</Object>
+    <Object Type="File">142_FillStation3Wobble.xml</Object>
+    <Object Type="File">143_FillStation4.xml</Object>
+    <Object Type="File">150_FillExitToWeigh1.xml</Object>
+    <Object Type="File">151_FillExitToWeigh2.xml</Object>
+    <Object Type="File">152_FinishToBuffer1.xml</Object>
+    <Object Type="File">153_FinishToBuffer2.xml</Object>
+    <Object Type="File">154_FinishToBuffer3.xml</Object>
+    <Object Type="File">155_Buffer1ToUnload.xml</Object>
+    <Object Type="File">156_Buffer2ToUnload.xml</Object>
+    <Object Type="File">157_Buffer3ToUnload.xml</Object>
+    <Object Type="File">160_RecoveryGroup0.xml</Object>
   </Objects>
 </Package>

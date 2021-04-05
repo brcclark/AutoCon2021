@@ -8,6 +8,6 @@
     <File Description="Local data types" Private="true">Types.typ</File>
     <File Description="Local variables" Private="true">Variables.var</File>
     <File Private="true">LocalFunctions.fun</File>
-    <File>PositionValidation.st</File>
+    <File>LocalFunctions.st</File>
   </Files>
 </Program>

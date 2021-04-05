@@ -6,6 +6,8 @@
 		ShuttleId : USINT;
 		PosStartX : REAL;
 		PosStartY : REAL;
+		LinearVel : REAL;
+		ShortAxisRotVel : REAL;
 	END_VAR
 	VAR_OUTPUT
 		Active : BOOL;

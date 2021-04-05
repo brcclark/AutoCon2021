@@ -4,8 +4,8 @@ FUNCTION_BLOCK AngledMovementFb
 		ANG_INT_OFF:
 			IF Execute THEN
 				Active := TRUE;
-				Internal.ShPos[axPosX] := PosStartX - 0.06;
-				Internal.ShPos[axPosY] := PosStartY + 0.06;
+				Internal.ShPos[axPosX] := PosStartX - 0.03;
+				Internal.ShPos[axPosY] := PosStartY + 0.03;
 				Internal.ShPos[axPosZ] := 0.004;
 				Internal.ShPos[axPosRX] := 0.025;
 				Internal.ShPos[axPosRY] := 0.025;
@@ -13,12 +13,12 @@ FUNCTION_BLOCK AngledMovementFb
 				Internal.Fbs.Move6DFb.Controller := ADR(Controller);
 				Internal.Fbs.Move6DFb.ShuttleID := ShuttleId;
 				Internal.Fbs.Move6DFb.Position := Internal.ShPos;
-				Internal.Fbs.Move6DFb.InPlaneVelocity := 0.24;
+				Internal.Fbs.Move6DFb.InPlaneVelocity := LinearVel;
 				Internal.Fbs.Move6DFb.Acceleration := 10;
-				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVel] := 0.24;
-				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVelRx] := 0.1;
-				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVelRy] := 0.1;
-				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVelRz] := 0.1;
+				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVel] := LinearVel;
+				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVelRx] := ShortAxisRotVel;
+				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVelRy] := ShortAxisRotVel;
+				Internal.Fbs.Move6DFb.ShortAxisVelocity[axVelRz] := ShortAxisRotVel;
 				
 				Internal.Fbs.Move6DFb.Execute := TRUE;
 				
@@ -38,7 +38,7 @@ FUNCTION_BLOCK AngledMovementFb
 			END_IF
 		ANG_INT_MOV_1:
 			Internal.ShPos[axPosX] := Internal.ShPos[axPosX];
-			Internal.ShPos[axPosY] := Internal.ShPos[axPosY] - 0.12;
+			Internal.ShPos[axPosY] := Internal.ShPos[axPosY] - 0.06;
 			Internal.ShPos[axPosRX] := -0.025;
 			Internal.ShPos[axPosRY] := 0.025;
 			
@@ -47,7 +47,7 @@ FUNCTION_BLOCK AngledMovementFb
 			
 			Internal.state := ANG_INT_MOV_WAIT;
 		ANG_INT_MOV_2:
-			Internal.ShPos[axPosX] := Internal.ShPos[axPosX] + 0.12;
+			Internal.ShPos[axPosX] := Internal.ShPos[axPosX] + 0.06;
 			Internal.ShPos[axPosY] := Internal.ShPos[axPosY];
 			Internal.ShPos[axPosRX] := -0.025;
 			Internal.ShPos[axPosRY] := -0.025;
@@ -58,7 +58,7 @@ FUNCTION_BLOCK AngledMovementFb
 			Internal.state := ANG_INT_MOV_WAIT;
 		ANG_INT_MOV_3:
 			Internal.ShPos[axPosX] := Internal.ShPos[axPosX];
-			Internal.ShPos[axPosY] := Internal.ShPos[axPosY] + 0.12;
+			Internal.ShPos[axPosY] := Internal.ShPos[axPosY] + 0.06;
 			Internal.ShPos[axPosRX] := 0.025;
 			Internal.ShPos[axPosRY] := -0.025;
 			
@@ -67,7 +67,7 @@ FUNCTION_BLOCK AngledMovementFb
 			
 			Internal.state := ANG_INT_MOV_WAIT;
 		ANG_INT_MOV_4:
-			Internal.ShPos[axPosX] := Internal.ShPos[axPosX] - 0.12;
+			Internal.ShPos[axPosX] := Internal.ShPos[axPosX] - 0.06;
 			Internal.ShPos[axPosY] := Internal.ShPos[axPosY];
 			Internal.ShPos[axPosRX] := 0.025;
 			Internal.ShPos[axPosRY] := 0.025;

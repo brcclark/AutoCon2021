@@ -54,4 +54,9 @@ PROGRAM _INIT
 	
 	pFillIf.Par.ShuttleIdx := STATION_IS_EMPTY;
 	
+	stationPars.Vel := 1.0;
+	stationPars.Accel := 10.0;
+	
+	FillStationFbs.St1Fb.LinearVel := 0.5;// m/s
+	FillStationFbs.St1Fb.ShortAxisRotVel := 1.0;//rad/s
 END_PROGRAM
