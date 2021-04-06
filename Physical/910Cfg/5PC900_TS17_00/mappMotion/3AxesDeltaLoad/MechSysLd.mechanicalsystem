@@ -16,53 +16,53 @@
               <Property ID="ArmLinkPointIsReadOnly" Value="0" />
               <Group ID="Arm1LinkPoint">
                 <Property ID="Angle" Value="0.0" />
-                <Property ID="Radius" Value="250.0" />
-                <Property ID="Z" Value="0.0" />
+                <Property ID="Radius" Value="225.0" />
+                <Property ID="Z" Value="-90" />
               </Group>
               <Group ID="Arm2LinkPoint">
-                <Property ID="Angle" Value="120.0" />
-                <Property ID="Radius" Value="250.0" />
-                <Property ID="Z" Value="0.0" />
+                <Property ID="Angle" Value="180" />
+                <Property ID="Radius" Value="225.0" />
+                <Property ID="Z" Value="-90" />
               </Group>
               <Group ID="Arm3LinkPoint">
-                <Property ID="Angle" Value="240.0" />
-                <Property ID="Radius" Value="250.0" />
-                <Property ID="Z" Value="0.0" />
+                <Property ID="Angle" Value="270" />
+                <Property ID="Radius" Value="225.0" />
+                <Property ID="Z" Value="-90" />
               </Group>
             </Group>
             <Group ID="Arms">
               <Property ID="ArmIsReadOnly" Value="0" />
               <Group ID="Arm1">
-                <Property ID="UpperArmLength" Value="600.0" />
-                <Property ID="LowerArmLength" Value="900.0" />
+                <Property ID="UpperArmLength" Value="320.0" />
+                <Property ID="LowerArmLength" Value="750.0" />
               </Group>
               <Group ID="Arm2">
-                <Property ID="UpperArmLength" Value="600.0" />
-                <Property ID="LowerArmLength" Value="900.0" />
+                <Property ID="UpperArmLength" Value="320.0" />
+                <Property ID="LowerArmLength" Value="750.0" />
               </Group>
               <Group ID="Arm3">
-                <Property ID="UpperArmLength" Value="600.0" />
-                <Property ID="LowerArmLength" Value="900.0" />
+                <Property ID="UpperArmLength" Value="320.0" />
+                <Property ID="LowerArmLength" Value="750.0" />
               </Group>
             </Group>
             <Group ID="EndEffectorPlatform">
               <Property ID="ArmLinkPointIsReadOnly" Value="0" />
               <Group ID="Arm1LinkPoint">
-                <Property ID="Radius" Value="50.0" />
+                <Property ID="Radius" Value="75" />
                 <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="Arm2LinkPoint">
-                <Property ID="Radius" Value="50.0" />
+                <Property ID="Radius" Value="75.0" />
                 <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="Arm3LinkPoint">
-                <Property ID="Radius" Value="50.0" />
+                <Property ID="Radius" Value="75.0" />
                 <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="TranslationToFlange">
                 <Property ID="X" Value="0.0" />
                 <Property ID="Y" Value="0.0" />
-                <Property ID="Z" Value="-150" />
+                <Property ID="Z" Value="-44.5" />
               </Group>
             </Group>
           </Group>

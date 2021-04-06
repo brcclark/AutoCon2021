@@ -2,17 +2,17 @@
 <Object objecttypeid="1" name="Scene" visible="1" mask="" binding="" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
-	<ParID parid="82" val="0.909092"/>
+	<ParID parid="82" val="0.751316"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="1184.57"/>
-	<ParID parid="101" val="-3951.83"/>
-	<ParID parid="102" val="2016.28"/>
-	<ParID parid="103" val="0.121218"/>
-	<ParID parid="104" val="0.875712"/>
-	<ParID parid="105" val="-0.46737"/>
-	<ParID parid="106" val="-0.0355604"/>
-	<ParID parid="107" val="0.474371"/>
-	<ParID parid="108" val="0.879607"/>
+	<ParID parid="100" val="-359.811"/>
+	<ParID parid="101" val="-4003.98"/>
+	<ParID parid="102" val="1081.05"/>
+	<ParID parid="103" val="0.288667"/>
+	<ParID parid="104" val="0.928045"/>
+	<ParID parid="105" val="-0.235381"/>
+	<ParID parid="106" val="0.151388"/>
+	<ParID parid="107" val="0.198512"/>
+	<ParID parid="108" val="0.968336"/>
 	<ParID parid="110" val="0.5"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -1565,8 +1565,8 @@
 	<Object objecttypeid="250" name="Rbt1Base" visible="1" mask="" binding="" jointoparent="0">
 		<ParID parid="100" val="1080"/>
 		<ParID parid="101" val="-1000"/>
-		<ParID parid="102" val="1150"/>
-		<ParID parid="103" val="0"/>
+		<ParID parid="102" val="1000"/>
+		<ParID parid="103" val="90"/>
 		<ParID parid="104" val="0"/>
 		<ParID parid="105" val="0"/>
 		<ParID parid="106" val="1"/>
@@ -1574,58 +1574,30 @@
 		<ParID parid="108" val="1"/>
 		<ParID parid="124" val="100"/>
 		<ParID parid="125" val="FALSE"/>
-		<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::LoadRbt:DeltaFb.Info.JointAxisPosition[0]#211*::LoadRbt:DeltaFb.Info.JointAxisPosition[1]#212*::LoadRbt:DeltaFb.Info.JointAxisPosition[2]" jointoparent="0">
+		<Object objecttypeid="1060" name="TD4 800 S020 R100" visible="1" mask="" binding="#110*::LoadRbt:DeltaFb.Info.JointAxisPosition[0]#111*::LoadRbt:DeltaFb.Info.JointAxisPosition[1]#112*::LoadRbt:DeltaFb.Info.JointAxisPosition[2]" jointoparent="0">
 			<ParID parid="100" val="0"/>
 			<ParID parid="101" val="0"/>
 			<ParID parid="102" val="0"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
-			<ParID parid="130" val="6: Orange Matte"/>
-			<ParID parid="131" val="6: Orange Matte"/>
-			<ParID parid="132" val="3: Grey Matte"/>
-			<ParID parid="133" val="5: Green Matte"/>
-			<ParID parid="140" val="0"/>
-			<ParID parid="141" val="0"/>
-			<ParID parid="142" val="0"/>
-			<ParID parid="143" val="0"/>
-			<ParID parid="144" val="250"/>
-			<ParID parid="145" val="0"/>
-			<ParID parid="146" val="120"/>
-			<ParID parid="147" val="250"/>
-			<ParID parid="148" val="0"/>
-			<ParID parid="149" val="240"/>
-			<ParID parid="150" val="250"/>
-			<ParID parid="151" val="0"/>
-			<ParID parid="152" val="600"/>
-			<ParID parid="153" val="600"/>
-			<ParID parid="154" val="600"/>
-			<ParID parid="155" val="900"/>
-			<ParID parid="156" val="900"/>
-			<ParID parid="157" val="900"/>
-			<ParID parid="158" val="50"/>
-			<ParID parid="159" val="0"/>
-			<ParID parid="160" val="50"/>
-			<ParID parid="161" val="0"/>
-			<ParID parid="162" val="50"/>
-			<ParID parid="163" val="0"/>
-			<ParID parid="164" val="0"/>
-			<ParID parid="165" val="0"/>
-			<ParID parid="166" val="-150"/>
-			<ParID parid="180" val="FALSE"/>
-			<ParID parid="210" val="29.968"/>
-			<ParID parid="211" val="29.968"/>
-			<ParID parid="212" val="29.968"/>
-			<ParID parid="220" val="-6.93889e-14"/>
-			<ParID parid="221" val="-2.77556e-14"/>
-			<ParID parid="222" val="-990"/>
+			<ParID parid="110" val="0"/>
+			<ParID parid="111" val="0"/>
+			<ParID parid="112" val="0"/>
+			<ParID parid="113" val="0"/>
+			<ParID parid="120" val="-5.55112e-14"/>
+			<ParID parid="121" val="8.78336e-14"/>
+			<ParID parid="122" val="-718.966"/>
+			<ParID parid="125" val="0"/>
+			<ParID parid="130" val="16: Light Grey Matte"/>
+			<ParID parid="150" val="FALSE"/>
 		</Object>
 	</Object>
 	<Object objecttypeid="250" name="Rbt2Base" visible="1" mask="" binding="" jointoparent="0">
 		<ParID parid="100" val="480"/>
 		<ParID parid="101" val="-1000"/>
-		<ParID parid="102" val="1150"/>
-		<ParID parid="103" val="0"/>
+		<ParID parid="102" val="1000"/>
+		<ParID parid="103" val="-90"/>
 		<ParID parid="104" val="0"/>
 		<ParID parid="105" val="0"/>
 		<ParID parid="106" val="1"/>
@@ -1633,51 +1605,23 @@
 		<ParID parid="108" val="1"/>
 		<ParID parid="124" val="100"/>
 		<ParID parid="125" val="FALSE"/>
-		<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::UnloadRbt:DeltaFb.Info.JointAxisPosition[0]#211*::UnloadRbt:DeltaFb.Info.JointAxisPosition[1]#212*::UnloadRbt:DeltaFb.Info.JointAxisPosition[2]" jointoparent="0">
+		<Object objecttypeid="1060" name="TD4 800 S020 R100" visible="1" mask="" binding="#110*::UnloadRbt:DeltaFb.Info.JointAxisPosition[0]#111*::UnloadRbt:DeltaFb.Info.JointAxisPosition[1]#112*::UnloadRbt:DeltaFb.Info.JointAxisPosition[2]" jointoparent="0">
 			<ParID parid="100" val="0"/>
 			<ParID parid="101" val="0"/>
 			<ParID parid="102" val="0"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
-			<ParID parid="130" val="6: Orange Matte"/>
-			<ParID parid="131" val="6: Orange Matte"/>
-			<ParID parid="132" val="3: Grey Matte"/>
-			<ParID parid="133" val="5: Green Matte"/>
-			<ParID parid="140" val="0"/>
-			<ParID parid="141" val="0"/>
-			<ParID parid="142" val="0"/>
-			<ParID parid="143" val="0"/>
-			<ParID parid="144" val="250"/>
-			<ParID parid="145" val="0"/>
-			<ParID parid="146" val="120"/>
-			<ParID parid="147" val="250"/>
-			<ParID parid="148" val="0"/>
-			<ParID parid="149" val="240"/>
-			<ParID parid="150" val="250"/>
-			<ParID parid="151" val="0"/>
-			<ParID parid="152" val="600"/>
-			<ParID parid="153" val="600"/>
-			<ParID parid="154" val="600"/>
-			<ParID parid="155" val="900"/>
-			<ParID parid="156" val="900"/>
-			<ParID parid="157" val="900"/>
-			<ParID parid="158" val="50"/>
-			<ParID parid="159" val="0"/>
-			<ParID parid="160" val="50"/>
-			<ParID parid="161" val="0"/>
-			<ParID parid="162" val="50"/>
-			<ParID parid="163" val="0"/>
-			<ParID parid="164" val="0"/>
-			<ParID parid="165" val="0"/>
-			<ParID parid="166" val="-150"/>
-			<ParID parid="180" val="FALSE"/>
-			<ParID parid="210" val="29.968"/>
-			<ParID parid="211" val="29.968"/>
-			<ParID parid="212" val="29.968"/>
-			<ParID parid="220" val="-6.93889e-14"/>
-			<ParID parid="221" val="-2.77556e-14"/>
-			<ParID parid="222" val="-990"/>
+			<ParID parid="110" val="1.49037e-06"/>
+			<ParID parid="111" val="1.49037e-06"/>
+			<ParID parid="112" val="1.49037e-06"/>
+			<ParID parid="113" val="0"/>
+			<ParID parid="120" val="-5.55112e-14"/>
+			<ParID parid="121" val="8.78336e-14"/>
+			<ParID parid="122" val="-718.966"/>
+			<ParID parid="125" val="0"/>
+			<ParID parid="130" val="16: Light Grey Matte"/>
+			<ParID parid="150" val="FALSE"/>
 		</Object>
 	</Object>
 </Object>
