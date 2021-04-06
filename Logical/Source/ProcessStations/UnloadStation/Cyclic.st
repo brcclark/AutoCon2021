@@ -71,6 +71,13 @@ PROGRAM _CYCLIC
 				state := UNLOAD_WAIT_FOR_SHUTTLE;
 			END_IF
 		UNLOAD_UNLOADING: //********************************************************************************Unload station is loading product onto a shuttle
+			IF setUnload THEN
+				setUnload := FALSE;
+				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
+					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
+					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.Loaded := FALSE;
+				END_FOR;
+			END_IF
 			IF stationFbs.BatchProcessFb.Error THEN
 				gUnloadStationIf.Sts.Error := TRUE;
 				state := UNLOAD_ERROR;
@@ -83,7 +90,6 @@ PROGRAM _CYCLIC
 				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
 					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Cmd.NextStep := TRUE; 
-					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.Loaded := FALSE;
 				END_FOR;
 				
 				gUnloadStationIf.Sts.Done := TRUE;

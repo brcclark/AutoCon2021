@@ -9,6 +9,7 @@ PROGRAM _CYCLIC
 			Vis.Shuttles[idx].Pos.RX := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RX / 3.14189 * 180.0;
 			Vis.Shuttles[idx].Pos.RY := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RY / 3.14189 * 180.0;
 			Vis.Shuttles[idx].Pos.RZ := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RZ / 3.14189 * 180.0;	
+			Vis.Shuttles[idx].UsrData := gShuttleIf[idx].Sts.ProductInfo;
 			CASE gShuttleIf[idx].Sts.ShuttleInfo.State.Value OF
 				mcACP6D_SH_STATE_UNDETECTED: //Shuttle is not detected by the System
 					Vis.Shuttles[idx].Color := DINT_TO_INT(COLOR_GREY_MATTE);

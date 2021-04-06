@@ -71,6 +71,13 @@ PROGRAM _CYCLIC
 				state := LOAD_WAIT_FOR_SHUTTLE;
 			END_IF
 		LOAD_LOADING: //********************************************************************************Load station is loading product onto a shuttle
+			IF setLoad THEN
+				setLoad := FALSE;
+				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
+					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
+					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.Loaded := TRUE;
+				END_FOR;
+			END_IF
 			IF stationFbs.BatchProcessFb.Error THEN
 				gLoadStationIf.Sts.Error := TRUE;
 				state := LOAD_ERROR;
@@ -84,8 +91,7 @@ PROGRAM _CYCLIC
 				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
 					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Cmd.NextStep := TRUE; 
-					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.Loaded := TRUE;
-						
+					
 					//Assign the shuttle a recipe
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Par.Recipe := recipes[recipeCounter];
 					recipeCounter:= recipeCounter + 1;

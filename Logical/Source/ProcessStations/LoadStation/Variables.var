@@ -5,4 +5,5 @@ VAR
 	stationPars : LoadStationParsTyp;
 	recipes : ARRAY[0..2] OF ProductRecipeTyp;
 	recipeCounter : USINT;
+	setLoad : BOOL;
 END_VAR

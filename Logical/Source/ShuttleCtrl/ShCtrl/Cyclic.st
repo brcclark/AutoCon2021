@@ -21,7 +21,9 @@ PROGRAM _CYCLIC
 			
 				shState[i] := SH_IDLE;
 			SH_IDLE:  //******************************************************************************** Shuttle is in the idle state
-				IF gShuttleIf[i].Cmd.NextStep THEN 
+				IF NOT gShuttleIf[i].Cmd.Enable THEN
+					shState[i] := SH_OFF;
+				ELSIF gShuttleIf[i].Cmd.NextStep THEN 
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					//Evaluate the current step to determine what the next step should be
 					shFbs[i].ShMoveInPlaneFb.Controller := ADR(gMcAcp6DController);

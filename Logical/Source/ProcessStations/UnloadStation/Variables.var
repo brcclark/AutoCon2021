@@ -3,4 +3,5 @@ VAR
 	state : UnloadStationStateEnum;
 	stationFbs : UnloadStationFbTyp;
 	stationPars : LoadStationParsTyp;
+	setUnload : BOOL;
 END_VAR

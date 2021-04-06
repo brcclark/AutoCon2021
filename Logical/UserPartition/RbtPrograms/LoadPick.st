@@ -7,13 +7,18 @@ VAR CONSTANT
 	Pick : McPointType := (Pos:=(X:=-300, Y:=0, Z:=-900));
 	
 END_VAR
-
+VAR{AT 'LoadStatio'}
+	setLoad : BOOL;
+END_VAR
 PROGRAM _MAIN          
 	Feedrate(100000);
 	MoveL(Rest);
 	RoundingEdges(50);
 	MoveL(PlaceApproach);
 	MoveLR(Place);
+	DO_PATH_SYNCH
+		setLoad := TRUE;
+	END_PATH_SYNCH
 	WaitTime(0.5);
 	RoundingEdges(50);
 	MoveL(PlaceApproach);

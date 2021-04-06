@@ -7,7 +7,9 @@ VAR CONSTANT
 	Pick : McPointType := (Pos:=(X:=-60, Y:=0, Z:=-850));
 	
 END_VAR
-
+VAR{AT 'UnloadStat'}
+	setUnload : BOOL;
+END_VAR
 PROGRAM _MAIN          
 	Feedrate(100000);
 	MoveL(Rest);
@@ -15,6 +17,9 @@ PROGRAM _MAIN
 	MoveL(PickApproach);
 	MoveLR(Pick);
 	WaitTime(0.5);
+	DO_PATH_SYNCH
+		setUnload := TRUE;
+	END_PATH_SYNCH
 	RoundingEdges(50);
 	MoveL(PickApproach);
 	MoveL(PlaceApproach);

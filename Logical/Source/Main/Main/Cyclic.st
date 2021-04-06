@@ -103,6 +103,7 @@ PROGRAM _CYCLIC
 				AND NOT gUnloadStationIf.Sts.Enabled THEN
 				
 				gMainIf.Cmd.Stop := FALSE;
+				CmdShEnable(FALSE, ADR(gShuttleIf), gMainIf.Cfg.ShuttleCount);
 				
 				FOR i:=0 TO gMainIf.Cfg.ShuttleCount - 1 DO
 					gShuttleIf[i].Sts.Recovered := FALSE;

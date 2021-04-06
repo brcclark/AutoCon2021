@@ -6,6 +6,7 @@ TYPE
 		Color : INT;
 		Pos : McAcp6DShPositionInfoType;
 		ScnViewer : ScnViewerConnectionTyp;
+		UsrData : {REDUND_UNREPLICABLE} CurrentProductInfoTyp;
 	END_STRUCT;
 	VisTyp : {REDUND_UNREPLICABLE} 	STRUCT 
 		Shuttles : {REDUND_UNREPLICABLE} ARRAY[0..MAX_SHUTTLE_COUNT_ARRAY]OF ShVisTyp;

@@ -15,6 +15,6 @@ PROGRAM _INIT
 	stationFbs.BatchProcessFb.Positions[3].X := 0.30;
 	stationFbs.BatchProcessFb.Positions[3].Y := 0.06;
 	
-	gSysPars.UnloadStation.WaitTime := T#2s;
+	//gSysPars.UnloadStation.WaitTime := T#2s;
 	
 END_PROGRAM
