@@ -14,6 +14,7 @@ PROGRAM _INIT
 	//gSysPars.LoadStation.WaitTime := T#2s;
 	
 	//Currently the first station must be 1 and the last station must be 4
+	//Also, skipping two stations won't currently work at the moment
 	recipes[0].Fills[0] := 1;
 	recipes[0].Fills[1] := 2;
 	recipes[0].Fills[2] := 3;
@@ -28,4 +29,9 @@ PROGRAM _INIT
 	recipes[2].Fills[1] := 2;
 	recipes[2].Fills[2] := 4;
 	recipes[2].Fills[3] := 0;
+	
+//	recipes[3].Fills[0] := 1;
+//	recipes[3].Fills[1] := 4;
+//	recipes[3].Fills[2] := 0;
+//	recipes[3].Fills[3] := 0;
 END_PROGRAM

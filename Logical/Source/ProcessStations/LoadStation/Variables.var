@@ -3,7 +3,7 @@ VAR
 	state : LoadStationStateEnum;
 	stationFbs : LoadStationFbTyp;
 	stationPars : LoadStationParsTyp;
-	recipes : ARRAY[0..2] OF ProductRecipeTyp;
+	recipes : ARRAY[0..3] OF ProductRecipeTyp;
 	recipeCounter : USINT;
 	setLoad : BOOL;
 END_VAR
