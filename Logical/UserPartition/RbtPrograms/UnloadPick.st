@@ -3,8 +3,8 @@ VAR CONSTANT
 	Rest : McPointType := (Pos:=(X:=0, Y:=0, Z:=-790));
 	PlaceApproach : McPointType := (Pos:=(X:=300, Y:=0, Z:=-800));
 	Place : McPointType := (Pos:=(X:=300, Y:=0, Z:=-900));
-	PickApproach : McPointType := (Pos:=(X:=-60, Y:=0, Z:=-800));
-	Pick : McPointType := (Pos:=(X:=-60, Y:=0, Z:=-850));
+	PickApproach : McPointType := (Pos:=(X:=-60, Y:=-120, Z:=-800));
+	Pick : McPointType := (Pos:=(X:=-60, Y:=-120, Z:=-850));
 	
 END_VAR
 VAR{AT 'UnloadStat'}
