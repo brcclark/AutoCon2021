@@ -10,5 +10,6 @@
     <Object Type="Program" Language="IEC">WeighStation</Object>
     <Object Type="Program" Language="IEC">FinishStation</Object>
     <Object Type="Program" Language="IEC">BufferArea</Object>
+    <Object Type="Program" Language="IEC">RejectStation</Object>
   </Objects>
 </Package>

@@ -101,6 +101,11 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[20].MacroFileName := '157_Buffer3ToUnload.xml';
 	gMacroLoadIf.Par.MacroList[20].MacroID := 157;
 	
+	//Load to Fill Enter
+	gMacroLoadIf.Par.MacroList[21].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[21].MacroFileName := '144_LoadToFillEnter.xml';
+	gMacroLoadIf.Par.MacroList[21].MacroID := 144;
+	
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

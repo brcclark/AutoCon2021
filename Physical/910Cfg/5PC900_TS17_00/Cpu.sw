@@ -15,6 +15,7 @@
     <Task Name="WeighSt2" Source="Source.ProcessStations.WeighStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="FinishStat" Source="Source.ProcessStations.FinishStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="BufferArea" Source="Source.ProcessStations.BufferArea.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="RejectStat" Source="Source.ProcessStations.RejectStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="UnloadStat" Source="Source.ProcessStations.UnloadStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="LoadRbt" Source="Source.Robots.RobotCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="UnloadRbt" Source="Source.Robots.RobotCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -50,6 +51,7 @@
     <BinaryObject Name="McAcpSim" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="McAcpDrv" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="McMechSys" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="OpcUaSrv" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="TC" Source="" Memory="UserROM" Language="Binary" />
@@ -61,10 +63,18 @@
     <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
     <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Settings" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Hierarchy" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="AxGrpUnl_1" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="AxUnload_2" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="AxGrpUldFt" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="MechSysUld" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="MechSysLd" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="AxLoad" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="AxGrpLd" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="AxGrpLdFt" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_1" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_2" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_4" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Hierarchy" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_3" Source="" Memory="UserROM" Language="Binary" />
   </Binaries>
   <Libraries>

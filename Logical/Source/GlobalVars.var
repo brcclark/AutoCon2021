@@ -29,5 +29,6 @@ VAR
 	gWeighStationIf : ARRAY[0..MAX_WEIGH_STATIONS_ARRAY] OF StationIfTyp; (*Interface to control the weight Stations*)
 	gFinishStationIf : StationIfTyp; (*Interface to control the finishing station*)
 	gBufferAreaIf : StationIfTyp;
+	gRejectStationIf : StationIfTyp;
 	gRobotIf : ARRAY[0..1] OF RbtIfTyp;
 END_VAR

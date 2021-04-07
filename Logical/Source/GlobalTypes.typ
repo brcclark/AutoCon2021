@@ -121,6 +121,7 @@ TYPE
 		MACRO_FILL_STATION_PROC_3_XY, (*Macro ID used for preforming the fill station 3 X/Y movement*)
 		MACRO_FILL_STATION_PROC_3_WOBBLE, (*Macro ID used for preforming the wobble movment on station 3*)
 		MACRO_FILL_STATION_PROC_4, (*Macro ID used for preforming the fill station 4 process*)
+		MACRO_LOAD_TO_FILL_ENTER, (*Macro ID used for going from load to the fill entrance*)
 		MACRO_FILL_EXIT_TO_WEIGH_1 := 150, (*Macro ID used for going from the fill exit station to weigh station 1*)
 		MACRO_FILL_EXIT_TO_WEIGH_2, (*Macro ID used for going from the fill exit station to weigh station 2*)
 		MACRO_FINISH_TO_BUFFER_1, (*Macro ID to navigate from the finishing station to buffer lane 1 station*)
@@ -129,6 +130,8 @@ TYPE
 		MACRO_BUFFER_1_TO_UNLOAD,
 		MACRO_BUFFER_2_TO_UNLOAD,
 		MACRO_BUFFER_3_TO_UNLOAD,
+		MACRO_WEIGHT_TO_REJECT,
+		MACRO_REJECT_TO_LOAD,
 		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
 		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
@@ -334,6 +337,7 @@ TYPE
 		UnloadStation : LoadStationParsTyp;
 		FinishStation : FinishStationParsTyp;
 		BufferArea : BufferAreaParsTyp;
+		RejectStation : RejectStationParsTyp;
 		TraversalVel : REAL;
 		TraversalAccel : REAL;
 	END_STRUCT;
@@ -356,5 +360,9 @@ TYPE
 	END_STRUCT;
 	BufferAreaParsTyp : 	STRUCT 
 		MinBufferSize : USINT;
+	END_STRUCT;
+	RejectStationParsTyp : 	STRUCT 
+		FailPercentage : USINT;
+		WaitTime : TIME;
 	END_STRUCT;
 END_TYPE

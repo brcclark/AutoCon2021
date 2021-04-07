@@ -3,12 +3,12 @@
 PROGRAM _INIT
 	gLoadStationIf.Par.ShuttleIdx := STATION_IS_EMPTY;
 	//Define station configuration values
-	gLoadStationIf.Cfg.StationPos.X := 0.9;
+	gLoadStationIf.Cfg.StationPos.X := 0.66;
 	gLoadStationIf.Cfg.StationPos.Y := 0.06;
 		
-	stationFbs.BatchProcessFb.Positions[0].X := 1.14;
+	stationFbs.BatchProcessFb.Positions[0].X := 0.9;
 	stationFbs.BatchProcessFb.Positions[0].Y := 0.06;
-	stationFbs.BatchProcessFb.Positions[1].X := 1.02;
+	stationFbs.BatchProcessFb.Positions[1].X := 0.78;
 	stationFbs.BatchProcessFb.Positions[1].Y := 0.06;
 	
 	//gSysPars.LoadStation.WaitTime := T#2s;

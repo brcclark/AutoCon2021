@@ -61,14 +61,10 @@ PROGRAM _CYCLIC
 				IF gShuttleIf[i].Cmd.NextStep THEN
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
-					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_Y_THEN_X;
-					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
-					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-					shFbs[i].ShMoveInPlaneFb.PositionX := fillEntry.X;
-					shFbs[i].ShMoveInPlaneFb.PositionY := fillEntry.Y;
-					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
-					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
-					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_LOAD_TO_FILL_ENTER);
+					shFbs[i].ShRunMacroFb.Execute := TRUE;
 					
 					LogDebug(gAuditTrail,i,"Sent To Fill Enter");
 					
@@ -80,8 +76,9 @@ PROGRAM _CYCLIC
 					gShuttleIf[i].Sts.ErrorState := shState[i];
 					
 					shState[i] := SH_ERROR;
-				ELSIF shFbs[i].ShMoveInPlaneFb.Acknowledge THEN
+				ELSIF shFbs[i].ShRunMacroFb.Acknowledge THEN
 					gShuttleIf[i].Sts.CurrentStation := gShuttleIf[i].Par.Recipe.Fills[gShuttleIf[i].Sts.ProductInfo.CurrentFillStep];
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
 					
 					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
 					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
@@ -91,12 +88,11 @@ PROGRAM _CYCLIC
 					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
 					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
 					
-					shFbs[i].ShMoveInPlaneFb.Execute := FALSE;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
 					
 					shState[i] := SH_MOVE_FILL;
 				END_IF
 			SH_MOVE_FILL:  //******************************************************************************** Shuttle is moving to a fill station
-				shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
 				IF shFbs[i].ShMoveInPlaneFb.Error THEN
 					gShuttleIf[i].Sts.Error := TRUE;
 					gShuttleIf[i].Sts.ErrorState := shState[i];
@@ -275,18 +271,27 @@ PROGRAM _CYCLIC
 					gWeighStationIf[gShuttleIf[i].Sts.ProductInfo.WeighStation].Cmd.Process := FALSE;
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
-					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_DIRECT;
-					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
-					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
-					shFbs[i].ShMoveInPlaneFb.PositionX := gFinishStationIf.Cfg.StationPos.X;
-					shFbs[i].ShMoveInPlaneFb.PositionY := gFinishStationIf.Cfg.StationPos.Y;
-					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
-					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
-					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
-					
-					LogDebug(gAuditTrail,i,"Sent to Finishing");
-					
-					shState[i] := SH_MOVE_TO_FINISH;
+					randGrade := RandValueDINT(0,100);
+					IF randGrade <= gSysPars.RejectStation.FailPercentage THEN
+							
+						shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_DIRECT;
+						shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+						shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+						shFbs[i].ShMoveInPlaneFb.PositionX := gFinishStationIf.Cfg.StationPos.X;
+						shFbs[i].ShMoveInPlaneFb.PositionY := gFinishStationIf.Cfg.StationPos.Y;
+						shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+						shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+						shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+						
+						LogDebug(gAuditTrail,i,"Sent to Finishing");
+						
+						shState[i] := SH_MOVE_TO_FINISH;
+					ELSE
+						LogDebug(gAuditTrail,i,"Sent to Reject");
+						
+						shState[i] := SH_MOVE_TO_FINISH;
+					END_IF
+						
 				END_IF
 			SH_MOVE_TO_FINISH:  //******************************************************************************** Shuttle is moving to a cap station
 				IF shFbs[i].ShMoveInPlaneFb.Error THEN

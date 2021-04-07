@@ -1,0 +1,5 @@
+VAR
+	state : RejectStationStateEnum;
+	stFbs : {REDUND_UNREPLICABLE} RejectStationFbTyp;
+	stationPars : {REDUND_UNREPLICABLE} RejectStationParsTyp;
+END_VAR

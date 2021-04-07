@@ -12,4 +12,5 @@ VAR
 	currentStationCalc : SINT;
 	currentWeighStation : USINT;
 	BufferLaneCounters : ARRAY[0..2] OF USINT;
+	randGrade : DINT;
 END_VAR
