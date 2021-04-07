@@ -6,4 +6,5 @@ VAR
 	recipes : ARRAY[0..3] OF ProductRecipeTyp;
 	recipeCounter : USINT;
 	setLoad : BOOL;
+	release : BOOL;
 END_VAR

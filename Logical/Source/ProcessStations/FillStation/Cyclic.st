@@ -61,6 +61,10 @@ PROGRAM _CYCLIC
 						FillStationFbs.St2Fb.Execute := FALSE;
 					ST3:
 						FillStationFbs.St3Fb.Execute := FALSE;
+						macroPatternCounter := macroPatternCounter + 1;
+						IF macroPatternCounter = 2 THEN
+							macroPatternCounter := 0;
+						END_IF
 					ST4:
 						FillStationFbs.St4Fb.Execute := FALSE;
 				END_CASE;
@@ -93,6 +97,7 @@ PROGRAM _CYCLIC
 			IF NOT pFillIf.Cmd.Enable THEN
 				pFillIf.Sts.Enabled := FALSE;
 				pFillIf.Sts.ReadyForNewShuttle := FALSE;
+				macroPatternCounter := 0;
 				
 				state := FILL_OFF;
 			ELSIF NOT pFillIf.Cmd.Process THEN

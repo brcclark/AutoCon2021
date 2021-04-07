@@ -4,4 +4,5 @@ VAR
 	stationFbs : UnloadStationFbTyp;
 	stationPars : LoadStationParsTyp;
 	setUnload : BOOL;
+	release : BOOL;
 END_VAR

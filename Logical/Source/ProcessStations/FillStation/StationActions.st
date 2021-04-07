@@ -17,10 +17,20 @@ ACTION SetupStationActions:
 			FillStationFbs.St3Fb.PosStartX := pFillIf.Cfg.StationPos.X;
 			FillStationFbs.St3Fb.PosStartY := pFillIf.Cfg.StationPos.Y;
 			FillStationFbs.St3Fb.PlanetMacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_WOBBLE);
-			FillStationFbs.St3Fb.SunMacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_XY);
+			
 			FillStationFbs.St3Fb.ShuttleId := gShuttleIf[pFillIf.Par.ShuttleIdx].Cfg.ShuttleId;
 			FillStationFbs.St3Fb.VirtShId := 100;
 			FillStationFbs.St3Fb.Execute := TRUE;
+			
+			CASE macroPatternCounter OF
+				0:
+					FillStationFbs.St3Fb.SunMacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_XY);
+				1:
+					FillStationFbs.St3Fb.SunMacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_A);
+				2:
+					FillStationFbs.St3Fb.SunMacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_B);
+			END_CASE;
+			
 		ST4:
 			FillStationFbs.St4Fb.Controller := ADR(gMcAcp6DController);
 			FillStationFbs.St4Fb.MacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_4);

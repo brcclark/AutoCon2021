@@ -5,4 +5,5 @@ VAR
 	taskName : STRING[80];
 	stationPars : REFERENCE TO FillStationParsTyp;
 	station : FillStationEnum;
+	macroPatternCounter : USINT;
 END_VAR

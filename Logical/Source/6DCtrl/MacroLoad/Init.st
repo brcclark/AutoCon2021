@@ -116,6 +116,16 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[23].MacroFileName := '159_RejectToLoad.xml';
 	gMacroLoadIf.Par.MacroList[23].MacroID := DINT_TO_USINT(MACRO_REJECT_TO_LOAD);
 	
+	//Letter A Pattern
+	gMacroLoadIf.Par.MacroList[24].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[24].MacroFileName := '170_LetterAPattern.xml';
+	gMacroLoadIf.Par.MacroList[24].MacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_A);
+	
+	//Letter B Pattern
+	gMacroLoadIf.Par.MacroList[25].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[25].MacroFileName := '171_LetterBPattern.xml';
+	gMacroLoadIf.Par.MacroList[25].MacroID := DINT_TO_USINT(MACRO_FILL_STATION_PROC_3_B);
+	
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

@@ -134,7 +134,9 @@ TYPE
 		MACRO_REJECT_TO_LOAD,
 		MACRO_RECOVERY_GROUP0 := 160, (*Macro ID used for recovering the group 0 shuttles*)
 		MACRO_RECOVERY_GROUP1, (*Macro ID used for recovering the group 1 shuttles*)
-		MACRO_RECOVERY_GROUP2 (*Macro ID used for recovering the group 2 shuttles*)
+		MACRO_RECOVERY_GROUP2, (*Macro ID used for recovering the group 2 shuttles*)
+		MACRO_FILL_STATION_PROC_3_A := 170,
+		MACRO_FILL_STATION_PROC_3_B
 		);
 	ShuttleIfDestEnum : 
 		( (*Destinations for a shuttle to move to*)

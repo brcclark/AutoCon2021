@@ -78,6 +78,13 @@ PROGRAM _CYCLIC
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.Loaded := FALSE;
 				END_FOR;
 			END_IF
+			IF release THEN 
+				release := FALSE;
+				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
+					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
+					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Cmd.NextStep := TRUE;
+				END_FOR;
+			END_IF
 			IF stationFbs.BatchProcessFb.Error THEN
 				gUnloadStationIf.Sts.Error := TRUE;
 				state := UNLOAD_ERROR;
@@ -87,11 +94,6 @@ PROGRAM _CYCLIC
 				gRobotIf[Unload_Robot].Cmd.Run := FALSE;
 				
 				gUnloadStationIf.Sts.Processing := FALSE;
-				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
-					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
-					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Cmd.NextStep := TRUE; 
-				END_FOR;
-				
 				gUnloadStationIf.Sts.Done := TRUE;
 				
 				state := UNLOAD_DONE;

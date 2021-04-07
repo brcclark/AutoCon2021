@@ -9,6 +9,7 @@ VAR CONSTANT
 END_VAR
 VAR{AT 'UnloadStat'}
 	setUnload : BOOL;
+	release : BOOL;
 END_VAR
 PROGRAM _MAIN          
 	Feedrate(100000);
@@ -19,6 +20,7 @@ PROGRAM _MAIN
 	WaitTime(0.5);
 	DO_PATH_SYNCH
 		setUnload := TRUE;
+		release := TRUE;
 	END_PATH_SYNCH
 	RoundingEdges(50);
 	MoveL(PickApproach);
