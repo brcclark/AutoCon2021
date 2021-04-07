@@ -106,6 +106,16 @@ PROGRAM _INIT
 	gMacroLoadIf.Par.MacroList[21].MacroFileName := '144_LoadToFillEnter.xml';
 	gMacroLoadIf.Par.MacroList[21].MacroID := 144;
 	
+	//Weight to Reject
+	gMacroLoadIf.Par.MacroList[22].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[22].MacroFileName := '158_WeighToReject.xml';
+	gMacroLoadIf.Par.MacroList[22].MacroID := DINT_TO_USINT(MACRO_WEIGHT_TO_REJECT);
+	
+	//Reject to Load
+	gMacroLoadIf.Par.MacroList[23].Load := TRUE;
+	gMacroLoadIf.Par.MacroList[23].MacroFileName := '159_RejectToLoad.xml';
+	gMacroLoadIf.Par.MacroList[23].MacroID := DINT_TO_USINT(MACRO_REJECT_TO_LOAD);
+	
 	//Define the parameters for the macro load IF
 	gMacroLoadIf.Par.FileDevice := '6DMacro';
 END_PROGRAM

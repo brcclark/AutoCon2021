@@ -287,9 +287,14 @@ PROGRAM _CYCLIC
 						
 						shState[i] := SH_MOVE_TO_FINISH;
 					ELSE
+						shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
+						shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+						shFbs[i].ShRunMacroFb.MacroID := DINT_TO_USINT(MACRO_WEIGHT_TO_REJECT);
+						shFbs[i].ShRunMacroFb.Execute := TRUE;
+						
 						LogDebug(gAuditTrail,i,"Sent to Reject");
 						
-						shState[i] := SH_MOVE_TO_FINISH;
+						shState[i] := SH_MOVE_TO_REJECT;
 					END_IF
 						
 				END_IF
@@ -407,7 +412,41 @@ PROGRAM _CYCLIC
 					shState[i] := SH_MOVE_TO_LOAD;
 				END_IF
 			SH_MOVE_TO_REJECT: //********************************************************************************  Shuttle is moving to a reject station	
+				IF shFbs[i].ShRunMacroFb.Error OR shFbs[i].ShMoveInPlaneFb.Error THEN 
+					gShuttleIf[i].Sts.Error := TRUE;
+					gShuttleIf[i].Sts.ErrorState := shState[i];
+					
+					shState[i] := SH_ERROR;
+				ELSIF shFbs[i].ShRunMacroFb.Acknowledge AND (gRejectStationIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gRejectStationIf.Sts.ReadyForNewShuttle) 
+					AND PositionValidation(ADR(gRejectStationIf.Cfg.StationPos),ADR(gShuttleIf[i].Sts.ShuttleInfo.Position)) THEN
+					gRejectStationIf.Par.ShuttleIdx := i;
+					gRejectStationIf.Cmd.Process := TRUE;
+					
+					LogDebug(gAuditTrail,i,"Arrived at Reject Station");
+					shFbs[i].ShRunMacroFb.Execute := FALSE;
+					
+					shState[i] := SH_REJECTING;
+				END_IF
 			SH_REJECTING: //********************************************************************************  Shuttle is currently being rejected
+				IF gShuttleIf[i].Cmd.NextStep THEN
+					gShuttleIf[i].Cmd.NextStep := FALSE;
+					gRejectStationIf.Cmd.Process := FALSE;
+					
+					gShuttleIf[i].Cmd.ResetProductInfo := TRUE;
+					gShuttleIf[i].Sts.CurrentDestination := DEST_LOAD;
+				
+					shFbs[i].ShMoveInPlaneFb.Path := mcACP6D_PATH_X_THEN_Y;
+					shFbs[i].ShMoveInPlaneFb.Mode := mcACP6D_MOVE_ABSOLUTE;
+					shFbs[i].ShMoveInPlaneFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
+					shFbs[i].ShMoveInPlaneFb.PositionX := gLoadStationIf.Cfg.StationPos.X;
+					shFbs[i].ShMoveInPlaneFb.PositionY := gLoadStationIf.Cfg.StationPos.Y;
+					shFbs[i].ShMoveInPlaneFb.Velocity := gSysPars.TraversalVel;
+					shFbs[i].ShMoveInPlaneFb.Acceleration := gSysPars.TraversalAccel;
+					shFbs[i].ShMoveInPlaneFb.Execute := TRUE;
+					LogDebug(gAuditTrail,i,"Sent To Load");
+					
+					shState[i] := SH_MOVE_TO_LOAD;
+				END_IF
 			SH_STOPPING:
 				IF shFbs[i].ShStop.Error THEN
 					shState[i] := SH_ERROR;

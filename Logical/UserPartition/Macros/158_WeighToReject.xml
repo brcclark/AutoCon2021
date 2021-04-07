@@ -7,7 +7,7 @@
 		<Parameter Name="MoveInPlane" ShuttleID="158" XTarget="0.9" YTarget="0.9" Acc="10" Vel="1" EndVel="0.0" PositionMode="0" PathType="1"/>
 	</Command>
 	<Command id="3">
-		<Parameter Name="MoveInPlane" ShuttleID="158" XTarget="0.0" YTarget="-0.30" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="0"/>
+		<Parameter Name="MoveInPlane" ShuttleID="158" XTarget="0.0" YTarget="-0.36" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="0"/>
 	</Command>
 	<Command id="4">
 		<Parameter Name="MoveInPlane" ShuttleID="158" XTarget="-0.12" YTarget="0.0" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="0"/>

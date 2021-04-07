@@ -17,6 +17,8 @@ PROGRAM _CYCLIC
 			IF NOT gBufferAreaIf.Cmd.Enable THEN
 				gBufferAreaIf.Sts.ReadyForNewShuttle := FALSE;
 				gBufferAreaIf.Sts.Enabled := FALSE;
+				blResetList(ADR(bufferArea));
+				
 				state := BUFFER_OFF;
 			ELSIF gBufferAreaIf.Par.ShuttleIdx <> STATION_IS_EMPTY AND gBufferAreaIf.Cmd.Process THEN
 				gBufferAreaIf.Sts.ReadyForNewShuttle := FALSE;

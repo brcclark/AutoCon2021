@@ -39,6 +39,7 @@ PROGRAM _CYCLIC
 				gWeighStationIf[1].Cmd.Enable := TRUE;
 				gRobotIf[Load_Robot].Cmd.Enable := TRUE;
 				gRobotIf[Unload_Robot].Cmd.Enable := TRUE;
+				gRejectStationIf.Cmd.Enable := TRUE;
 				gFinishStationIf.Cmd.Enable := TRUE;
 				gBufferAreaIf.Cmd.Enable := TRUE;
 				gUnloadStationIf.Cmd.Enable := TRUE;
@@ -63,6 +64,7 @@ PROGRAM _CYCLIC
 				AND gRobotIf[Load_Robot].Sts.Ready 
 				AND gRobotIf[Unload_Robot].Sts.Ready 
 				AND gBufferAreaIf.Sts.Enabled 
+				AND gRejectStationIf.Sts.Enabled
 				AND gProcessInfoIf.Sts.Enabled 
 				AND gUnloadStationIf.Sts.Enabled THEN
 				
@@ -85,6 +87,7 @@ PROGRAM _CYCLIC
 				gBufferAreaIf.Cmd.Enable := FALSE;
 				gProcessInfoIf.Cmd.Enable := FALSE;
 				gUnloadStationIf.Cmd.Enable := FALSE;
+				gRejectStationIf.Cmd.Enable := FALSE;
 				CmdShStop(ADR(gShuttleIf),gMainIf.Cfg.ShuttleCount);
 				
 				state := MAIN_STOPPING;
@@ -100,7 +103,8 @@ PROGRAM _CYCLIC
 				AND NOT gFinishStationIf.Sts.Enabled
 				AND NOT gBufferAreaIf.Sts.Enabled
 				AND NOT gProcessInfoIf.Sts.Enabled 
-				AND NOT gUnloadStationIf.Sts.Enabled THEN
+				AND NOT gUnloadStationIf.Sts.Enabled 
+				AND NOT gRejectStationIf.Sts.Enabled THEN
 				
 				gMainIf.Cmd.Stop := FALSE;
 				CmdShEnable(FALSE, ADR(gShuttleIf), gMainIf.Cfg.ShuttleCount);

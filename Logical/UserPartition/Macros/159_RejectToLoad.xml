@@ -10,7 +10,7 @@
 		<Parameter Name="MoveInPlane" ShuttleID="159" XTarget="0.00" YTarget="-0.42" Acc="10" Vel="1" EndVel="0.0" PositionMode="0" PathType="0"/>
 	</Command>
 	<Command id="4">
-		<Parameter Name="MoveInPlane" ShuttleID="159" XTarget="0.18" YTarget="0.18" Acc="10" Vel="1" EndVel="0.0" PositionMode="0" PathType="2"/>
+		<Parameter Name="MoveInPlane" ShuttleID="159" XTarget="0.66" YTarget="0.06" Acc="10" Vel="1" EndVel="0.0" PositionMode="0" PathType="2"/>
 	</Command>
 	<Command id="5">
 		<Parameter Name="MacroSave" MacroID="159"/>

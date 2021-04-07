@@ -8,5 +8,5 @@ PROGRAM _INIT
 	//Define station configuration values
 	gSysPars.RejectStation.WaitTime := T#2s;
 	
-	gSysPars.RejectStation.FailPercentage := 101;
+	gSysPars.RejectStation.FailPercentage := 90;
 END_PROGRAM
