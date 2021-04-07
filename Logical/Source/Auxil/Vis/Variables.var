@@ -5,4 +5,5 @@ VAR
 	idx : USINT;
 	turnOnAllPaths : BOOL;
 	clearAllPaths : BOOL;
+	lo : BOOL;
 END_VAR

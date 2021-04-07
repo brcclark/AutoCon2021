@@ -320,7 +320,6 @@ PROGRAM _CYCLIC
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
 					gShuttleIf[i].Sts.ProductInfo.BufferLane := GetNextLane(ADR(BufferLaneCounters));
-					gShuttleIf[i].Sts.ProductInfo.Buffer := TRUE;
 					
 					shFbs[i].ShRunMacroFb.Controller := ADR(gMcAcp6DController);
 					shFbs[i].ShRunMacroFb.ShuttleID := gShuttleIf[i].Cfg.ShuttleId;
@@ -341,6 +340,7 @@ PROGRAM _CYCLIC
 					(gBufferAreaIf.Par.ShuttleIdx = STATION_IS_EMPTY AND gBufferAreaIf.Sts.ReadyForNewShuttle) THEN
 					gBufferAreaIf.Par.ShuttleIdx := i;
 					gBufferAreaIf.Cmd.Process := TRUE;
+					gShuttleIf[i].Sts.ProductInfo.Buffer := TRUE;
 					
 					LogDebug(gAuditTrail,i,"Added to a Buffer Lane");
 					shFbs[i].ShRunMacroFb.Execute := FALSE;

@@ -62,6 +62,7 @@ TYPE
 		BufferLane : USINT;
 		Buffer : BOOL;
 		Bypassing : BOOL;
+		RecipeNum : USINT;
 	END_STRUCT;
 END_TYPE
 
@@ -241,7 +242,11 @@ END_TYPE
 TYPE
 	RbtIfTyp : 	STRUCT 
 		Cmd : RbtIfCmdTyp;
+		Par : RbtIfParTyp;
 		Sts : RbtIfStsTyp;
+	END_STRUCT;
+	RbtIfParTyp : 	STRUCT 
+		Products : ARRAY[0..3]OF RbtIfProductTyp;
 	END_STRUCT;
 	RbtIfCmdTyp : 	STRUCT 
 		Enable : BOOL;
@@ -259,6 +264,10 @@ TYPE
 		Load_Robot,
 		Unload_Robot
 		);
+	RbtIfProductTyp : 	STRUCT 
+		Type : INT;
+		Present : BOOL;
+	END_STRUCT;
 END_TYPE
 
 (*Recovery Interface Type*)

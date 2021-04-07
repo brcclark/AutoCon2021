@@ -49,8 +49,16 @@
         <Variable Name="debugIdx" />
       </Task>
       <Task Name="Vis">
-        <Variable Name="Vis">
+        <Variable Name="Vis" AutomaticEnable="True">
           <Variable Name="Shuttles" EnableArrayElements="True" />
+          <Variable Name="Robots" EnableArrayElements="True">
+            <Variable Name="Robots[0]">
+              <Variable Name="Products" EnableArrayElements="True" />
+            </Variable>
+            <Variable Name="Robots[1]">
+              <Variable Name="Products" EnableArrayElements="True" />
+            </Variable>
+          </Variable>
         </Variable>
       </Task>
       <Task Name="FillSt1">

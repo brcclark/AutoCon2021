@@ -33,6 +33,18 @@ PROGRAM _CYCLIC
 				state := RBT_RUN_PROGRAM;
 			END_IF
 		RBT_RUN_PROGRAM:
+			IF setProduct THEN
+				setProduct := FALSE;
+				FOR i:=0 TO 3 DO
+					pRobotIf.Par.Products[i].Present := TRUE;
+				END_FOR;
+			END_IF
+			IF resetProduct THEN
+				resetProduct := FALSE;
+				FOR i:=0 TO 3 DO
+					pRobotIf.Par.Products[i].Present := FALSE;
+				END_FOR;
+			END_IF
 			IF DeltaFb.MoveDone THEN
 				DeltaFb.MoveProgram := FALSE;
 				pRobotIf.Sts.Running := FALSE;

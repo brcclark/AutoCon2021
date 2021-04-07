@@ -76,6 +76,7 @@ PROGRAM _CYCLIC
 				FOR i:=0 TO MAX_BATCH_SHUTTLE_COUNT -1 DO
 					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.Loaded := TRUE;	
+					gRobotIf[Load_Robot].Par.Products[i].Present := FALSE;
 				END_FOR;
 			END_IF
 			IF release THEN 
@@ -84,15 +85,14 @@ PROGRAM _CYCLIC
 					//WARNING WARNING THIS ID - 1 WILL ONLY WORK WITH SEQUENTIAL IDS. IF YOU USE ABSOLUTE ID THIS WILL NOT WORK
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Cmd.NextStep := TRUE; 
 					//Assign the shuttle a recipe
+					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Sts.ProductInfo.RecipeNum := recipeCounter + 1;
 					gShuttleIf[stationFbs.BatchProcessFb.ShuttleIds[i] - 1].Par.Recipe := recipes[recipeCounter];
 					recipeCounter:= recipeCounter + 1;
 					IF recipeCounter = 3 THEN
 						recipeCounter := 0;
 					END_IF
 				END_FOR;
-				
 			END_IF
-			
 			IF stationFbs.BatchProcessFb.Error THEN
 				gLoadStationIf.Sts.Error := TRUE;
 				state := LOAD_ERROR;

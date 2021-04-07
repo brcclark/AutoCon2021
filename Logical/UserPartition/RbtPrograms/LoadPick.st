@@ -11,6 +11,9 @@ VAR{AT 'LoadStatio'}
 	setLoad : BOOL;
 	release : BOOL;
 END_VAR
+VAR{AT 'LoadRbt'}
+	setProduct : BOOL;
+END_VAR
 PROGRAM _MAIN          
 	Feedrate(100000);
 	MoveL(Rest);
@@ -29,6 +32,9 @@ PROGRAM _MAIN
 	MoveL(PickApproach);
 	MoveL(Pick);
 	WaitTime(0.2);
+	DO_PATH_SYNCH
+		setProduct := TRUE;
+	END_PATH_SYNCH
 	MoveL(PickApproach);
 	MoveL(Rest);
 END_PROGRAM

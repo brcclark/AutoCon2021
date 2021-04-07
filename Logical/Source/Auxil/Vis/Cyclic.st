@@ -10,6 +10,15 @@ PROGRAM _CYCLIC
 			Vis.Shuttles[idx].Pos.RY := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RY / 3.14189 * 180.0;
 			Vis.Shuttles[idx].Pos.RZ := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RZ / 3.14189 * 180.0;	
 			Vis.Shuttles[idx].UsrData := gShuttleIf[idx].Sts.ProductInfo;
+			IF Vis.Shuttles[idx].UsrData.RecipeNum = 0 OR NOT Vis.Shuttles[idx].UsrData.Loaded THEN
+				Vis.Shuttles[idx].ProdColor := DINT_TO_INT(COLOR_GREY_MATTE);
+			ELSIF Vis.Shuttles[idx].UsrData.RecipeNum = 1 THEN
+				Vis.Shuttles[idx].ProdColor := DINT_TO_INT(COLOR_GREEN_MATTE);
+			ELSIF Vis.Shuttles[idx].UsrData.RecipeNum = 2 THEN
+				Vis.Shuttles[idx].ProdColor := DINT_TO_INT(COLOR_BLUE_MATTE);
+			ELSIF Vis.Shuttles[idx].UsrData.RecipeNum = 3 THEN
+				Vis.Shuttles[idx].ProdColor := DINT_TO_INT(COLOR_RED);
+			END_IF
 			CASE gShuttleIf[idx].Sts.ShuttleInfo.State.Value OF
 				mcACP6D_SH_STATE_UNDETECTED: //Shuttle is not detected by the System
 					Vis.Shuttles[idx].Color := DINT_TO_INT(COLOR_GREY_MATTE);
@@ -33,9 +42,38 @@ PROGRAM _CYCLIC
 				mcACP6D_SH_STATE_RESERVED :  //Reserved State
 			END_CASE;
 			Vis.Shuttles[idx].ScnViewer.EnablePath := turnOnAllPaths;
-			Vis.Shuttles[idx].ScnViewer.ClearPath := clearAllPaths;
+			IF Vis.Shuttles[idx].UsrData.Buffer THEN
+				Vis.Shuttles[idx].ScnViewer.ClearPath := TRUE;	
+			ELSE
+				Vis.Shuttles[idx].ScnViewer.ClearPath := clearAllPaths;
+			END_IF
 		ELSE
 			Vis.Shuttles[idx].Visible := TRUE;
+		END_IF
+	END_FOR;
+	FOR idx:=0 TO 3 DO
+		Vis.Robots[Load_Robot].Products[idx].Present := gRobotIf[Load_Robot].Par.Products[idx].Present;
+		IF NOT gRobotIf[Load_Robot].Par.Products[idx].Present THEN
+			Vis.Robots[Load_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_GREY_MATTE);
+		ELSIF gRobotIf[Load_Robot].Par.Products[idx].Type = 1 THEN
+			Vis.Robots[Load_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_GREEN_MATTE);
+		ELSIF gRobotIf[Load_Robot].Par.Products[idx].Type = 2 THEN
+			Vis.Robots[Load_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_BLUE_MATTE);
+		ELSIF gRobotIf[Load_Robot].Par.Products[idx].Type = 3 THEN
+			Vis.Robots[Load_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_RED);
+		END_IF
+	END_FOR;
+	
+	FOR idx:=0 TO 3 DO
+		Vis.Robots[Unload_Robot].Products[idx].Present := gRobotIf[Unload_Robot].Par.Products[idx].Present;
+		IF NOT gRobotIf[Unload_Robot].Par.Products[idx].Present THEN
+			Vis.Robots[Unload_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_GREY_MATTE);
+		ELSIF gRobotIf[Unload_Robot].Par.Products[idx].Type = 1 THEN
+			Vis.Robots[Unload_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_GREEN_MATTE);
+		ELSIF gRobotIf[Unload_Robot].Par.Products[idx].Type = 2 THEN
+			Vis.Robots[Unload_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_BLUE_MATTE);
+		ELSIF gRobotIf[Unload_Robot].Par.Products[idx].Type = 3 THEN
+			Vis.Robots[Unload_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_RED);
 		END_IF
 	END_FOR;
 END_PROGRAM

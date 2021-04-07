@@ -4,12 +4,14 @@ TYPE
 		ID : USINT;
 		Visible : BOOL;
 		Color : INT;
+		ProdColor : INT;
 		Pos : McAcp6DShPositionInfoType;
 		ScnViewer : ScnViewerConnectionTyp;
 		UsrData : {REDUND_UNREPLICABLE} CurrentProductInfoTyp;
 	END_STRUCT;
-	VisTyp : {REDUND_UNREPLICABLE} 	STRUCT 
+	VisTyp : 	STRUCT 
 		Shuttles : {REDUND_UNREPLICABLE} ARRAY[0..MAX_SHUTTLE_COUNT_ARRAY]OF ShVisTyp;
+		Robots : ARRAY[0..1]OF RobotVisTyp;
 	END_STRUCT;
 	VisShuttleStateEnum : 
 		(
@@ -35,4 +37,7 @@ TYPE
 		COLOR_WHITE_MATTE,
 		COLOR_BLACK_MATTE
 		);
+	RobotVisTyp : 	STRUCT 
+		Products : ARRAY[0..3]OF RbtIfProductTyp;
+	END_STRUCT;
 END_TYPE

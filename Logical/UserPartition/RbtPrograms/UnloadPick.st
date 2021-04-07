@@ -11,6 +11,9 @@ VAR{AT 'UnloadStat'}
 	setUnload : BOOL;
 	release : BOOL;
 END_VAR
+VAR{AT 'UnloadRbt'}
+	resetProduct : BOOL;
+END_VAR
 PROGRAM _MAIN          
 	Feedrate(100000);
 	MoveL(Rest);
@@ -27,6 +30,9 @@ PROGRAM _MAIN
 	MoveL(PlaceApproach);
 	MoveL(Place);
 	WaitTime(0.5);
+	DO_PATH_SYNCH
+		resetProduct := TRUE;
+	END_PATH_SYNCH
 	MoveL(PlaceApproach);
 	MoveL(Rest);
 END_PROGRAM
