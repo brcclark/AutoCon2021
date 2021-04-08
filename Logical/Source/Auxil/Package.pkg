@@ -7,5 +7,6 @@
     <Object Type="Program" Language="IEC">AuditCtrl</Object>
     <Object Type="Program" Language="IEC">Vis</Object>
     <Object Type="Program" Language="IEC">OeeCalc</Object>
+    <Object Type="Program" Language="IEC">SVControl</Object>
   </Objects>
 </Package>

@@ -6,5 +6,6 @@
     <Object Type="File">Visualizat.vis</Object>
     <Object Type="File">cntHome.binding</Object>
     <Object Type="File">OpcUaServer.uaserver</Object>
+    <Object Type="File">cntSceneViewerCtrl.binding</Object>
   </Objects>
 </Package>

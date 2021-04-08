@@ -95,6 +95,12 @@
           </Variable>
         </Variable>
       </Task>
+      <Task Name="SVControl">
+        <Variable Name="Vis" AutomaticEnable="True" />
+        <Variable Name="CamMove" EnableArrayElements="True" />
+        <Variable Name="DataProvider" EnableArrayElements="True" />
+        <Variable Name="svMovieRecipeIf" AutomaticEnable="True" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

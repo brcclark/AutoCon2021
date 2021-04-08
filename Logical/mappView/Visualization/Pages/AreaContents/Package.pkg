@@ -5,5 +5,6 @@
     <Object Type="File">cntHeader.content</Object>
     <Object Type="File">cntInfo.content</Object>
     <Object Type="File">cntHome.content</Object>
+    <Object Type="File">cntSceneViewerCtrl.content</Object>
   </Objects>
 </Package>

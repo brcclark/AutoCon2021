@@ -34,6 +34,7 @@
     <Task Name="AuditCtrl" Source="Source.Auxil.AuditCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Vis" Source="Source.Auxil.Vis.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="OeeCalc" Source="Source.Auxil.OeeCalc.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="SVControl" Source="Source.Auxil.SVControl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <DataObjects>
     <DataObject Name="McAcpSys" Source="" Memory="UserROM" Language="Binary" />
@@ -106,6 +107,7 @@
     <LibraryObject Name="McAxis" Source="Libraries.McAxis.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="McProgInt" Source="Libraries.McProgInt.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="McAcpAx" Source="Libraries.McAcpAx.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="SceneView" Source="Libraries.SceneView.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="aruser" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
@@ -116,5 +118,6 @@
     <LibraryObject Name="asmem" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asio" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asepl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpRecipe" Source="Libraries.MpRecipe.lby" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

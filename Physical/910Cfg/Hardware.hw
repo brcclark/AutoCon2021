@@ -33,6 +33,9 @@
     <Group ID="FileDevice3" />
     <Parameter ID="FileDeviceName3" Value="CNC_PrgDir" />
     <Parameter ID="FileDevicePath3" Value="F:/RbtPrograms" />
+    <Group ID="FileDevice4" />
+    <Parameter ID="FileDeviceName4" Value="SvMovie" />
+    <Parameter ID="FileDevicePath4" Value="F:/SvMovies/" />
     <Group ID="FtpUser1" />
     <Parameter ID="FtpUsername1" Value="user" />
     <Parameter ID="FtpUserPassword1" Value="XLDSpOsjCux8fLbUPdTMl3dlmwfwq9DjvsZi0xU0j4E=" Description="user" />
