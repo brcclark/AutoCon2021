@@ -2,17 +2,17 @@
 <Object objecttypeid="1" name="Scene" visible="1" mask="" binding="" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
-	<ParID parid="82" val="0.163508"/>
+	<ParID parid="82" val="0.513158"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="1566.58"/>
-	<ParID parid="101" val="882.328"/>
-	<ParID parid="102" val="4493.57"/>
-	<ParID parid="103" val="0.0898775"/>
-	<ParID parid="104" val="-0.387654"/>
-	<ParID parid="105" val="-0.917413"/>
-	<ParID parid="106" val="0.733726"/>
-	<ParID parid="107" val="-0.597113"/>
-	<ParID parid="108" val="0.324193"/>
+	<ParID parid="100" val="-2031.51"/>
+	<ParID parid="101" val="2238.91"/>
+	<ParID parid="102" val="1851.86"/>
+	<ParID parid="103" val="0.700838"/>
+	<ParID parid="104" val="-0.612774"/>
+	<ParID parid="105" val="-0.36515"/>
+	<ParID parid="106" val="0.43166"/>
+	<ParID parid="107" val="-0.0432075"/>
+	<ParID parid="108" val="0.901001"/>
 	<ParID parid="110" val="0.5"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -269,6 +269,24 @@
 			<ParID parid="120" val="Models/S3-A-04_Segment.stl"/>
 			<ParID parid="121" val="13: Black Metal Shine"/>
 			<ParID parid="130" val="2"/>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="180"/>
+				<ParID parid="101" val="180"/>
+				<ParID parid="102" val="130"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="7: White Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="50"/>
+				<ParID parid="141" val="1"/>
+				<ParID parid="142" val="200"/>
+			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Segment17" visible="1" mask="" binding="" jointoparent="0">
 			<ParID parid="100" val="720"/>
@@ -283,6 +301,24 @@
 			<ParID parid="120" val="Models/S3-A-04_Segment.stl"/>
 			<ParID parid="121" val="13: Black Metal Shine"/>
 			<ParID parid="130" val="2"/>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="180"/>
+				<ParID parid="101" val="60"/>
+				<ParID parid="102" val="130"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="7: White Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="50"/>
+				<ParID parid="141" val="1"/>
+				<ParID parid="142" val="200"/>
+			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Segment18" visible="1" mask="" binding="" jointoparent="0">
 			<ParID parid="100" val="960"/>
@@ -377,12 +413,12 @@
 				<ParID parid="106" val="1"/>
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
-				<ParID parid="120" val="3: Grey Matte"/>
+				<ParID parid="120" val="7: White Matte"/>
 				<ParID parid="121" val="32"/>
 				<ParID parid="122" val="FALSE"/>
 				<ParID parid="123" val="FALSE"/>
 				<ParID parid="140" val="50"/>
-				<ParID parid="141" val="1"/>
+				<ParID parid="141" val="5"/>
 				<ParID parid="142" val="200"/>
 			</Object>
 		</Object>
@@ -441,6 +477,24 @@
 			<ParID parid="120" val="Models/S3-A-04_Segment.stl"/>
 			<ParID parid="121" val="13: Black Metal Shine"/>
 			<ParID parid="130" val="2"/>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="120"/>
+				<ParID parid="101" val="120"/>
+				<ParID parid="102" val="130"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="7: White Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="50"/>
+				<ParID parid="141" val="5"/>
+				<ParID parid="142" val="200"/>
+			</Object>
 		</Object>
 		<Object objecttypeid="110" name="Segment28" visible="1" mask="" binding="" jointoparent="0">
 			<ParID parid="100" val="1680"/>
@@ -493,12 +547,12 @@
 				<ParID parid="106" val="1"/>
 				<ParID parid="107" val="1"/>
 				<ParID parid="108" val="1"/>
-				<ParID parid="120" val="3: Grey Matte"/>
+				<ParID parid="120" val="7: White Matte"/>
 				<ParID parid="121" val="32"/>
 				<ParID parid="122" val="FALSE"/>
 				<ParID parid="123" val="FALSE"/>
 				<ParID parid="140" val="50"/>
-				<ParID parid="141" val="1"/>
+				<ParID parid="141" val="5"/>
 				<ParID parid="142" val="200"/>
 			</Object>
 		</Object>
@@ -557,6 +611,24 @@
 			<ParID parid="120" val="Models/S3-A-04_Segment.stl"/>
 			<ParID parid="121" val="13: Black Metal Shine"/>
 			<ParID parid="130" val="2"/>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="120"/>
+				<ParID parid="101" val="120"/>
+				<ParID parid="102" val="130"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="7: White Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="50"/>
+				<ParID parid="141" val="5"/>
+				<ParID parid="142" val="200"/>
+			</Object>
 		</Object>
 		<Object objecttypeid="630" name="Table" visible="1" mask="" binding="" jointoparent="0">
 			<ParID parid="100" val="1080"/>
