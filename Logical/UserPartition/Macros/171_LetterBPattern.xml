@@ -4,7 +4,7 @@
 		<Parameter Name="MacroClear" MacroID="171"/>
 	</Command>
 	<Command id="2">
-		<Parameter Name="MoveInPlane" ShuttleID="171" XTarget="-0.03" YTarget="0.0" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="0"/>
+		<Parameter Name="MoveInPlane" ShuttleID="171" XTarget="0.03" YTarget="0.0" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="0"/>
 	</Command>
     <Command id="3">
 		<Parameter Name="MoveInPlane" ShuttleID="171" XTarget="0.00" YTarget="0.03" Acc="10" Vel="1" EndVel="0.0" PositionMode="1" PathType="0"/>
