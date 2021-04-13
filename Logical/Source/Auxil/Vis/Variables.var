@@ -1,4 +1,5 @@
 VAR
+	cameraFlashIntensity : USINT;
 	Vis : VisTyp;
 	ShData : ARRAY[0..9] OF MC_BR_ShReadPosition_Acp6D;
 	states : ARRAY[0..9] OF VisShuttleStateEnum;

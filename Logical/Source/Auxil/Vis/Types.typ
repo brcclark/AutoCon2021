@@ -12,6 +12,7 @@ TYPE
 	VisTyp : 	STRUCT 
 		Shuttles : {REDUND_UNREPLICABLE} ARRAY[0..MAX_SHUTTLE_COUNT_ARRAY]OF ShVisTyp;
 		Robots : ARRAY[0..1]OF RobotVisTyp;
+		Camera : ARRAY[0..1]OF USINT;
 	END_STRUCT;
 	VisShuttleStateEnum : 
 		(
@@ -25,6 +26,7 @@ TYPE
 		ClearPath : BOOL;
 		PathColor : ARRAY[0..2]OF REAL; (*0-Red, 1-Green, 2-Blue*)
 		PathLength : UDINT;
+		PathOffset : PointTyp;
 	END_STRUCT;
 	ShuttleColorEnum : 
 		(
@@ -39,5 +41,10 @@ TYPE
 		);
 	RobotVisTyp : 	STRUCT 
 		Products : ARRAY[0..3]OF RbtIfProductTyp;
+	END_STRUCT;
+	PointTyp : 	STRUCT 
+		X : REAL;
+		Y : REAL;
+		Z : REAL;
 	END_STRUCT;
 END_TYPE

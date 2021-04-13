@@ -5,6 +5,8 @@ PROGRAM _INIT
 		Vis.Shuttles[idx].ID := idx+1;
 		Vis.Shuttles[idx].ScnViewer.PathLength := 35;
 	END_FOR;
+	cameraFlashIntensity := 1;
+	
 	Vis.Shuttles[0].ScnViewer.PathColor[0] := 0.0;
 	Vis.Shuttles[0].ScnViewer.PathColor[1] := 0.0;
 	Vis.Shuttles[0].ScnViewer.PathColor[2] := 0.0;

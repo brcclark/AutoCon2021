@@ -24,7 +24,7 @@
     <Build GccVersion="4.1.2" PreBuildStep="" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Safety SafetyRelease="0.0" />
-    <Transfer AddToUserPart="True" AdditionalUserDir="\Logical\UserPartition" AllowDowngrade="True" AllowInitialTransfer="False" AllowPartitioning="False" ExecuteInitExitProgram="False" ForceInitialTransfer="False" IdentificationTypeValue="" IgnoreVersion="True" KeepNonVolatileMemory="False" ModuleSystemForPip="" PreserveVariableValues="True" ProjectConsistent="True" RebootDuringTransfer="False" TargetIdentificationType="Always" TryToBootInRunMode="False" UserFilesIgnoreDifference="True" />
+    <Transfer AddToUserPart="True" AdditionalUserDir="\Logical\UserPartition" AllowDowngrade="True" AllowInitialTransfer="False" AllowPartitioning="False" ExecuteInitExitProgram="True" ForceInitialTransfer="False" IdentificationTypeValue="" IgnoreVersion="True" KeepNonVolatileMemory="False" ModuleSystemForPip="" PreserveVariableValues="True" ProjectConsistent="True" RebootDuringTransfer="False" TargetIdentificationType="Always" TryToBootInRunMode="False" UserFilesIgnoreDifference="True" />
     <Vc FirmwareVersion="V4.72.2" />
   </Configuration>
 </Cpu>

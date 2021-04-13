@@ -18,7 +18,7 @@ PROGRAM _INIT
 	SvMovieRecipeFb.MpLink := ADR(gRecipeScnViewer);
 	SvMovieRecipeFb.Enable := TRUE;
 	SvMovieRecipeFb.Category := ADR('SvMovie');
-	SvMovieRecipeFb.DeviceName := ADR('SvMovie');
+	SvMovieRecipeFb.DeviceName := ADR('6DMacro');
 	SvMovieRecipeFb.FileName := ADR(svMovieRecipeIf.Par.FileName);
 	SvMovieRecipeFb();
 	

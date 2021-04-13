@@ -27,6 +27,7 @@
           </Variable>
         </Variable>
         <Variable Name="gFillStationsIf" EnableArrayElements="True" />
+        <Variable Name="gWeighStationIf" EnableArrayElements="True" />
       </GlobalVariables>
       <Task Name="6DCtrl">
         <Variable Name="state" />
@@ -59,6 +60,7 @@
               <Variable Name="Products" EnableArrayElements="True" />
             </Variable>
           </Variable>
+          <Variable Name="Camera" EnableArrayElements="True" />
         </Variable>
       </Task>
       <Task Name="FillSt1">

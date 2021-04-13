@@ -395,6 +395,8 @@ PROGRAM _CYCLIC
 				IF gShuttleIf[i].Cmd.NextStep THEN
 					gShuttleIf[i].Cmd.NextStep := FALSE;
 					
+					gProcessInfoIf.Par.CurrentProductCount := gProcessInfoIf.Par.CurrentProductCount + 1;
+					
 					gShuttleIf[i].Cmd.ResetProductInfo := TRUE;
 					gShuttleIf[i].Sts.CurrentDestination := DEST_LOAD;
 				

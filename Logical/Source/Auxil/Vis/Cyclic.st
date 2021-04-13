@@ -10,6 +10,11 @@ PROGRAM _CYCLIC
 			Vis.Shuttles[idx].Pos.RY := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RY / 3.14189 * 180.0;
 			Vis.Shuttles[idx].Pos.RZ := gShuttleIf[idx].Sts.ShuttleInfo.Position.Value.RZ / 3.14189 * 180.0;	
 			Vis.Shuttles[idx].UsrData := gShuttleIf[idx].Sts.ProductInfo;
+			IF gFillStationsIf[2].Par.ShuttleIdx = idx AND gFillStationsIf[2].Sts.Processing THEN
+				Vis.Shuttles[idx].ScnViewer.PathOffset.Z := 40;
+			ELSE 
+				Vis.Shuttles[idx].ScnViewer.PathOffset.Z := 10;
+			END_IF
 			IF Vis.Shuttles[idx].UsrData.RecipeNum = 0 OR NOT Vis.Shuttles[idx].UsrData.Loaded THEN
 				Vis.Shuttles[idx].ProdColor := DINT_TO_INT(COLOR_GREY_MATTE);
 			ELSIF Vis.Shuttles[idx].UsrData.RecipeNum = 1 THEN
@@ -76,4 +81,10 @@ PROGRAM _CYCLIC
 			Vis.Robots[Unload_Robot].Products[idx].Type :=  DINT_TO_INT(COLOR_RED);
 		END_IF
 	END_FOR;
+	
+	FOR idx:=0 TO 1 DO
+		Vis.Camera[idx] := BOOL_TO_USINT(gWeighStationIf[idx].Sts.Processing) * cameraFlashIntensity;
+	END_FOR
+	Vis.Camera[0] := BOOL_TO_USINT(gWeighStationIf[0].Sts.Processing OR gWeighStationIf[1].Sts.Processing) * cameraFlashIntensity;
+	
 END_PROGRAM

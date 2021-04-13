@@ -17,7 +17,7 @@ PROGRAM _CYCLIC
 				state := WEIGH_OFF;
 			ELSIF pWeighIf.Par.ShuttleIdx <> STATION_IS_EMPTY AND pWeighIf.Cmd.Process THEN
 				pWeighIf.Sts.ReadyForNewShuttle := FALSE;
-				pWeighIf.Sts.Processing := TRUE;
+				
 				
 				state := WEIGH_LAND;
 			END_IF
@@ -46,6 +46,7 @@ PROGRAM _CYCLIC
 				stFbs.LevitationCtrlFb.Execute := FALSE;
 				
 				stFbs.WeighTimerFb.IN := TRUE;
+				pWeighIf.Sts.Processing := TRUE;
 				stFbs.WeighTimerFb.PT := stationPars.WaitTime;
 				
 				state := WEIGH_WEIGHING;
