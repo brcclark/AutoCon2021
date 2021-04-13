@@ -113,5 +113,13 @@
 <Source xsi:type="opcUa" refId="::SVControl:svMovieRecipeIf.Par.FileName" attribute="value" />
 <Target xsi:type="brease" contentRefId="cntSceneViewerCtrl" widgetRefId="tiFileName" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::SVControl:Vis.Controls.ActiveMoveElapsedTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntSceneViewerCtrl" widgetRefId="movieProgBar" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::SVControl:Vis.Controls.ActiveMoveTravelTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntSceneViewerCtrl" widgetRefId="movieProgBar" attribute="maxValue" />
+</Binding>
 </Bindings>
 </BindingsSet>

@@ -30,10 +30,10 @@
 	<VariablesSets>
 		<!--<VariablesSet refId="" />-->
 	</VariablesSets>
-	<!--<StartTheme themeRefId="" />
+	<StartTheme themeRefId="CuRWebDay" />
 	<Themes>
-	<Theme refId=""/>
-	</Themes>-->
+		<Theme refId="CuRWebDay"/>
+	</Themes>
 	<Configurations>
 		<Configuration key="activityCount" value="false" />
 		<Gestures>

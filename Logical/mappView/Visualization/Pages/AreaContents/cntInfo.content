@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="cntInfo" height="840" width="150" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.NavigationButton" id="navToHome" top="44" left="20" zIndex="0" pageId="pgHome" text="Home" />
-    <Widget xsi:type="widgets.brease.NavigationButton" id="navToSvCtrl" top="94" left="20" zIndex="1" pageId="pgSceneViewerCtrl" text="SV Ctrl" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="navToHome" top="44" left="20" zIndex="1" pageId="pgHome" text="Home" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="navToSvCtrl" top="94" left="20" zIndex="2" pageId="pgSceneViewerCtrl" text="SV Ctrl" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="22" left="-50" width="240" height="876" zIndex="0" image="Media/6D.jpg" />
   </Widgets>
 </Content>

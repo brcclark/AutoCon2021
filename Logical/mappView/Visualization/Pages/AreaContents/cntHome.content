@@ -3,37 +3,37 @@
   <Widgets>
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="10" left="15" width="380" height="180" zIndex="0" text="Main">
       <Widgets>
-        <Widget xsi:type="widgets.brease.ToggleSwitch" id="tsMainPower" top="7" left="9" width="111" zIndex="0" mouseDownText="Powered" text="Power" />
-        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="mpbStartProcess" top="52" left="9" width="111" zIndex="1" text="Start" />
-        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="mpbStopProcess" top="92" left="9" width="111" zIndex="2" text="Stop" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="toMainStatus" top="77" left="194" zIndex="3" padding="0px 5px 0px 5px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label1" top="17" left="189" width="106" zIndex="4" text="Main Status" />
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="tsMainPower" top="7" left="9" width="135" height="28" zIndex="0" mouseDownText="Powered" text="Power" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="mpbStartProcess" top="52" left="9" width="135" height="28" zIndex="1" text="Start" style="Contained" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="mpbStopProcess" top="92" left="9" width="135" height="28" zIndex="2" text="Stop" style="Contained" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="toMainStatus" top="77" left="194" width="148" zIndex="3" padding="0px 5px 0px 5px" />
+        <Widget xsi:type="widgets.brease.Label" id="Label1" top="17" left="189" width="165" zIndex="4" text="Main Status" style="Heading5" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="gbStations" top="15" left="550" width="695" height="185" zIndex="1" text="Station Statuses">
       <Widgets>
-        <Widget xsi:type="widgets.brease.Label" id="Label2" top="7" left="14" width="91" height="33" zIndex="0" text="Load State:" />
-        <Widget xsi:type="widgets.brease.Label" id="Label3" top="32" left="14" width="91" zIndex="1" text="Shuttle Idx:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label2" top="7" left="14" width="91" height="33" zIndex="0" text="Load State:" style="Caption" />
+        <Widget xsi:type="widgets.brease.Label" id="Label3" top="32" left="14" width="91" height="29" zIndex="1" text="Shuttle Idx:" style="Caption" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toLoadState" top="7" left="109" width="121" zIndex="2" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noLoadIdx" top="32" left="109" width="55" zIndex="3" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label4" top="77" left="0" width="105" zIndex="4" text="Unload State:" />
-        <Widget xsi:type="widgets.brease.Label" id="Label5" top="102" left="14" width="91" zIndex="5" text="Shuttle Idx:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label4" top="77" left="0" width="105" height="29" zIndex="4" text="Unload State:" style="Caption" />
+        <Widget xsi:type="widgets.brease.Label" id="Label5" top="102" left="14" width="91" height="29" zIndex="5" text="Shuttle Idx:" style="Caption" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toUnloadState" top="77" left="109" width="121" zIndex="6" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noUnloadShuttleIdx" top="102" left="109" width="55" zIndex="7" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label6" top="7" left="234" width="91" zIndex="8" text="Print State:" />
-        <Widget xsi:type="widgets.brease.Label" id="Label7" top="32" left="234" width="91" zIndex="9" text="Shuttle Idx:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label6" top="7" left="234" width="91" height="29" zIndex="8" text="Print State:" style="Caption" />
+        <Widget xsi:type="widgets.brease.Label" id="Label7" top="32" left="234" width="91" height="29" zIndex="9" text="Shuttle Idx:" style="Caption" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toPrintState" top="7" left="329" width="121" zIndex="10" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noPrintShuttleIdx" top="32" left="329" width="55" zIndex="11" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label8" top="77" left="234" width="91" zIndex="12" text="Tamp State:" />
-        <Widget xsi:type="widgets.brease.Label" id="Label9" top="102" left="234" width="91" zIndex="13" text="Shuttle Idx:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label8" top="77" left="234" width="91" height="29" zIndex="12" text="Tamp State:" style="Caption" />
+        <Widget xsi:type="widgets.brease.Label" id="Label9" top="102" left="234" width="91" height="29" zIndex="13" text="Shuttle Idx:" style="Caption" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toTampState" top="77" left="329" width="121" zIndex="14" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noTampShuttleIdx" top="102" left="329" width="55" zIndex="15" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label10" top="7" left="445" width="105" zIndex="16" text="Fill 1 State:" />
-        <Widget xsi:type="widgets.brease.Label" id="Label11" top="32" left="459" width="91" zIndex="17" text="Shuttle Idx:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label10" top="7" left="445" width="105" height="29" zIndex="16" text="Fill 1 State:" style="Caption" />
+        <Widget xsi:type="widgets.brease.Label" id="Label11" top="32" left="459" width="91" zIndex="17" text="Shuttle Idx:" style="Caption" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toFill1State" top="7" left="549" width="121" zIndex="18" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noFill1ShuttleIdx" top="32" left="549" width="55" zIndex="19" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
-        <Widget xsi:type="widgets.brease.Label" id="Label12" top="77" left="445" width="105" zIndex="20" text="Fill 2 State:" />
-        <Widget xsi:type="widgets.brease.Label" id="Label13" top="102" left="459" width="91" zIndex="21" text="Shuttle Idx:" />
+        <Widget xsi:type="widgets.brease.Label" id="Label12" top="77" left="445" width="105" zIndex="20" text="Fill 2 State:" style="Caption" />
+        <Widget xsi:type="widgets.brease.Label" id="Label13" top="102" left="459" width="91" zIndex="21" text="Shuttle Idx:" style="Caption" />
         <Widget xsi:type="widgets.brease.TextOutput" id="toFill2State" top="77" left="549" width="121" zIndex="22" padding="0px 2px 0px 2px" />
         <Widget xsi:type="widgets.brease.NumericOutput" id="noFill2ShuttleIdx" top="102" left="549" width="55" zIndex="23" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="255" value="255" borderWidth="0px" fontSize="14px" bold="false" padding="0px 0px 0px 15px" />
       </Widgets>
@@ -84,7 +84,7 @@
         </cursor>
       </Properties>
     </Widget>
-    <Widget xsi:type="widgets.brease.Label" id="Label22" top="276" left="876" width="182" zIndex="5" text="Layers Per Minute" />
+    <Widget xsi:type="widgets.brease.Label" id="Label22" top="276" left="876" width="248" zIndex="5" text="Products Per Minute" style="Heading5" />
     <Widget xsi:type="widgets.brease.OnlineChart" id="OnlineChart1" top="360" left="600" zIndex="6" autoscale="true">
       <Widgets>
         <Widget xsi:type="widgets.brease.OnlineChartTimeAxis" id="OnlineChartTimeAxis1" zIndex="0">
