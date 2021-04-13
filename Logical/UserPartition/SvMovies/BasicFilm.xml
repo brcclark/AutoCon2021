@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+	<Element Name="SVControl:CamMove" Type="PvParameter">
+		<Group ID="SVControl:CamMove">
+			<Group ID="[0]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="61.900001525878906" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="-96" />
+						<Property ID="Y" DataType="REAL" Value="727" />
+						<Property ID="Z" DataType="REAL" Value="1140" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.2419999837875366" />
+						<Property ID="Y" DataType="REAL" Value="-1.4700000286102295" />
+						<Property ID="Z" DataType="REAL" Value="-1.1440000534057617" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="1146" />
+					<Property ID="Y" DataType="REAL" Value="-743" />
+					<Property ID="Z" DataType="REAL" Value="-4" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="20000" />
+			</Group>
+			<Group ID="[1]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="60.200000762939453" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1400.676025390625" />
+						<Property ID="Y" DataType="REAL" Value="-535.02001953125" />
+						<Property ID="Z" DataType="REAL" Value="420" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="-1.5706759691238403" />
+						<Property ID="Y" DataType="REAL" Value="-1.1369799375534058" />
+						<Property ID="Z" DataType="REAL" Value="-0.69999998807907104" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="-170" />
+					<Property ID="Y" DataType="REAL" Value="-1672" />
+					<Property ID="Z" DataType="REAL" Value="-280" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[2]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="60.200000762939453" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1400.676025390625" />
+						<Property ID="Y" DataType="REAL" Value="-535.02001953125" />
+						<Property ID="Z" DataType="REAL" Value="420" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="-1.5706759691238403" />
+						<Property ID="Y" DataType="REAL" Value="-1.1369799375534058" />
+						<Property ID="Z" DataType="REAL" Value="-0.69999998807907104" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="-170" />
+					<Property ID="Y" DataType="REAL" Value="-1672" />
+					<Property ID="Z" DataType="REAL" Value="-280" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[3]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="89.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1714.7060546875" />
+						<Property ID="Y" DataType="REAL" Value="-180.117919921875" />
+						<Property ID="Z" DataType="REAL" Value="720" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="-1.766706109046936" />
+						<Property ID="Y" DataType="REAL" Value="-1.2788820266723633" />
+						<Property ID="Z" DataType="REAL" Value="-1" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="-52" />
+					<Property ID="Y" DataType="REAL" Value="-1459" />
+					<Property ID="Z" DataType="REAL" Value="-280" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[4]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="10" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="483.8505859375" />
+						<Property ID="Y" DataType="REAL" Value="-675.15533447265625" />
+						<Property ID="Z" DataType="REAL" Value="360" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="2.7391493320465088" />
+						<Property ID="Y" DataType="REAL" Value="-0.5458446741104126" />
+						<Property ID="Z" DataType="REAL" Value="-0.61000001430511475" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="3223" />
+					<Property ID="Y" DataType="REAL" Value="-1221" />
+					<Property ID="Z" DataType="REAL" Value="-250" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[5]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="10" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="483.8505859375" />
+						<Property ID="Y" DataType="REAL" Value="-675.15533447265625" />
+						<Property ID="Z" DataType="REAL" Value="360" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="2.7391493320465088" />
+						<Property ID="Y" DataType="REAL" Value="-0.5458446741104126" />
+						<Property ID="Z" DataType="REAL" Value="-0.61000001430511475" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="3223" />
+					<Property ID="Y" DataType="REAL" Value="-1221" />
+					<Property ID="Z" DataType="REAL" Value="-250" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[6]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="18.5" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="868.25531005859375" />
+						<Property ID="Y" DataType="REAL" Value="-466.50936889648438" />
+						<Property ID="Z" DataType="REAL" Value="600" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.2447446584701538" />
+						<Property ID="Y" DataType="REAL" Value="-0.80249065160751343" />
+						<Property ID="Z" DataType="REAL" Value="-0.85000002384185791" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2113" />
+					<Property ID="Y" DataType="REAL" Value="-1269" />
+					<Property ID="Z" DataType="REAL" Value="-250" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[7]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="18.5" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="868.25531005859375" />
+						<Property ID="Y" DataType="REAL" Value="-466.50936889648438" />
+						<Property ID="Z" DataType="REAL" Value="600" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.2447446584701538" />
+						<Property ID="Y" DataType="REAL" Value="-0.80249065160751343" />
+						<Property ID="Z" DataType="REAL" Value="-0.85000002384185791" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2113" />
+					<Property ID="Y" DataType="REAL" Value="-1269" />
+					<Property ID="Z" DataType="REAL" Value="-250" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[8]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="868.25531005859375" />
+						<Property ID="Y" DataType="REAL" Value="-341.5093994140625" />
+						<Property ID="Z" DataType="REAL" Value="660" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.765744686126709" />
+						<Property ID="Y" DataType="REAL" Value="-0.90049058198928833" />
+						<Property ID="Z" DataType="REAL" Value="-0.9100000262260437" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2634" />
+					<Property ID="Y" DataType="REAL" Value="-1242" />
+					<Property ID="Z" DataType="REAL" Value="-250" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[9]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1910.6866455078125" />
+						<Property ID="Y" DataType="REAL" Value="-537.73040771484375" />
+						<Property ID="Z" DataType="REAL" Value="780" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.14831335842609406" />
+						<Property ID="Y" DataType="REAL" Value="-0.34126958250999451" />
+						<Property ID="Z" DataType="REAL" Value="-0.72600001096725464" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2059" />
+					<Property ID="Y" DataType="REAL" Value="-879" />
+					<Property ID="Z" DataType="REAL" Value="54" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[10]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1910.6866455078125" />
+						<Property ID="Y" DataType="REAL" Value="-537.73040771484375" />
+						<Property ID="Z" DataType="REAL" Value="780" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.14831335842609406" />
+						<Property ID="Y" DataType="REAL" Value="-0.34126958250999451" />
+						<Property ID="Z" DataType="REAL" Value="-0.72600001096725464" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2059" />
+					<Property ID="Y" DataType="REAL" Value="-879" />
+					<Property ID="Z" DataType="REAL" Value="54" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[11]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1547.390380859375" />
+						<Property ID="Y" DataType="REAL" Value="75.633674621582031" />
+						<Property ID="Z" DataType="REAL" Value="240" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.1246095895767212" />
+						<Property ID="Y" DataType="REAL" Value="0.033366326242685318" />
+						<Property ID="Z" DataType="REAL" Value="-0.3529999852180481" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2672" />
+					<Property ID="Y" DataType="REAL" Value="109" />
+					<Property ID="Z" DataType="REAL" Value="-113" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[12]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1547.390380859375" />
+						<Property ID="Y" DataType="REAL" Value="75.633674621582031" />
+						<Property ID="Z" DataType="REAL" Value="240" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.1246095895767212" />
+						<Property ID="Y" DataType="REAL" Value="0.033366326242685318" />
+						<Property ID="Z" DataType="REAL" Value="-0.3529999852180481" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2672" />
+					<Property ID="Y" DataType="REAL" Value="109" />
+					<Property ID="Z" DataType="REAL" Value="-113" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[13]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1634.2421875" />
+						<Property ID="Y" DataType="REAL" Value="85.627815246582031" />
+						<Property ID="Z" DataType="REAL" Value="480" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.78775781393051147" />
+						<Property ID="Y" DataType="REAL" Value="0.023372184485197067" />
+						<Property ID="Z" DataType="REAL" Value="-0.68500000238418579" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2422" />
+					<Property ID="Y" DataType="REAL" Value="109" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[14]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1634.2421875" />
+						<Property ID="Y" DataType="REAL" Value="85.627815246582031" />
+						<Property ID="Z" DataType="REAL" Value="480" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.78775781393051147" />
+						<Property ID="Y" DataType="REAL" Value="0.023372184485197067" />
+						<Property ID="Z" DataType="REAL" Value="-0.68500000238418579" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="2422" />
+					<Property ID="Y" DataType="REAL" Value="109" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[15]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1091.2421875" />
+						<Property ID="Y" DataType="REAL" Value="78.627815246582031" />
+						<Property ID="Z" DataType="REAL" Value="480" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.78775781393051147" />
+						<Property ID="Y" DataType="REAL" Value="0.023372184485197067" />
+						<Property ID="Z" DataType="REAL" Value="-0.68500000238418579" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="1879" />
+					<Property ID="Y" DataType="REAL" Value="102" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[16]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="32.099998474121094" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1091.2421875" />
+						<Property ID="Y" DataType="REAL" Value="78.627815246582031" />
+						<Property ID="Z" DataType="REAL" Value="480" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.78775781393051147" />
+						<Property ID="Y" DataType="REAL" Value="0.023372184485197067" />
+						<Property ID="Z" DataType="REAL" Value="-0.68500000238418579" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="1879" />
+					<Property ID="Y" DataType="REAL" Value="102" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[17]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="61" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1877.6514892578125" />
+						<Property ID="Y" DataType="REAL" Value="-517.07928466796875" />
+						<Property ID="Z" DataType="REAL" Value="1380" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.0013485107338055968" />
+						<Property ID="Y" DataType="REAL" Value="0.036079283803701401" />
+						<Property ID="Z" DataType="REAL" Value="-1.5850000381469727" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="1879" />
+					<Property ID="Y" DataType="REAL" Value="-481" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[18]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="61" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1877.6514892578125" />
+						<Property ID="Y" DataType="REAL" Value="-517.07928466796875" />
+						<Property ID="Z" DataType="REAL" Value="1380" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.0013485107338055968" />
+						<Property ID="Y" DataType="REAL" Value="0.036079283803701401" />
+						<Property ID="Z" DataType="REAL" Value="-1.5850000381469727" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="1879" />
+					<Property ID="Y" DataType="REAL" Value="-481" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[19]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="28.700000762939453" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1655.1551513671875" />
+						<Property ID="Y" DataType="REAL" Value="-1166.403564453125" />
+						<Property ID="Z" DataType="REAL" Value="780" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="-0.90415513515472412" />
+						<Property ID="Y" DataType="REAL" Value="1.5554035902023315" />
+						<Property ID="Z" DataType="REAL" Value="-0.98500001430511475" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="751" />
+					<Property ID="Y" DataType="REAL" Value="389" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[20]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="28.700000762939453" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="1655.1551513671875" />
+						<Property ID="Y" DataType="REAL" Value="-1166.403564453125" />
+						<Property ID="Z" DataType="REAL" Value="780" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="-0.90415513515472412" />
+						<Property ID="Y" DataType="REAL" Value="1.5554035902023315" />
+						<Property ID="Z" DataType="REAL" Value="-0.98500001430511475" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="751" />
+					<Property ID="Y" DataType="REAL" Value="389" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[21]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="28.700000762939453" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="-113.23443603515625" />
+						<Property ID="Y" DataType="REAL" Value="824.3238525390625" />
+						<Property ID="Z" DataType="REAL" Value="780" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.65323442220687866" />
+						<Property ID="Y" DataType="REAL" Value="-1.6763238906860352" />
+						<Property ID="Z" DataType="REAL" Value="-0.98500001430511475" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="540" />
+					<Property ID="Y" DataType="REAL" Value="-852" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[22]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="1" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="28.700000762939453" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="-113.23443603515625" />
+						<Property ID="Y" DataType="REAL" Value="824.3238525390625" />
+						<Property ID="Z" DataType="REAL" Value="780" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0.65323442220687866" />
+						<Property ID="Y" DataType="REAL" Value="-1.6763238906860352" />
+						<Property ID="Z" DataType="REAL" Value="-0.98500001430511475" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="540" />
+					<Property ID="Y" DataType="REAL" Value="-852" />
+					<Property ID="Z" DataType="REAL" Value="-205" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="10000" />
+			</Group>
+			<Group ID="[23]">
+				<Property ID="IsSaved" DataType="BOOL" Value="true" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="true" />
+					<Property ID="Zoom" DataType="REAL" Value="10" />
+					<Property ID="Fov" DataType="REAL" Value="61.900001525878906" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="-96" />
+						<Property ID="Y" DataType="REAL" Value="727" />
+						<Property ID="Z" DataType="REAL" Value="1140" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="1.2419999837875366" />
+						<Property ID="Y" DataType="REAL" Value="-1.4700000286102295" />
+						<Property ID="Z" DataType="REAL" Value="-1.1440000534057617" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="1" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="1146" />
+					<Property ID="Y" DataType="REAL" Value="-743" />
+					<Property ID="Z" DataType="REAL" Value="-4" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="5000" />
+			</Group>
+			<Group ID="[24]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[25]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[26]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[27]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[28]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[29]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[30]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[31]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[32]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[33]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[34]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[35]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[36]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[37]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[38]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[39]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[40]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[41]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[42]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[43]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[44]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[45]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[46]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[47]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[48]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[49]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+			<Group ID="[50]">
+				<Property ID="IsSaved" DataType="BOOL" Value="false" />
+				<Property ID="MoveType" DataType="DINT" Value="0" />
+				<Group ID="Point">
+					<Property ID="Perspective" DataType="BOOL" Value="false" />
+					<Property ID="Zoom" DataType="REAL" Value="0" />
+					<Property ID="Fov" DataType="REAL" Value="0" />
+					<Group ID="ViewPoint">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="ViewVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+					<Group ID="OrientationVector">
+						<Property ID="X" DataType="REAL" Value="0" />
+						<Property ID="Y" DataType="REAL" Value="0" />
+						<Property ID="Z" DataType="REAL" Value="0" />
+					</Group>
+				</Group>
+				<Group ID="FocalPoint">
+					<Property ID="X" DataType="REAL" Value="0" />
+					<Property ID="Y" DataType="REAL" Value="0" />
+					<Property ID="Z" DataType="REAL" Value="0" />
+				</Group>
+				<Property ID="TravelTime" DataType="TIME" Value="0" />
+			</Group>
+		</Group>
+	</Element>
+</DATA>
