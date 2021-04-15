@@ -18,7 +18,7 @@ PROGRAM _INIT
 	SvMovieRecipeFb.MpLink := ADR(gRecipeScnViewer);
 	SvMovieRecipeFb.Enable := TRUE;
 	SvMovieRecipeFb.Category := ADR('SvMovie');
-	SvMovieRecipeFb.DeviceName := ADR('6DMacro');
+	SvMovieRecipeFb.DeviceName := ADR('SvMovie');
 	SvMovieRecipeFb.FileName := ADR(svMovieRecipeIf.Par.FileName);
 	SvMovieRecipeFb();
 	
@@ -168,8 +168,10 @@ PROGRAM _CYCLIC
 			brsmemset(ADR(DataProvider),0,SIZEOF(DataProvider));
 			brsmemset(ADR(MoveNumText),0,SIZEOF(MoveNumText));
 			brsmemset(ADR(IntermediateDateProvider),0,SIZEOF(IntermediateDateProvider));
+			TotalNumMoves := 0; //Added for loading saved recipes
 			FOR i:=0 TO MAX_NUM_MOVES DO
 				IF CamMove[i].IsSaved THEN
+					TotalNumMoves := TotalNumMoves + 1;
 					brsftoa(i, ADR(MoveIndexString));
 					MoveNumText[i] := CONCAT(MoveIndexString, ': ');
 					CASE CamMove[i].MoveType OF
@@ -203,7 +205,6 @@ PROGRAM _CYCLIC
 				Vis.Bind.Camera := CamMove[Vis.Controls.SelectedMove].Point;
 				Vis.Bind.FocalPoint := CamMove[Vis.Controls.SelectedMove].FocalPoint;
 				
-				
 				//update radial controls
 				AngleRad := atan2((Vis.Bind.Camera.ViewPoint.Y - Vis.Bind.FocalPoint.Y),(Vis.Bind.Camera.ViewPoint.X - Vis.Bind.FocalPoint.X));
 				Vis.Controls.Circular.Angle := AngleRad * 180 / PI;
@@ -228,7 +229,6 @@ PROGRAM _CYCLIC
 				State := MOVE_SETTINGS;
 			END_IF
 			
-			
 		START_MOVE:
 			TravelTime := CamMove[CompletedMoves].TravelTime;
 			IF CamMove[CompletedMoves].MoveType = LINEAR THEN
@@ -236,8 +236,6 @@ PROGRAM _CYCLIC
 			ELSIF CamMove[CompletedMoves].MoveType = RADIAL THEN
 				State := RADIAL_MOVE;
 			END_IF
-			
-			
 			
 		RADIAL_MOVE:
 			Vis.Controls.SelectedMove := CompletedMoves;
@@ -251,9 +249,7 @@ PROGRAM _CYCLIC
 			
 			
 		WAIT_FOR_RADIAL_MOVE_DONE:
-			
-			
-			IF RadialMove.Done THEN
+			IF RadialMove.Done AND NOT Vis.Controls.Pause THEN
 				RadialMove.Execute := FALSE;
 				CompletedMoves := CompletedMoves + 1;
 				State := MOVE_COMPLETE;
@@ -280,7 +276,7 @@ PROGRAM _CYCLIC
 		WAIT_FOR_LINEAR_MOVE_DONE:
 			
 		
-			IF FocalPointMove.Done THEN
+			IF FocalPointMove.Done AND NOT Vis.Controls.Pause THEN
 				FocalPointMove.Execute := FALSE;
 				CompletedMoves := CompletedMoves + 1;
 				State := MOVE_COMPLETE;

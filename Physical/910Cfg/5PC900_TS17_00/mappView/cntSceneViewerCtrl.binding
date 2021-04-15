@@ -121,5 +121,9 @@
 <Source xsi:type="opcUa" refId="::SVControl:Vis.Controls.ActiveMoveTravelTime" attribute="value" />
 <Target xsi:type="brease" contentRefId="cntSceneViewerCtrl" widgetRefId="movieProgBar" attribute="maxValue" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::SVControl:Vis.Controls.Pause" attribute="value" />
+<Target xsi:type="brease" contentRefId="cntSceneViewerCtrl" widgetRefId="tbPausePlayback" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

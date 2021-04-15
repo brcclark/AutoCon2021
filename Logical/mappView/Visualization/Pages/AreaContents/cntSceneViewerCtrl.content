@@ -37,5 +37,6 @@
     <Widget xsi:type="widgets.brease.TextInput" id="tiFileName" top="572" left="900" width="230" zIndex="33" style="Outlined" />
     <Widget xsi:type="widgets.brease.PushButton" id="pbSaveRecipe" top="616" left="902" width="110" zIndex="34" text="Save Movie" style="Contained" />
     <Widget xsi:type="widgets.brease.PushButton" id="pbLoadRecipe" top="616" left="1026" width="110" zIndex="35" text="Load Movie" style="Contained" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="tbPausePlayback" top="586" left="576" width="54" height="52" zIndex="36" image="Media/Pause.svg" style="ContainedOnOff" />
   </Widgets>
 </Content>

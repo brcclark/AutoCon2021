@@ -45,6 +45,7 @@ TYPE
 		TimeInput : REAL;
 		ActiveMoveTravelTime : TIME;
 		ActiveMoveElapsedTime : TIME;
+		Pause : BOOL;
 	END_STRUCT;
 	FocalPointControls_typ : 	STRUCT 
 		XBtnPos : USINT;
